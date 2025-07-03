@@ -1,0 +1,2959 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <%--<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="Next_ae.User.User" %>
+
+    <!DOCTYPE html>
+
+    <html>
+    <head runat="server">
+    
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+        <title>Home</title>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->	
+	    <link rel="icon" type="image/png" href="../UserTemplate/images/icons/favicon.png"/>
+    <!--===============================================================================================-->
+	    <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+	    <link rel="stylesheet" type="text/css" href="../UserTemplate/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+	    <link rel="stylesheet" type="text/css" href="../UserTemplate/fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+	    <link rel="stylesheet" type="text/css" href="../UserTemplate/fonts/linearicons-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+	    <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/animate/animate.css">
+    <!--===============================================================================================-->	
+	    <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+	    <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+	    <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->	
+	    <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+	    <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/slick/slick.css">
+    <!--===============================================================================================-->
+	    <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/MagnificPopup/magnific-popup.css">
+    <!--===============================================================================================-->
+	    <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+	    <link rel="stylesheet" type="text/css" href="../UserTemplate/css/util.css">
+	    <link rel="stylesheet" type="text/css" href="../UserTemplate/css/main.css" />
+
+	    <style>
+            /* Mega Menu Styles */
+	
+		    body {
+                margin: 0;
+                padding: 0;
+                position: relative;
+                padding-top: 120px; /* Adjust based on your header height */
+            }
+
+            header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 10000;
+                background: #fff;
+                box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            }
+
+            .container-menu-desktop {
+                position: relative;
+                z-index: 10001;
+            }
+
+            .wrap-menu-desktop {
+                position: static;
+            }
+
+            /* Main content area - pushes content below fixed header */
+            main {
+                position: relative;
+                z-index: 1;
+                margin-top: 80px; /* Adjust based on your header height */
+            }
+
+            /* Mobile header adjustments */
+            @media (max-width: 991px) {
+                body {
+                    padding-top: 60px; /* Smaller header on mobile */
+                }
+            
+                header {
+                    position: fixed;
+                }
+            
+                .wrap-header-mobile {
+                    position: relative;
+                    z-index: 10002;
+                }
+            }
+		    .mega-menu {
+			    position: absolute;
+			    left: 0;
+			    width: 100%;
+			    background: #fff;
+			    padding: 30px 20px;
+			    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+			    z-index: 1000;
+			    display: none;
+			    border-top: 2px solid #717fe0;
+			    margin-top: -1px;
+		    }
+
+		    .main-menu > li:hover .mega-menu {
+			    display: flex;
+			    animation: fadeIn 0.15s ease-out;
+		    }
+
+		    .mega-menu-col {
+			    flex: 1;
+			    padding: 0 15px;
+			    min-width: 200px;
+			    border-right: 1px solid #f0f0f0; /* Subtle column separator */
+		    }
+
+		    .mega-menu-col:last-child {
+			    border-right: none; /* Remove border from last column */
+		    }
+
+		    .mega-menu h4 {
+			    font-size: 14px;
+			    color: #333;
+			    margin-bottom: 15px;
+			    text-transform: uppercase;
+			    font-weight: 700; /* Bolder font weight */
+			    position: relative;
+			    padding-bottom: 8px;
+			    letter-spacing: 0.5px; /* Better readability */
+		    }
+
+		    .mega-menu h4:after {
+			    content: '';
+			    position: absolute;
+			    left: 0;
+			    bottom: 0;
+			    width: 40px; /* Longer underline */
+			    height: 2px;
+			    background: #717fe0;
+		    }
+
+		    .mega-menu ul {
+			    list-style: none;
+			    padding: 0;
+			    margin: 0 0 25px 0; /* More space between sections */
+		    }
+
+		    .mega-menu ul li {
+			    margin-bottom: 10px; /* Increased spacing between items */
+		    }
+
+		    .mega-menu ul li a {
+			    color: #555;
+			    font-size: 13px;
+			    transition: all 0.2s ease;
+			    display: block;
+			    padding: 5px 0;
+			    line-height: 1.4;
+		    }
+
+		    .mega-menu ul li a:hover {
+			    color: #717fe0;
+			    padding-left: 8px; /* More noticeable hover effect */
+			    font-weight: 500;
+		    }
+
+		    .mega-menu-header {
+			    font-size: 18px;
+			    font-weight: 700;
+			    color: #333;
+			    margin-bottom: 25px;
+			    text-transform: uppercase;
+			    border-bottom: 2px solid #717fe0;
+			    padding-bottom: 10px;
+			    display: block;
+			    letter-spacing: 1px;
+		    }
+
+		    /* Animation for smooth appearance */
+		    @keyframes fadeIn {
+			    from { 
+				    opacity: 0; 
+				    transform: translateY(8px); 
+			    }
+			    to { 
+				    opacity: 1; 
+				    transform: translateY(0); 
+			    }
+		    }
+
+		    /* Adjust main menu items */
+		    .main-menu > li {
+			    position: static; /* Changed from relative for better dropdown positioning */
+		    }
+
+		    .main-menu > li > a {
+			    padding: 22px 18px; /* Slightly larger click area */
+			    display: inline-block;
+			    font-weight: 500;
+			    position: relative;
+			    color: #333;
+			    transition: all 0.2s;
+		    }
+
+		    .main-menu > li > a:after {
+			    content: '';
+			    position: absolute;
+			    left: 18px;
+			    bottom: 18px;
+			    width: 0;
+			    height: 2px;
+			    background: #717fe0;
+			    transition: width 0.3s ease-out;
+		    }
+
+		    .main-menu > li:hover > a {
+			    color: #717fe0;
+		    }
+
+		    .main-menu > li:hover > a:after {
+			    width: calc(100% - 36px);
+		    }
+
+		    /* Container adjustments to prevent clipping */
+		    .wrap-menu-desktop {
+			    position: relative;
+			    z-index: 1001;
+		    }
+
+		    .container-menu-desktop {
+			    overflow: visible !important;
+		    }
+
+		    /* Mobile adjustments */
+		    @media (max-width: 991px) {
+			    .mega-menu {
+				    position: static;
+				    display: none;
+				    box-shadow: none;
+				    padding: 15px;
+				    background: #f9f9f9;
+			    }
+        
+			    .mega-menu-col {
+				    border-right: none;
+				    margin-bottom: 20px;
+			    }
+        
+			    .main-menu > li > a:after {
+				    display: none;
+			    }
+		    }
+
+		    /* Fallbacks for older browsers */
+		    @supports not (backdrop-filter: blur(10px)) {
+			    .mega-menu {
+				    background: #fff;
+			    }
+		    }
+            /* Add this new mobile menu style */
+            .mobile-menu {
+                position: fixed;
+                top: 120px; /* Adjusted based on your header height */
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: #fff;
+                z-index: 9999;
+                overflow-y: auto;
+                padding: 20px;
+                display: none;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+        
+            .mobile-menu.active {
+                display: block;
+            }
+        
+            .mobile-menu > ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+        
+            .mobile-menu > ul > li {
+                position: relative;
+                border-bottom: 1px solid #eee;
+            }
+        
+            .mobile-menu > ul > li > a {
+                color: #333;
+                display: block;
+                padding: 15px 0;
+                font-weight: 500;
+                text-decoration: none;
+            }
+        
+            .mobile-mega-menu {
+                display: none;
+                background: #f9f9f9;
+                padding: 15px;
+                margin-top: 10px;
+                border-left: 3px solid #717fe0;
+            }
+        
+            .mobile-mega-menu.active {
+                display: block;
+                animation: fadeIn 0.3s ease;
+            }
+        
+            .mobile-mega-col {
+                margin-bottom: 20px;
+            }
+        
+            .mobile-mega-col h4 {
+                font-size: 14px;
+                color: #333;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+                font-weight: 700;
+                padding-bottom: 5px;
+                border-bottom: 1px solid #eee;
+            }
+        
+            .mobile-mega-col ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+        
+            .mobile-mega-col ul li {
+                margin-bottom: 8px;
+            }
+        
+            .mobile-mega-col ul li a {
+                color: #555;
+                font-size: 13px;
+                transition: all 0.2s ease;
+                display: block;
+                padding: 5px 0;
+            }
+        
+            .mobile-mega-col ul li a:hover {
+                color: #717fe0;
+                padding-left: 8px;
+            }
+        
+            .mobile-arrow {
+                float: right;
+                transition: transform 0.3s ease;
+                margin-left: 10px;
+            }
+        
+            .mobile-arrow.active {
+                transform: rotate(90deg);
+            }
+        
+            /* Add hover effect for mobile menu items */
+            @media (hover: hover) and (pointer: fine) {
+                .mobile-menu > ul > li:hover > .mobile-mega-menu {
+                    display: block;
+                }
+            
+                .mobile-menu > ul > li:hover > a .mobile-arrow {
+                    transform: rotate(90deg);
+                }
+            }
+        
+            /* For touch devices */
+            @media (hover: none) and (pointer: coarse) {
+                .mobile-menu > ul > li > a {
+                    position: relative;
+                    padding-right: 30px;
+                }
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            /* Account dropdown styles */
+           /* Account Dropdown Styles */
+
+
+
+        /* Header and Navigation Styles */
+     
+
+            /* Header Icons Alignment Fix */
+            .wrap-icon-header {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .icon-header-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 10px !important;
+            }
+
+            /* Account Dropdown Styles */
+            .account-dropdown {
+                position: relative;
+                display: flex;
+                align-items: center;
+            }
+
+            .account-info {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                padding: 0 10px;
+            }
+
+            .login-label {
+                margin-left: 8px;
+                font-size: 14px;
+                white-space: nowrap;
+            }
+
+            .account-dropdown-content {
+                display: none;
+                position: absolute;
+                right: 0;
+                top: 100%;
+                background-color: #fff;
+                min-width: 200px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                border-radius: 4px;
+                padding: 10px 0;
+            }
+
+            .account-dropdown:hover .account-dropdown-content {
+                display: block;
+                animation: fadeIn 0.2s ease-out;
+            }
+
+            .account-dropdown-content a {
+                color: #333;
+                padding: 10px 16px;
+                text-decoration: none;
+                display: block;
+                font-size: 14px;
+            }
+
+            .account-dropdown-content a:hover {
+                background-color: #f5f5f5;
+                color: #717fe0;
+            }
+
+            /* Mobile menu adjustments */
+            @media (max-width: 991px) {
+                .wrap-icon-header {
+                    gap: 5px;
+                }
+            
+                .icon-header-item {
+                    padding: 0 5px !important;
+                }
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            /* Ensure all icons are the same size */
+            .icon-header-item i {
+                font-size: 20px;
+            }
+
+            /* Mega Menu Styles (keep your existing mega menu styles here) */
+            /* ... your existing mega menu styles ... */
+        </style>
+    </head>
+    <body>
+    
+        <form id="form1" runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
+		    <!-- Header -->
+	    <header>
+		    <!-- Header desktop -->
+		    <div class="container-menu-desktop">
+			
+
+			    <div class="wrap-menu-desktop">
+				    <nav class="limiter-menu-desktop container">
+					
+					    <!-- Logo desktop -->		
+					    <a href="Home.aspx" class="logo" >
+						    <img src="../UserTemplate/images/icons/logo.png" alt="IMG-LOGO">
+					    </a>
+                            <div class="menu-desktop">
+                                <ul class="main-menu">
+                                    <li class="">
+                                        <a href="Girls.aspx">Girls</a>
+                                        <div class="mega-menu">
+                                            <div class="mega-menu-col">
+                                                <h4 class="mega-menu-header">THE GIRLS SHOP</h4>
+                                            
+                                                <h4>New In</h4>
+                                                <ul>
+                                                    <li><a href="#">New In from Next</a></li>
+                                                    <li><a href="#">Jumpsuits & Physuits</a></li>
+                                                    <li><a href="#">Shop all</a></li>
+                                                    <li><a href="#">Pylamas & Underwear</a></li>
+                                                </ul>
+                                            
+                                                <h4>Top 5 Brands</h4>
+                                                <ul>
+                                                    <li><a href="#">All Girls Brands</a></li>
+                                                    <li><a href="#">Adidas</a></li>
+                                                    <li><a href="#">Angel & Rocket</a></li>
+                                                    <li><a href="#">Baker by Ted Baker</a></li>
+                                                    <li><a href="#">Upsy Girl</a></li>
+                                                    <li><a href="#">JoJo Maman Bébé</a></li>
+                                                </ul>
+                                            
+                                                <h4>Holiday Shop</h4>
+                                                <ul>
+                                                    <li><a href="#">Dresses</a></li>
+                                                    <li><a href="#">Sets & outfits under 80 AED</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="mega-menu-col">
+                                                <h4>Shop By Age</h4>
+                                                <ul>
+                                                    <li><a href="#">3-5 years</a></li>
+                                                    <li><a href="#">6-8 years</a></li>
+                                                    <li><a href="#">9-11 years</a></li>
+                                                </ul>
+                                            
+                                                <h4>Loungewear</h4>
+                                                <ul>
+                                                    <li><a href="#">Nightwear & Pylamas</a></li>
+                                                    <li><a href="#">Thermals</a></li>
+                                                    <li><a href="#">Robes</a></li>
+                                                    <li><a href="#">Sleepsuits</a></li>
+                                                    <li><a href="#">Slippers</a></li>
+                                                    <li><a href="#">Socks & Tights</a></li>
+                                                </ul>
+                                            
+                                                <h4>Footwear</h4>
+                                                <ul>
+                                                    <li><a href="#">All Footwear</a></li>
+                                                    <li><a href="#">Sandals & Clogs</a></li>
+                                                    <li><a href="#">School Shoes</a></li>
+                                                    <li><a href="#">Sneakers & Pumps</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="mega-menu-col">
+                                                <h4>Clothing</h4>
+                                                <ul>
+                                                    <li><a href="#">All Clothing</a></li>
+                                                    <li><a href="#">Dresses</a></li>
+                                                    <li><a href="#">Shirts & Blouses</a></li>
+                                                    <li><a href="#">Shorts & Skirts</a></li>
+                                                    <li><a href="#">Swedishirts & Hoodies</a></li>
+                                                    <li><a href="#">Tops & T-Shirts</a></li>
+                                                    <li><a href="#">Bodysuits & Vests</a></li>
+                                                    <li><a href="#">Coats & Jackets</a></li>
+                                                    <li><a href="#">Pants & Leggings</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="mega-menu-col">
+                                                <h4>Schoolwear</h4>
+                                                <ul>
+                                                    <li><a href="#">All Schoolwear</a></li>
+                                                    <li><a href="#">Uniforms</a></li>
+                                                    <li><a href="#">School Shoes</a></li>
+                                                </ul>
+                                            
+                                                <h4>Baby & Toddler</h4>
+                                                <ul>
+                                                    <li><a href="#">Babygrows & Sleepsuits</a></li>
+                                                    <li><a href="#">Multipack Sleepsuits</a></li>
+                                                </ul>
+                                            
+                                                <h4>Accessories</h4>
+                                                <ul>
+                                                    <li><a href="#">All Bags & Accessories</a></li>
+                                                    <li><a href="#">Bags</a></li>
+                                                    <li><a href="#">Hats, Gloves & Scarves</a></li>
+                                                    <li><a href="#">Socks & Tights</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="mega-menu-col">
+                                                <h4>Multipacks</h4>
+                                                <ul>
+                                                    <li><a href="#">Multipack Leggings</a></li>
+                                                    <li><a href="#">Multipack T-Shirts</a></li>
+                                                    <li><a href="#">Multipack Socks & Tights</a></li>
+                                                    <li><a href="#">Multipack Underwear</a></li>
+                                                </ul>
+                                            
+                                                <h4>Seasonal</h4>
+                                                <ul>
+                                                    <li><a href="#">Swim & Beach</a></li>
+                                                    <li><a href="#">Occasion & Party</a></li>
+                                                </ul>
+                                            
+                                                <h4>Other</h4>
+                                                <ul>
+                                                    <li><a href="#">Pylamas & Nightwear</a></li>
+                                                    <li><a href="#">Footwear</a></li>
+                                                    <li><a href="#">Branded</a></li>
+                                                    <li><a href="#">Books & Wellies</a></li>
+                                                    <li><a href="#">Sports & Skirts</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+									    <a href="Boys.aspx">Boys</a>
+									    <div class="mega-menu">
+										    <div class="mega-menu-col">
+											    <h4 class="mega-menu-header">THE BOYS SHOP</h4>
+            
+											    <h4>New in</h4>
+											    <ul>
+												    <li><a href="#">New in from Next</a></li>
+												    <li><a href="#">Shop all</a></li>
+											    </ul>
+            
+											    <h4>Top 5 Brands</h4>
+											    <ul>
+												    <li><a href="#">All Boys Brands</a></li>
+												    <li><a href="#">Adidas</a></li>
+												    <li><a href="#">Angel & Rocket</a></li>
+												    <li><a href="#">Baker by Ted Baker</a></li>
+												    <li><a href="#">Tommy Hilfiger</a></li>
+												    <li><a href="#">JoJo Maman Bébé</a></li>
+											    </ul>
+            
+											    <h4>Inspire Me / Lookbook</h4>
+											    <ul>
+												    <li><a href="#">Holiday Shop</a></li>
+												    <li><a href="#">T-Shirts</a></li>
+												    <li><a href="#">Sets & outfits under 110 AED</a></li>
+											    </ul>
+										    </div>
+
+										    <div class="mega-menu-col">
+											    <h4>Shop By Age</h4>
+											    <ul>
+												    <li><a href="#">0-2 years</a></li>
+												    <li><a href="#">3-5 years</a></li>
+												    <li><a href="#">6-8 years</a></li>
+												    <li><a href="#">9-11 years</a></li>
+												    <li><a href="#">12-14 years</a></li>
+												    <li><a href="#">15+ years</a></li>
+											    </ul>
+            
+											    <h4>Character Shop</h4>
+											    <ul>
+												    <li><a href="#">Shop all</a></li>
+											    </ul>
+										    </div>
+
+										    <div class="mega-menu-col">
+											    <h4>Clothing</h4>
+											    <ul>
+												    <li><a href="#">All Clothing</a></li>
+												    <li><a href="#">Babygrows & Sleepsuits</a></li>
+												    <li><a href="#">Bodysuits & Vests</a></li>
+												    <li><a href="#">Coats & Jackets</a></li>
+												    <li><a href="#">Hoodies</a></li>
+												    <li><a href="#">Jeans</a></li>
+												    <li><a href="#">Joggers</a></li>
+												    <li><a href="#">Knitwear</a></li>
+												    <li><a href="#">Loungewear</a></li>
+												    <li><a href="#">Multipacks</a></li>
+												    <li><a href="#">Nightwear & Pyjamas</a></li>
+												    <li><a href="#">Schoolwear</a></li>
+												    <li><a href="#">Occasion & Party</a></li>
+												    <li><a href="#">Polo Shirts</a></li>
+												    <li><a href="#">Sets & Outfits</a></li>
+												    <li><a href="#">Shirts</a></li>
+												    <li><a href="#">Sportswear</a></li>
+												    <li><a href="#">Suits & Waistcoats</a></li>
+												    <li><a href="#">Sweatshirts & Hoodies</a></li>
+												    <li><a href="#">Swimwear</a></li>
+												    <li><a href="#">T-Shirts</a></li>
+												    <li><a href="#">Tracksuits</a></li>
+												    <li><a href="#">Trousers & Chinos</a></li>
+											    </ul>
+										    </div>
+
+										    <div class="mega-menu-col">
+											    <h4>Footwear</h4>
+											    <ul>
+												    <li><a href="#">All Footwear</a></li>
+												    <li><a href="#">Baby & Toddler</a></li>
+												    <li><a href="#">Boots</a></li>
+												    <li><a href="#">Sandals & Clogs</a></li>
+												    <li><a href="#">School Shoes</a></li>
+												    <li><a href="#">Sneakers & Pumps</a></li>
+											    </ul>
+            
+											    <h4>Bags & Accessories</h4>
+											    <ul>
+												    <li><a href="#">All Accessories</a></li>
+												    <li><a href="#">Bags</a></li>
+												    <li><a href="#">Hats, Gloves & Scarves</a></li>
+											    </ul>
+										    </div>
+
+										    <div class="mega-menu-col">
+											    <h4>Pyjamas & Underwear</h4>
+											    <ul>
+												    <li><a href="#">All Nightwear</a></li>
+												    <li><a href="#">Underwear</a></li>
+												    <li><a href="#">Pyjamas</a></li>
+												    <li><a href="#">Robes</a></li>
+												    <li><a href="#">Sleepsuits</a></li>
+												    <li><a href="#">Slippers</a></li>
+												    <li><a href="#">Socks</a></li>
+											    </ul>
+            
+											    <h4>Multipacks</h4>
+											    <ul>
+												    <li><a href="#">Multipack T-Shirts</a></li>
+												    <li><a href="#">Multipack Sleepsuits</a></li>
+												    <li><a href="#">Multipack Socks</a></li>
+												    <li><a href="#">Multipack Underwear</a></li>
+												    <li><a href="#">Multipack Joggers</a></li>
+											    </ul>
+            
+											    <h4>Other</h4>
+											    <ul>
+												    <li><a href="#">Pyjamas & Nightwear</a></li>
+												    <li><a href="#">Footwear</a></li>
+												    <li><a href="#">Branded</a></li>
+											    </ul>
+										    </div>
+									    </div>
+								    </li>
+
+                                   <li>
+									    <a href="Baby.aspx">Baby</a>
+									    <div class="mega-menu">
+										    <div class="mega-menu-col">
+											    <h4 class="mega-menu-header">THE BABY SHOP</h4>
+            
+											    <h4>New in</h4>
+											    <ul>
+												    <li><a href="#">Newborn</a></li>
+												    <li><a href="#">Newborn Clothing</a></li>
+												    <li><a href="#">Newborn Accessories</a></li>
+											    </ul>
+            
+											    <h4>Top 5 Brands</h4>
+											    <ul>
+												    <li><a href="#">All Baby Brands</a></li>
+												    <li><a href="#">Aden + Anais</a></li>
+												    <li><a href="#">Baker by Ted Baker</a></li>
+												    <li><a href="#">JoJo Maman Bébé</a></li>
+												    <li><a href="#">Lipsy</a></li>
+												    <li><a href="#">The White Company</a></li>
+											    </ul>
+            
+											    <h4>Holiday Shop</h4>
+											    <ul>
+												    <li><a href="#">Sleepsuits & Bodysuits</a></li>
+												    <li><a href="#">Sets & Coords</a></li>
+											    </ul>
+            
+											    <h4>Other</h4>
+											    <ul>
+												    <li><a href="#">Footwear</a></li>
+												    <li><a href="#">Accessories</a></li>
+												    <li><a href="#">Branded</a></li>
+											    </ul>
+										    </div>
+
+										    <div class="mega-menu-col">
+											    <h4>Clothing</h4>
+											    <ul>
+												    <li><a href="#">All Clothing</a></li>
+												    <li><a href="#">Bodysuits & Vests</a></li>
+												    <li><a href="#">Coats, Jackets & Pramsuits</a></li>
+												    <li><a href="#">Dresses</a></li>
+												    <li><a href="#">Dungarees</a></li>
+												    <li><a href="#">Jeans & Joggers</a></li>
+												    <li><a href="#">Jumpers & Knitwear</a></li>
+												    <li><a href="#">Multipacks</a></li>
+												    <li><a href="#">Occasionwear</a></li>
+												    <li><a href="#">Sets & Coords</a></li>
+												    <li><a href="#">Shorts</a></li>
+												    <li><a href="#">Sleepsuits & Rompersuits</a></li>
+												    <li><a href="#">Socks & Tights</a></li>
+												    <li><a href="#">Swim & Beach</a></li>
+												    <li><a href="#">Tops</a></li>
+												    <li><a href="#">Trousers & Leggings</a></li>
+											    </ul>
+										    </div>
+
+										    <div class="mega-menu-col">
+											    <h4>Shop by Age</h4>
+											    <ul>
+												    <li><a href="#">First Size</a></li>
+												    <li><a href="#">0-3 Months</a></li>
+												    <li><a href="#">3-6 Months</a></li>
+												    <li><a href="#">6-9 Months</a></li>
+												    <li><a href="#">9-12 Months</a></li>
+												    <li><a href="#">12-18 Months</a></li>
+												    <li><a href="#">18-24 Months</a></li>
+											    </ul>
+            
+											    <h4>Shop by Gender</h4>
+											    <ul>
+												    <li><a href="#">Unisex</a></li>
+												    <li><a href="#">Baby Boys</a></li>
+												    <li><a href="#">Baby Girls</a></li>
+											    </ul>
+										    </div>
+
+										    <div class="mega-menu-col">
+											    <h4>100% Cotton & Organic Cotton</h4>
+											    <ul>
+												    <li><a href="#">All Cotton Favorites</a></li>
+												    <li><a href="#">Cotton Sets</a></li>
+												    <li><a href="#">Cotton Sleepsuits</a></li>
+												    <li><a href="#">Cotton Bodysuits</a></li>
+											    </ul>
+            
+											    <h4>All Footwear</h4>
+											    <ul>
+												    <li><a href="#">Baby Shoes</a></li>
+												    <li><a href="#">Boots</a></li>
+												    <li><a href="#">Sandals</a></li>
+											    </ul>
+            
+											    <h4>All Accessories</h4>
+											    <ul>
+												    <li><a href="#">100% Cotton</a></li>
+												    <li><a href="#">Blankets</a></li>
+												    <li><a href="#">Hats & Scratch Mitts</a></li>
+											    </ul>
+										    </div>
+
+										    <div class="mega-menu-col">
+											    <h4>Maternity</h4>
+											    <ul>
+												    <li><a href="#">All Maternity</a></li>
+											    </ul>
+            
+											    <h4>Nursery</h4>
+											    <ul>
+												    <li><a href="#">All Nursery</a></li>
+											    </ul>
+            
+											    <h4>Inspire Me / Lookbook</h4>
+											    <ul>
+												    <li><a href="#">New Arrivals</a></li>
+												    <li><a href="#">Seasonal Collections</a></li>
+											    </ul>
+										    </div>
+									    </div>
+								    </li>
+
+                                    <li>
+									    <a href="Women.aspx">Women</a>
+									    <div class="mega-menu">
+										    <div class="mega-menu-col">
+											    <h4 class="mega-menu-header">THE WOMENS SHOP</h4>
+            
+											    <h4>New In</h4>
+											    <ul>
+												    <li><a href="#">Dresses</a></li>
+												    <ul>
+													    <li><a href="#">All Dresses</a></li>
+													    <li><a href="#">Occasion Dresses</a></li>
+													    <li><a href="#">Midi Dresses</a></li>
+													    <li><a href="#">Small Dresses</a></li>
+													    <li><a href="#">Summer Dresses</a></li>
+												    </ul>
+											    </ul>
+            
+											    <h4>Top 5 Brands</h4>
+											    <ul>
+												    <li><a href="#">Shop Womens Brands</a></li>
+												    <li><a href="#">Friends Like These</a></li>
+												    <li><a href="#">Upsy</a></li>
+												    <li><a href="#">Love & Roses</a></li>
+												    <li><a href="#">Reiss</a></li>
+												    <li><a href="#">The Set</a></li>
+											    </ul>
+            
+											    <h4>Inspire Me / Lookbook</h4>
+											    <ul>
+												    <li><a href="#">Holiday Shop</a></li>
+												    <ul>
+													    <li><a href="#">Dresses</a></li>
+													    <li><a href="#">Influencer Edit</a></li>
+													    <li><a href="#">Footwear</a></li>
+													    <li><a href="#">Branded</a></li>
+												    </ul>
+											    </ul>
+										    </div>
+
+										    <div class="mega-menu-col">
+											    <h4>Clothing</h4>
+											    <ul>
+												    <li><a href="#">Shop All</a></li>
+												    <ul>
+													    <li><a href="#">Midi Dresses</a></li>
+													    <li><a href="#">Small Dresses</a></li>
+													    <li><a href="#">Summer Dresses</a></li>
+												    </ul>
+											    </ul>
+            
+											    <h4>Trending</h4>
+											    <ul>
+												    <li><a href="#">Wide Leg Trousers</a></li>
+												    <li><a href="#">Cotton Favorites</a></li>
+												    <li><a href="#">Denim</a></li>
+												    <li><a href="#">Linen</a></li>
+												    <li><a href="#">The Set</a></li>
+											    </ul>
+										    </div>
+
+										    <div class="mega-menu-col">
+											    <h4>Hoodies & Sweatshirts</h4>
+											    <ul>
+												    <li><a href="#">Jackets & Coats</a></li>
+												    <ul>
+													    <li><a href="#">All Bikinis</a></li>
+													    <li><a href="#">All Beachwear</a></li>
+													    <li><a href="#">All Lingerie</a></li>
+													    <li><a href="#">Bras</a></li>
+													    <li><a href="#">Dressing Gowns</a></li>
+												    </ul>
+											    </ul>
+										    </div>
+
+										    <div class="mega-menu-col">
+											    <h4>Shoes</h4>
+											    <ul>
+												    <li><a href="#">Shop All</a></li>
+												    <ul>
+													    <li><a href="#">Boots & Wellies</a></li>
+													    <li><a href="#">Flats</a></li>
+													    <li><a href="#">Heels</a></li>
+													    <li><a href="#">Sandals</a></li>
+													    <li><a href="#">Slippers</a></li>
+													    <li><a href="#">Sneakers</a></li>
+												    </ul>
+											    </ul>
+										    </div>
+
+										    <div class="mega-menu-col">
+											    <h4>Accessories</h4>
+											    <ul>
+												    <li><a href="#">Shop All</a></li>
+												    <ul>
+													    <li><a href="#">Belts</a></li>
+													    <li><a href="#">Handbags & Purses</a></li>
+													    <li><a href="#">Hats, Gloves & Scarves</a></li>
+													    <li><a href="#">Jewellery</a></li>
+												    </ul>
+											    </ul>
+            
+											    <h4>Gifts</h4>
+											    <ul>
+												    <li><a href="#">Women</a></li>
+												    <li><a href="#">Men</a></li>
+												    <li><a href="#">Boys</a></li>
+												    <li><a href="#">Baby</a></li>
+											    </ul>
+										    </div>
+									    </div>
+								    </li>
+
+                                    <li>
+        <a href="#">Men</a>
+        <div class="mega-menu">
+            <div class="mega-menu-col">
+                <h4 class="mega-menu-header">THE MENS SHOP</h4>
+            
+                <h4>New in</h4>
+                <ul>
+                    <li><a href="#">Suits & Tailoring</a></li>
+                </ul>
+            
+                <h4>Top 5 Brands</h4>
+                <ul>
+                    <li><a href="#">Shop Men's Brands</a></li>
+                    <li><a href="#">Adidas</a></li>
+                    <li><a href="#">Calvin Klein</a></li>
+                    <li><a href="#">Reiss</a></li>
+                    <li><a href="#">Threadbare</a></li>
+                    <li><a href="#">Tommy Hilfiger</a></li>
+                </ul>
+            
+                <h4>Trending</h4>
+                <ul>
+                    <li><a href="#">Trending: Linen Shop</a></li>
+                    <li><a href="#">Trending: Cotton Favorites</a></li>
+                    <li><a href="#">Trending: Smart Casual</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4>All Clothing</h4>
+                <ul>
+                    <li><a href="#">Shop All</a></li>
+                    <li><a href="#">Coats & Jackets</a></li>
+                    <li><a href="#">Jeans</a></li>
+                    <li><a href="#">Joggers</a></li>
+                    <li><a href="#">Knitwear</a></li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Shorts</a></li>
+                    <li><a href="#">Socks</a></li>
+                    <li><a href="#">Sportswear</a></li>
+                    <li><a href="#">Suits</a></li>
+                    <li><a href="#">Sweatshirts & Hoodies</a></li>
+                    <li><a href="#">Swimwear</a></li>
+                    <li><a href="#">Tracksuits</a></li>
+                    <li><a href="#">Trousers & Chinos</a></li>
+                    <li><a href="#">Tops & T-Shirts</a></li>
+                    <li><a href="#">Underwear</a></li>
+                    <li><a href="#">Occasionwear</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4>Suits & Tailoring</h4>
+                <ul>
+                    <li><a href="#">All Suits</a></li>
+                    <li><a href="#">Black Suits</a></li>
+                    <li><a href="#">Blue Suits</a></li>
+                    <li><a href="#">Grey Suits</a></li>
+                    <li><a href="#">Blazers & Formal Jackets</a></li>
+                    <li><a href="#">Cufflinks & Tie Clips</a></li>
+                    <li><a href="#">Formal Shirts</a></li>
+                    <li><a href="#">Formal Trousers</a></li>
+                    <li><a href="#">Formal Shoes</a></li>
+                    <li><a href="#">Ties & Pocket Squares</a></li>
+                    <li><a href="#">Waistcoats</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4>Night & Lounge</h4>
+                <ul>
+                    <li><a href="#">All Nightwear</a></li>
+                    <li><a href="#">Dressing Gowns & Robes</a></li>
+                    <li><a href="#">Joggers</a></li>
+                    <li><a href="#">Loungewear</a></li>
+                    <li><a href="#">Pyjamas</a></li>
+                    <li><a href="#">Thermals</a></li>
+                    <li><a href="#">Slippers</a></li>
+                    <li><a href="#">Sweatshirts & Hoodies</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4>Inspire Me / Lookbook</h4>
+                <ul>
+                    <li><a href="#">Holiday Shop</a></li>
+                    <li><a href="#">Tops & T-shirts</a></li>
+                    <li><a href="#">Trousers & chinos</a></li>
+                </ul>
+            
+                <h4>Other</h4>
+                <ul>
+                    <li><a href="#">Pyjamas & Nightwear</a></li>
+                    <li><a href="#">Footwear</a></li>
+                    <li><a href="#">Branded</a></li>
+                </ul>
+            </div>
+        </div>
+    </li>
+
+                                   <li>
+        <a href="#">Shoes</a>
+        <div class="mega-menu">
+            <div class="mega-menu-col">
+                <h4 class="mega-menu-header">FOOTWEAR COLLECTION</h4>
+            
+                <h4>Girls</h4>
+                <ul>
+                    <li><a href="#">New in Footwear</a></li>
+                    <li><a href="#">Sandals</a></li>
+                    <li><a href="#">Sneakers</a></li>
+                    <li><a href="#">Occasion Shoes</a></li>
+                    <li><a href="#">School Shoes</a></li>
+                    <li><a href="#">Boots</a></li>
+                    <li><a href="#">Wellies</a></li>
+                    <li><a href="#">Slippers</a></li>
+                    <li><a href="#">Shop All Girls Footwear</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4>Boys</h4>
+                <ul>
+                    <li><a href="#">New in Footwear</a></li>
+                    <li><a href="#">Sandals</a></li>
+                    <li><a href="#">Sneakers</a></li>
+                    <li><a href="#">Occasion Shoes</a></li>
+                    <li><a href="#">School Shoes</a></li>
+                    <li><a href="#">Boots</a></li>
+                    <li><a href="#">Wellies</a></li>
+                    <li><a href="#">Slippers</a></li>
+                    <li><a href="#">Shop All Boys Footwear</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4>Baby</h4>
+                <ul>
+                    <li><a href="#">New in Footwear</a></li>
+                    <li><a href="#">Pram Shoes</a></li>
+                    <li><a href="#">Baby's First Shoes</a></li>
+                    <li><a href="#">Sandals</a></li>
+                    <li><a href="#">Sneakers</a></li>
+                    <li><a href="#">Boots</a></li>
+                    <li><a href="#">Slippers</a></li>
+                    <li><a href="#">Shop All Baby Footwear</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4>Women</h4>
+                <ul>
+                    <li><a href="#">New in Footwear</a></li>
+                    <li><a href="#">Sandals</a></li>
+                    <li><a href="#">Heeled Sandals</a></li>
+                    <li><a href="#">Sneakers</a></li>
+                    <li><a href="#">Flats</a></li>
+                    <li><a href="#">High Heels</a></li>
+                    <li><a href="#">Mid Heels</a></li>
+                    <li><a href="#">Boots</a></li>
+                    <li><a href="#">Workwear</a></li>
+                    <li><a href="#">Wedges</a></li>
+                    <li><a href="#">Wellies</a></li>
+                    <li><a href="#">Slippers</a></li>
+                    <li><a href="#">Shop All Womens Footwear</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4>Men</h4>
+                <ul>
+                    <li><a href="#">New in Footwear</a></li>
+                    <li><a href="#">Sandals</a></li>
+                    <li><a href="#">Sneakers</a></li>
+                    <li><a href="#">Boots</a></li>
+                    <li><a href="#">Smart Shoes</a></li>
+                    <li><a href="#">Wellies</a></li>
+                    <li><a href="#">Slippers</a></li>
+                    <li><a href="#">Shop All Mens Footwear</a></li>
+                </ul>
+            
+                <h4>Top Brands</h4>
+                <ul>
+                    <li><a href="#">Next</a></li>
+                    <li><a href="#">Adidas</a></li>
+                    <li><a href="#">Baker by Ted Baker</a></li>
+                    <li><a href="#">Friends Like These</a></li>
+                    <li><a href="#">Lirai</a></li>
+                    <li><a href="#">Lipay</a></li>
+                </ul>
+            </div>
+        </div>
+    </li>
+                                    <li>
+        <a href="#">Home</a>
+        <div class="mega-menu">
+            <div class="mega-menu-col">
+                <h4 class="mega-menu-header">SHOP BY ROOM</h4>
+                <ul>
+                    <li><a href="#">Bathroom</a></li>
+                    <li><a href="#">Bedroom</a></li>
+                    <li><a href="#">Dining Room</a></li>
+                    <li><a href="#">Living Room</a></li>
+                    <li><a href="#">Hallway</a></li>
+                    <li><a href="#">Kitchen</a></li>
+                    <li><a href="#">Children's Bedroom</a></li>
+                </ul>
+            
+                <h4 class="mega-menu-header">HOME FURNISHINGS</h4>
+                <ul>
+                    <li><a href="#">Shop All Home Furnishings</a></li>
+                    <li><a href="#">Curtains Poles & Accessories</a></li>
+                    <li><a href="#">Curtains</a></li>
+                    <li><a href="#">Cushions</a></li>
+                    <li><a href="#">Throws</a></li>
+                    <li><a href="#">Rugs & Runners</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4 class="mega-menu-header">BEDROOM & BEDDING</h4>
+                <ul>
+                    <li><a href="#">All Bedding</a></li>
+                    <li><a href="#">Duvets & Pillows</a></li>
+                    <li><a href="#">Bedsets & Duvet Covers</a></li>
+                    <li><a href="#">Bedsheets & Pillow Cases</a></li>
+                    <li><a href="#">Mattress Toppers & Protectors</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4 class="mega-menu-header">KITCHEN & DINING</h4>
+                <ul>
+                    <li><a href="#">All Kitchen & Dining</a></li>
+                    <li><a href="#">Kitchen Storage</a></li>
+                    <li><a href="#">Serveware</a></li>
+                    <li><a href="#">Dinnerware</a></li>
+                    <li><a href="#">Tableware</a></li>
+                    <li><a href="#">Glassware</a></li>
+                    <li><a href="#">Mugs & Cups</a></li>
+                    <li><a href="#">Table Linen & Placemats</a></li>
+                    <li><a href="#">Kitchen Accessories</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4 class="mega-menu-header">HOME ACCESSORIES</h4>
+                <ul>
+                    <li><a href="#">All Home Accessories</a></li>
+                    <li><a href="#">Artificial Flowers & Plants</a></li>
+                    <li><a href="#">Storage & Organisation</a></li>
+                    <li><a href="#">Candle Holders & Lanterns</a></li>
+                    <li><a href="#">Lamp Shades & Pendants</a></li>
+                    <li><a href="#">Mirrors</a></li>
+                    <li><a href="#">Photo Frames</a></li>
+                    <li><a href="#">Vases</a></li>
+                    <li><a href="#">Ornaments</a></li>
+                </ul>
+            
+                <h4 class="mega-menu-header">BATHROOM</h4>
+                <ul>
+                    <li><a href="#">All Bathroom</a></li>
+                    <li><a href="#">Towels & Bathmats</a></li>
+                    <li><a href="#">Bathroom Accessories</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4 class="mega-menu-header">FEATURED</h4>
+                <ul>
+                    <li><a href="#">New In</a></li>
+                    <li><a href="#">Bed Sets</a></li>
+                    <li><a href="#">Kids Bedroom</a></li>
+                    <li><a href="#">Branded</a></li>
+                </ul>
+            
+                <h4 class="mega-menu-header">THE HOME SHOP</h4>
+                <p>Explore our complete home collection</p>
+            </div>
+        </div>
+    </li>
+
+                                    <li>
+        <a href="#">Brands</a>
+        <div class="mega-menu">
+            <div class="mega-menu-col">
+                <h4 class="mega-menu-header">BRANDS</h4>
+                <ul>
+                    <li><a href="#">A-Z Brands</a></li>
+                    <li><a href="#">All Brands</a></li>
+                    <li><a href="#">Popular Categories</a></li>
+                </ul>
+            
+                <h4>Top Fashion Brands</h4>
+                <ul>
+                    <li><a href="#">Benetton</a></li>
+                    <li><a href="#">Boden</a></li>
+                    <li><a href="#">FatFace</a></li>
+                    <li><a href="#">Joules</a></li>
+                    <li><a href="#">Laura Ashley</a></li>
+                    <li><a href="#">Lyle & Scott</a></li>
+                    <li><a href="#">Reiss</a></li>
+                    <li><a href="#">Ted Baker</a></li>
+                    <li><a href="#">White Stuff</a></li>
+                    <li><a href="#">The White Company</a></li>
+                    <li><a href="#">Paul Smith Jr</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4>Sports Brands</h4>
+                <ul>
+                    <li><a href="#">adidas</a></li>
+                    <li><a href="#">Converse</a></li>
+                    <li><a href="#">Hype</a></li>
+                    <li><a href="#">Voyage</a></li>
+                </ul>
+            
+                <h4>Home Brands</h4>
+                <ul>
+                    <li><a href="#">Fum</a></li>
+                    <li><a href="#">Oria Kiely</a></li>
+                    <li><a href="#">Upsy</a></li>
+                    <li><a href="#">Love & Roses</a></li>
+                </ul>
+            
+                <h4>Kids Brands</h4>
+                <ul>
+                    <li><a href="#">JoJo Maman Bebé</a></li>
+                    <li><a href="#">Little Bird by Jools Oliver</a></li>
+                    <li><a href="#">Mini Boden</a></li>
+                    <li><a href="#">Reiss Kids</a></li>
+                    <li><a href="#">Upsy Girl</a></li>
+                    <li><a href="#">Angel & Rocket</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4>Shop All</h4>
+                <ul>
+                    <li><a href="#">Womens</a></li>
+                    <li><a href="#">Mens</a></li>
+                    <li><a href="#">Kids</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Holiday Shop</a></li>
+                </ul>
+            
+                <h4>Popular Categories</h4>
+                <ul>
+                    <li><a href="#">Coats & Jackets</a></li>
+                    <li><a href="#">Dresses</a></li>
+                    <li><a href="#">Jeans</a></li>
+                    <li><a href="#">Sweatshirts & Hoodies</a></li>
+                    <li><a href="#">Tops & T-Shirts</a></li>
+                    <li><a href="#">Trousers & Leggings</a></li>
+                    <li><a href="#">Sneakers</a></li>
+                    <li><a href="#">The Set</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4 class="mega-menu-header">Inspire Me / Lookbook</h4>
+                <p>THE BRANDS SHOP</p>
+                <p>Explore our complete brand collection</p>
+            
+                <h4>Featured</h4>
+                <ul>
+                    <li><a href="#">New In</a></li>
+                    <li><a href="#">Baker by Ted Baker</a></li>
+                    <li><a href="#">Love & Roses</a></li>
+                </ul>
+            </div>
+        </div>
+    </li>
+
+                                    <li>
+        <a href="#">Clearance</a>
+        <div class="mega-menu">
+            <div class="mega-menu-col">
+                <h4 class="mega-menu-header">Shop Girls</h4>
+                <ul>
+                    <li><a href="#">Shop All</a></li>
+                    <li><a href="#">Coats & Jackets</a></li>
+                    <li><a href="#">Dresses & Skirts</a></li>
+                    <li><a href="#">Hoodies & Sweatshirts</a></li>
+                    <li><a href="#">Shoes</a></li>
+                    <li><a href="#">Tops & T-Shirts</a></li>
+                    <li><a href="#">Pants & Leggings</a></li>
+                    <li><a href="#">Nightwear</a></li>
+                </ul>
+            
+                <h4 class="mega-menu-header">Shop Boys</h4>
+                <ul>
+                    <li><a href="#">Shop All</a></li>
+                    <li><a href="#">Coats & Jackets</a></li>
+                    <li><a href="#">Hoodies & Sweatshirts</a></li>
+                    <li><a href="#">Shoes</a></li>
+                    <li><a href="#">Shorts</a></li>
+                    <li><a href="#">Tops & T-shirts</a></li>
+                    <li><a href="#">Pants & Joggers</a></li>
+                    <li><a href="#">Nightwear</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4 class="mega-menu-header">Shop Womens</h4>
+                <ul>
+                    <li><a href="#">Shop All</a></li>
+                    <li><a href="#">Coats & Jackets</a></li>
+                    <li><a href="#">Dresses</a></li>
+                    <li><a href="#">Jumpers & Cardigans</a></li>
+                    <li><a href="#">Shorts, Skirts & Trousers</a></li>
+                    <li><a href="#">Shoes</a></li>
+                    <li><a href="#">Swim & Beachwear</a></li>
+                    <li><a href="#">Tops & T-Shirts</a></li>
+                    <li><a href="#">Nightwear</a></li>
+                </ul>
+            
+                <h4>Womens Shop by Size</h4>
+                <ul>
+                    <li><a href="#">Size 6</a></li>
+                    <li><a href="#">Size 8</a></li>
+                    <li><a href="#">Size 10</a></li>
+                    <li><a href="#">Size 12</a></li>
+                    <li><a href="#">Size 14</a></li>
+                    <li><a href="#">Size 16</a></li>
+                    <li><a href="#">Size 18</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4 class="mega-menu-header">Shop Mens</h4>
+                <ul>
+                    <li><a href="#">Shop All</a></li>
+                    <li><a href="#">Coats & Jackets</a></li>
+                    <li><a href="#">Jeans</a></li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Shoes</a></li>
+                    <li><a href="#">Shorts & Swimwear</a></li>
+                    <li><a href="#">T-Shirts & Polos</a></li>
+                    <li><a href="#">Trousers & Chinos</a></li>
+                    <li><a href="#">Nightwear</a></li>
+                </ul>
+            
+                <h4>Mens Shop by Size</h4>
+                <ul>
+                    <li><a href="#">XS</a></li>
+                    <li><a href="#">Small</a></li>
+                    <li><a href="#">Medium</a></li>
+                    <li><a href="#">Large</a></li>
+                    <li><a href="#">XL</a></li>
+                </ul>
+            </div>
+
+            <div class="mega-menu-col">
+                <h4 class="mega-menu-header">Shop Brands</h4>
+                <ul>
+                    <li><a href="#">Shop All Brands</a></li>
+                    <li><a href="#">Baker by Ted Baker</a></li>
+                    <li><a href="#">Upsy</a></li>
+                    <li><a href="#">River Island</a></li>
+                    <li><a href="#">Friends Like These</a></li>
+                    <li><a href="#">Love & Roses</a></li>
+                </ul>
+            
+                <h4>Shop Home</h4>
+                <ul>
+                    <li><a href="#">Shop All</a></li>
+                </ul>
+            
+                <h4 class="mega-menu-header">Shop Baby</h4>
+                <ul>
+                    <li><a href="#">Shop All</a></li>
+                    <li><a href="#">Baby Boys</a></li>
+                    <li><a href="#">Baby Girls</a></li>
+                    <li><a href="#">Rompers & Sleepsuits</a></li>
+                </ul>
+            
+                <h4 class="mega-menu-header">Inspire Me / Lookbook</h4>
+            </div>
+        </div>
+    </li>
+                          
+                            </div>	
+				     <!-- Icon header - UPDATED FOR PROPER ALIGNMENT -->
+                            <div class="wrap-icon-header flex-w flex-r-m">
+                            
+
+                                <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart">
+                                    <i class="zmdi zmdi-shopping-cart"></i>
+                                </div>
+
+                            
+
+                                <div class="account-dropdown icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
+                                    <div class="account-info">
+                                        <i class="zmdi zmdi-account account-icon"></i>
+                                        <asp:Label ID="lblLoginStatus" runat="server" Text="Login" CssClass="login-label"></asp:Label>
+                                    </div>
+                                    <div class="account-dropdown-content">
+                                        <asp:Panel ID="pnlLoggedIn" runat="server" Visible="false">
+                                            <a href="Profile.aspx"><i class="zmdi zmdi-account"></i> My Profile</a>
+                                            <a href="Orders.aspx"><i class="zmdi zmdi-shopping-cart"></i> My Orders</a>
+                                            <a href="Wishlist.aspx"><i class="zmdi zmdi-favorite"></i> Wishlist</a>
+                                            <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click">
+                                                <i class="zmdi zmdi-power"></i> Logout
+                                            </asp:LinkButton>
+                                        </asp:Panel>
+                                        <asp:Panel ID="pnlLoggedOut" runat="server" Visible="true">
+                                            <a href="Login.aspx"><i class="zmdi zmdi-account"></i> Login</a>
+                                            <a href="Register.aspx"><i class="zmdi zmdi-account-add"></i> Register</a>
+                                        </asp:Panel>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>	
+                </div>
+
+				
+			
+
+		    <!-- Header Mobile -->
+		    <div class="wrap-header-mobile">
+			    <!-- Logo moblie -->		
+			    <div class="logo-mobile">
+				    <a href="home.aspx"><img src="../UserTemplate/images/icons/logo.png" alt="IMG-LOGO"></a>
+			    </div>
+
+			    <!-- Icon header -->
+                    <div class="wrap-icon-header flex-w flex-r-m m-r-15">
+                        <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+                            <i class="zmdi zmdi-search"></i>
+                        </div>
+
+                        <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
+                            <i class="zmdi zmdi-shopping-cart"></i>
+                        </div>
+
+                        <a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
+                            <i class="zmdi zmdi-favorite-outline"></i>
+                        </a>
+
+                        <a href="Login.aspx" class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10">
+                            <i class="zmdi zmdi-account"></i>
+                        </a>
+                    </div>
+
+
+			    <!-- Button show menu -->
+			    <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+				    <span class="hamburger-box">
+					    <span class="hamburger-inner"></span>
+				    </span>
+			    </div>
+		    </div>
+
+
+		    <!-- Menu Mobile -->
+		    <div class="mobile-menu">
+                <ul>
+                    <li>
+                        <a href="Home.aspx">Home</a>
+                    </li>
+                    <li>
+                        <a href="Girls.aspx">Girls <span class="mobile-arrow">›</span></a>
+                        <div class="mobile-mega-menu">
+                            <div class="row">
+                                <div class="col-6 mobile-mega-col">
+                                    <h4>Clothing</h4>
+                                    <ul>
+                                        <li><a href="#">Dresses</a></li>
+                                        <li><a href="#">Tops</a></li>
+                                        <li><a href="#">T-Shirts</a></li>
+                                        <li><a href="#">Jeans</a></li>
+                                        <li><a href="#">Skirts</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6 mobile-mega-col">
+                                    <h4>Accessories</h4>
+                                    <ul>
+                                        <li><a href="#">Bags</a></li>
+                                        <li><a href="#">Shoes</a></li>
+                                        <li><a href="#">Jewelry</a></li>
+                                        <li><a href="#">Hats</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="Boys.aspx">Boys <span class="mobile-arrow">›</span></a>
+                        <div class="mobile-mega-menu">
+                            <div class="row">
+                                <div class="col-6 mobile-mega-col">
+                                    <h4>Clothing</h4>
+                                    <ul>
+                                        <li><a href="#">Shirts</a></li>
+                                        <li><a href="#">T-Shirts</a></li>
+                                        <li><a href="#">Pants</a></li>
+                                        <li><a href="#">Shorts</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6 mobile-mega-col">
+                                    <h4>Accessories</h4>
+                                    <ul>
+                                        <li><a href="#">Shoes</a></li>
+                                        <li><a href="#">Hats</a></li>
+                                        <li><a href="#">Backpacks</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Baby <span class="mobile-arrow">›</span></a>
+                        <div class="mobile-mega-menu">
+                            <div class="row">
+                                <div class="col-6 mobile-mega-col">
+                                    <h4>Clothing</h4>
+                                    <ul>
+                                        <li><a href="#">Bodysuits</a></li>
+                                        <li><a href="#">Rompers</a></li>
+                                        <li><a href="#">Sleepwear</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6 mobile-mega-col">
+                                    <h4>Accessories</h4>
+                                    <ul>
+                                        <li><a href="#">Bibs</a></li>
+                                        <li><a href="#">Blankets</a></li>
+                                        <li><a href="#">Booties</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Shoes</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Brands</a></li>
+                    <li><a href="#">Clearance</a></li>
+                    <li><a href="Login.aspx">Login</a></li>
+                    <li><a href="Register.aspx">Register</a></li>
+                </ul>
+            </div>
+
+		    <!-- Modal Search -->
+		    <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+			    <div class="container-search-header">
+				    <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+					    <img src="images/icons/icon-close2.png" alt="CLOSE">
+				    </button>
+
+				    <form class="wrap-search-header flex-w p-l-15">
+					    <button class="flex-c-m trans-04">
+						    <i class="zmdi zmdi-search"></i>
+					    </button>
+					    <input class="plh3" type="text" name="search" placeholder="Search...">
+				    </form>
+			    </div>
+		    </div>
+
+            <!-- Cart -->
+
+            <!-- Update the cart icon section in your user.master -->
+            <div class="wrap-header-cart js-panel-cart">
+        <div class="s-full js-hide-cart"></div>
+
+        <div class="header-cart flex-col-l p-l-65 p-r-25">
+            <div class="header-cart-title flex-w flex-sb-m p-b-8">
+                <span class="mtext-103 cl2">
+                    Your Cart
+                </span>
+
+                <div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+                    <i class="zmdi zmdi-close"></i>
+                </div>
+            </div>
+    
+            <asp:Panel ID="pnlEmptyCart" runat="server" CssClass="empty-cart-message" Visible="false">
+                <div class="text-center p-t-30 p-b-30">
+                    <i class="zmdi zmdi-shopping-cart" style="font-size: 50px; color: #ccc;"></i>
+                    <p class="mtext-107 cl6 p-t-10">Kindly Login First To Check Cart</p>
+                    <a href="Login.aspx" class="flex-c-m stext-101 cl0 size-107 bg3 bor14 hov-btn3 p-lr-15 trans-04 m-t-10">
+                        Login
+                    </a>
+                </div>
+            </asp:Panel>
+
+            <div id="cartContent" runat="server" class="header-cart-content flex-w js-pscroll">
+                <!-- Cart items will be loaded server-side -->
+            </div>
+        </div>
+    </div>
+
+
+
+
+	    <%--<div class="wrap-header-cart js-panel-cart">
+		    <div class="s-full js-hide-cart"></div>
+
+		    <div class="header-cart flex-col-l p-l-65 p-r-25">
+			    <div class="header-cart-title flex-w flex-sb-m p-b-8">
+				    <span class="mtext-103 cl2">
+					    Your Cart
+				    </span>
+
+				    <div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+					    <i class="zmdi zmdi-close"></i>
+				    </div>
+			    </div>
+			
+			    <div class="header-cart-content flex-w js-pscroll">
+				    <ul class="header-cart-wrapitem w-full">
+					    <li class="header-cart-item flex-w flex-t m-b-12">
+						    <div class="header-cart-item-img">
+							    <img src="images/item-cart-01.jpg" alt="IMG">
+						    </div>
+
+						    <div class="header-cart-item-txt p-t-8">
+							    <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+								    White Shirt Pleat
+							    </a>
+
+							    <span class="header-cart-item-info">
+								    1 x $19.00
+							    </span>
+						    </div>
+					    </li>
+
+					    <li class="header-cart-item flex-w flex-t m-b-12">
+						    <div class="header-cart-item-img">
+							    <img src="images/item-cart-02.jpg" alt="IMG">
+						    </div>
+
+						    <div class="header-cart-item-txt p-t-8">
+							    <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+								    Converse All Star
+							    </a>
+
+							    <span class="header-cart-item-info">
+								    1 x $39.00
+							    </span>
+						    </div>
+					    </li>
+
+					    <li class="header-cart-item flex-w flex-t m-b-12">
+						    <div class="header-cart-item-img">
+							    <img src="images/item-cart-03.jpg" alt="IMG">
+						    </div>
+
+						    <div class="header-cart-item-txt p-t-8">
+							    <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+								    Nixon Porter Leather
+							    </a>
+
+							    <span class="header-cart-item-info">
+								    1 x $17.00
+							    </span>
+						    </div>
+					    </li>
+				    </ul>
+				
+				    <div class="w-full">
+					    <div class="header-cart-total w-full p-tb-40">
+						    Total: $75.00
+					    </div>
+
+					    <div class="header-cart-buttons flex-w w-full">
+						    <a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+							    View Cart
+						    </a>
+
+							    <a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+							    Check Out
+						    </a>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+	    </div>--%>
+
+	    <%--</header>--%>
+           <%-- <div>
+           
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                
+                </asp:ContentPlaceHolder>
+            </div>--%>
+	
+    <%--<footer class="footer" style="background-color: black; padding: 60px 0 30px; font-family: Arial, sans-serif; color: #fff;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+            <div class="footer-content" style="display: flex; flex-wrap: wrap; margin-bottom: 40px;">
+            
+                <!-- Column 1: My Account -->
+                <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                    <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">My Account</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Sign-in to your account</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <span style="color: #ccc; font-size: 14px;">Sales: Language English</span>
+                        </li>
+                    </ul>
+                </div>
+            
+                <!-- Column 2: Help -->
+                <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                    <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Help</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Returns Information</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Delivery Information</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Contact Us</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Tamara Payment</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Product Recall</a>
+                        </li>
+                    </ul>
+                </div>
+            
+                <!-- Column 3: Privacy & Legal -->
+                <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                    <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Privacy & Legal</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Privacy & Cookie Policy</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Terms & Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+            
+                <!-- Column 4: Departments -->
+                <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                    <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Departments</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Womens</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Mens</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Boys</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Girls</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Home</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Baby</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Brands</a>
+                        </li>
+                    </ul>
+                </div>
+            
+                <!-- Column 5: Other Services -->
+                <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                    <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Other Services</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Media & Press</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">The Company</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Careers</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Our Affiliate Programme</a>
+                        </li>
+                    </ul>
+                </div>
+            
+                <!-- Column 6: Social Networks -->
+                <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                    <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Our Social Networks</h4>
+                    <div class="social-icons" style="margin-bottom: 20px;">
+                        <a href="#" style="color: #ccc; text-decoration: none; font-size: 20px; margin-right: 15px;">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" style="color: #ccc; text-decoration: none; font-size: 20px; margin-right: 15px;">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" style="color: #ccc; text-decoration: none; font-size: 20px; margin-right: 15px;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" style="color: #ccc; text-decoration: none; font-size: 20px; margin-right: 15px;">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <div class="mobile-link">
+                        <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">View mobile site</a>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Copyright Section -->
+            <div class="copyright" style="text-align: center; padding-top: 30px; border-top: 1px solid #444;">
+                <p style="color: #ccc; font-size: 12px; margin: 0;">
+                    © 2025 Next General Trading LLC. Registered in Dubai. Company No. 1202472
+                </p>
+            </div>
+        </div>
+    </footer>--%>
+
+
+    <%--<!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+			    <script src="../UserTemplate/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+	    <script src="../UserTemplate/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+	    <script src="../UserTemplate/vendor/bootstrap/js/popper.js"></script>
+	    <script src="../UserTemplate/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+	    <script src="../UserTemplate/vendor/select2/select2.min.js"></script>
+	    <script>
+            $(".js-select2").each(function () {
+                $(this).select2({
+                    minimumResultsForSearch: 20,
+                    dropdownParent: $(this).next('.dropDownSelect2')
+                });
+            })
+        </script>
+    <!--===============================================================================================-->
+	    <script src="../UserTemplate/vendor/daterangepicker/moment.min.js"></script>
+	    <script src="../UserTemplate/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+	    <script src="../UserTemplate/vendor/slick/slick.min.js"></script>
+	    <script src="../UserTemplate/js/slick-custom.js"></script>
+    <!--===============================================================================================-->
+	    <script src="../UserTemplate/vendor/parallax100/parallax100.js"></script>
+	    <script>
+            $('.parallax100').parallax100();
+        </script>
+    <!--===============================================================================================-->
+	    <script src="../UserTemplate/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+	    <script>
+            $('.gallery-lb').each(function () { // the containers for all your galleries
+                $(this).magnificPopup({
+                    delegate: 'a', // the selector for gallery item
+                    type: 'image',
+                    gallery: {
+                        enabled: true
+                    },
+                    mainClass: 'mfp-fade'
+                });
+            });
+        </script>
+    <!--===============================================================================================-->
+	    <script src="../UserTemplate/vendor/isotope/isotope.pkgd.min.js"></script>
+    <!--===============================================================================================-->
+	    <script src="../UserTemplate/vendor/sweetalert/sweetalert.min.js"></script>
+	    <script>
+            $('.js-addwish-b2').on('click', function (e) {
+                e.preventDefault();
+            });
+
+            $('.js-addwish-b2').each(function () {
+                var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+                $(this).on('click', function () {
+                    swal(nameProduct, "is added to wishlist !", "success");
+
+                    $(this).addClass('js-addedwish-b2');
+                    $(this).off('click');
+                });
+            });
+
+            $('.js-addwish-detail').each(function () {
+                var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+
+                $(this).on('click', function () {
+                    swal(nameProduct, "is added to wishlist !", "success");
+
+                    $(this).addClass('js-addedwish-detail');
+                    $(this).off('click');
+                });
+            });
+
+            /*---------------------------------------------*/
+
+            $('.js-addcart-detail').each(function () {
+                var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+                $(this).on('click', function () {
+                    swal(nameProduct, "is added to cart !", "success");
+                });
+            });
+
+        </script>
+    <!--===============================================================================================-->
+	    <script src="../UserTemplate/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	    <script>
+            $('.js-pscroll').each(function () {
+                $(this).css('position', 'relative');
+                $(this).css('overflow', 'hidden');
+                var ps = new PerfectScrollbar(this, {
+                    wheelSpeed: 1,
+                    scrollingThreshold: 1000,
+                    wheelPropagation: false,
+                });
+
+                $(window).on('resize', function () {
+                    ps.update();
+                })
+            });
+        </script>
+    <!--===============================================================================================-->
+	    <script src="../UserTemplate/js/main.js"></script>
+        <script>
+            // Mobile menu toggle
+            $(document).ready(function () {
+                $('.btn-show-menu-mobile').on('click', function () {
+                    $(this).toggleClass('is-active');
+                    $('.mobile-menu').toggleClass('active');
+                });
+
+                // For touch devices - toggle mega menu on click
+                if (matchMedia('(hover: none) and (pointer: coarse)').matches) {
+                    $('.mobile-menu > ul > li > a').on('click', function (e) {
+                        if ($(this).siblings('.mobile-mega-menu').length) {
+                            e.preventDefault();
+                            $(this).find('.mobile-arrow').toggleClass('active');
+                            $(this).siblings('.mobile-mega-menu').toggleClass('active');
+                        }
+                    });
+                }
+            });
+            $(document).ready(function () {
+                // Mobile menu toggle
+                $('.btn-show-menu-mobile').on('click', function () {
+                    $(this).toggleClass('is-active');
+                    $('.mobile-menu').toggleClass('active');
+                });
+
+                // Account dropdown toggle
+                $('.account-info').on('click', function (e) {
+                    e.stopPropagation();
+                    $('.account-dropdown-content').toggle();
+                });
+
+                // Close dropdown when clicking outside
+                $(document).on('click', function () {
+                    $('.account-dropdown-content').hide();
+                });
+
+                // Prevent dropdown from closing when clicking inside it
+                $('.account-dropdown-content').on('click', function (e) {
+                    e.stopPropagation();
+                });
+
+                // For touch devices - toggle mega menu on click
+                if (matchMedia('(hover: none) and (pointer: coarse)').matches) {
+                    $('.mobile-menu > ul > li > a').on('click', function (e) {
+                        if ($(this).siblings('.mobile-mega-menu').length) {
+                            e.preventDefault();
+                            $(this).find('.mobile-arrow').toggleClass('active');
+                            $(this).siblings('.mobile-mega-menu').toggleClass('active');
+                        }
+                    });
+                }
+            });
+
+
+            $(document).ready(function () {
+                // Handle cart icon click for unauthenticated users
+                $('.header-icon2').on('click', function (e) {
+                    // Check if user is logged in (you might need to adjust this condition)
+                    if (typeof isUserLoggedIn === 'undefined' || !isUserLoggedIn) {
+                        e.preventDefault();
+                        swal({
+                            title: "Oops!",
+                            text: "You are logged out. Kindly log in to check your cart",
+                            icon: "warning",
+                            buttons: {
+                                login: {
+                                    text: "Login",
+                                    value: "login",
+                                },
+                                cancel: "Cancel"
+                            }
+                        }).then((value) => {
+                            if (value === "login") {
+                                window.location.href = "Login.aspx?ReturnUrl=Cart.aspx";
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
+
+
+         
+        </form>
+    </body>
+    </html>--%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="Next_ae.User.User" %>
+
+    <!DOCTYPE html>
+
+    <html>
+    <head runat="server">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+        <title>Home</title>
+    
+        <!-- Favicon -->
+       
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="../UserTemplate/dist/css/iconfont/tabler-icons.css">
+        <link rel="stylesheet" href="../UserTemplate/dist/css/style.css">
+     
+
+
+
+
+      
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <%--<link href="../UserTemplate/assets/css/theme.css" rel="stylesheet" />--%>
+
+        <style>
+            /* General Responsive Styles */
+            body {
+                margin: 0;
+                padding: 0;
+                position: relative;
+                padding-top: 120px; /* Adjust based on your header height */
+                font-family: 'Poppins', sans-serif;
+                overflow-x: hidden;
+            }
+
+            /* Header Styles */
+            header {
+                position:fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 10000;
+                background: #fff;
+                box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            }
+
+           
+            .wrap-menu-desktop {
+                position: static;
+            }
+
+
+            
+            
+            
+
+            /* Mobile menu style */
+            .mobile-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: #fff;
+                z-index: 9999;
+                overflow-y: auto;
+                padding: 20px;
+                display: none;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+        
+            .mobile-menu.active {
+                display: block;
+            }
+        
+            .mobile-menu > ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+        
+            .mobile-menu > ul > li {
+                position: relative;
+                border-bottom: 1px solid #eee;
+            }
+        
+            .mobile-menu > ul > li > a {
+                color: #333;
+                display: block;
+                padding: 15px 0;
+                font-weight: 500;
+                text-decoration: none;
+            }
+        
+            .mobile-mega-menu {
+                display: none;
+                background: #f9f9f9;
+                padding: 15px;
+                margin-top: 10px;
+                border-left: 3px solid #717fe0;
+            }
+        
+            .mobile-mega-menu.active {
+                display: block;
+                animation: fadeIn 0.3s ease;
+            }
+        
+            .mobile-mega-col {
+                margin-bottom: 20px;
+            }
+        
+            .mobile-mega-col h4 {
+                font-size: 14px;
+                color: #333;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+                font-weight: 700;
+                padding-bottom: 5px;
+                border-bottom: 1px solid #eee;
+            }
+        
+            .mobile-mega-col ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+        
+            .mobile-mega-col ul li {
+                margin-bottom: 8px;
+            }
+        
+            .mobile-mega-col ul li a {
+                color: #555;
+                font-size: 13px;
+                transition: all 0.2s ease;
+                display: block;
+                padding: 5px 0;
+            }
+        
+            .mobile-mega-col ul li a:hover {
+                color: #717fe0;
+                padding-left: 8px;
+            }
+        
+            .mobile-arrow {
+                float: right;
+                transition: transform 0.3s ease;
+                margin-left: 10px;
+            }
+        
+            .mobile-arrow.active {
+                transform: rotate(90deg);
+            }
+
+            /* Account dropdown styles */
+            .wrap-icon-header {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .icon-header-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 10px !important;
+            }
+
+            /* Account Dropdown Styles */
+            .account-dropdown {
+                position: relative;
+                display: flex;
+                align-items: center;
+            }
+
+            .account-info {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                padding: 0 10px;
+            }
+
+            .login-label {
+                margin-left: 8px;
+                font-size: 14px;
+                white-space: nowrap;
+            }
+
+            .account-dropdown-content {
+                display: none;
+                position: absolute;
+                right: 0;
+                top: 100%;
+                background-color: #fff;
+                min-width: 200px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                border-radius: 4px;
+                padding: 10px 0;
+            }
+
+            .account-dropdown:hover .account-dropdown-content {
+                display: block;
+                animation: fadeIn 0.2s ease-out;
+            }
+
+            .account-dropdown-content a {
+                color: #333;
+                padding: 10px 16px;
+                text-decoration: none;
+                display: block;
+                font-size: 14px;
+            }
+
+            .account-dropdown-content a:hover {
+                background-color: #f5f5f5;
+                color: #717fe0;
+            }
+
+            /* Ensure all icons are the same size */
+            .icon-header-item i {
+                font-size: 20px;
+            }
+
+            /* Mobile menu adjustments */
+            @media (max-width: 991px) {
+                .wrap-icon-header {
+                    gap: 5px;
+                }
+            
+                .icon-header-item {
+                    padding: 0 5px !important;
+                }
+            
+                .account-dropdown-content {
+                    right: auto;
+                    left: 0;
+                    min-width: 180px;
+                }
+            }
+
+            /* Cart styles */
+            .wrap-header-cart {
+                position: fixed;
+                z-index: 1100;
+                width: 100%;
+                height: 100vh;
+                top: 0;
+                right: 0;
+                background-color: rgba(0,0,0,0.0);
+                visibility: hidden;
+            
+                -webkit-transition: all 0.4s;
+                -o-transition: all 0.4s;
+                -moz-transition: all 0.4s;
+                transition: all 0.4s;
+            }
+
+            .header-cart {
+                position: fixed;
+                z-index: 1100;
+                width: 390px;
+                max-width: calc(100% - 30px);
+                height: 100vh;
+                top: 0;
+                right: -400px;
+                background-color: #fff;
+            
+                -webkit-transition: all 0.4s;
+                -o-transition: all 0.4s;
+                -moz-transition: all 0.4s;
+                transition: all 0.4s;
+
+                box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.18);
+            }
+
+            .show-header-cart {
+                visibility: visible;
+                background-color: rgba(0,0,0,0.6);
+            }
+
+            .show-header-cart .header-cart {
+                right: 0;
+            }
+
+            /* Footer responsive styles */
+            @media (max-width: 991px) {
+                .footer-column {
+                    width: 33.33% !important;
+                    margin-bottom: 30px;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .footer-column {
+                    width: 50% !important;
+                }
+            }
+
+            @media (max-width: 575px) {
+                .footer-column {
+                    width: 100% !important;
+                }
+            
+                .footer-content {
+                    flex-direction: column;
+                }
+            }
+
+            /* Responsive logo */
+            .logo img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            /* Hamburger menu icon */
+            .hamburger {
+                padding: 15px;
+                cursor: pointer;
+            }
+
+            /* Search modal responsive */
+            @media (max-width: 767px) {
+                .wrap-search-header input,
+                .wrap-search-header button {
+                    font-size: 18px;
+                }
+
+                .wrap-search-header {
+                    height: 60px;
+                }
+            }
+
+            /* General responsive utilities */
+            .hidden-mobile {
+                display: block;
+            }
+        
+            .hidden-desktop {
+                display: none;
+            }
+        
+            @media (max-width: 991px) {
+                .hidden-mobile {
+                    display: none !important;
+                }
+            
+                .hidden-desktop {
+                    display: block !important;
+                }
+            }
+
+            /* Center the New Arrival menu item */
+            
+        </style>
+    </head>
+    <body>
+        <form id="form1" runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
+        
+            <!-- Header -->
+            <header>
+    <!-- Header desktop -->
+    <div class="container-menu-desktop">
+        <div class="wrap-menu-desktop">
+            <nav class="limiter-menu-desktop container">
+            
+                <!-- Logo desktop -->        
+                <a href="Home.aspx" class="logo">
+                    <img src="../UserTemplate/images/icons/logo.png" alt="IMG-LOGO">
+                </a>
+            
+              <div class="menu-desktop">
+						<ul class="main-menu">
+							<li class="">
+								<a href="Homw.aspx">Home</a>
+								
+							</li>
+
+							<li>
+								<a href="Mens.aspx">Mens</a>
+                                <ul class="sub-menu">
+				                                <li><a href="index.html">T-Shirts</a></li>
+				                                <li><a href="home-02.html">Trousers</a></li>
+				                                <li><a href="home-03.html">Shorts</a></li>
+                                </ul>
+							</li>
+
+							<li ">
+								<a href="Womens.aspx">Womens</a>
+                                <ul class="sub-menu">
+				                                 <li><a href="index.html">T-Shirts</a></li>
+                                                 <li><a href="home-02.html">Trousers</a></li>
+                                                 <li><a href="home-03.html">Shorts</a></li>
+				                                
+                                </ul>
+							</li >
+
+							<li class="label1" data-label1="hot">
+								
+                                <a href="NewArrival.aspx">New Arrival</a>
+                                <ul class="sub-menu">
+                                                 <li><a href="index.html">Mens</a></li>
+                                                 <li><a href="home-02.html">Womens</a></li>
+                                                 
+                                </ul>
+							</li>
+
+							
+						</ul>
+					</div>	
+            
+                <!-- Icon header (same as original) -->
+                <div class="wrap-icon-header flex-w flex-r-m">
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+                        <i class="zmdi zmdi-search"></i>
+                    </div>
+
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart">
+                        <i class="zmdi zmdi-shopping-cart"></i>
+                    </div>
+
+                    <div class="account-dropdown icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
+                        <div class="account-info">
+                            <i class="zmdi zmdi-account account-icon"></i>
+                            <asp:Label ID="lblLoginStatus" runat="server" Text="Login" CssClass="login-label"></asp:Label>
+                        </div>
+                        <div class="account-dropdown-content">
+                            <asp:Panel ID="pnlLoggedIn" runat="server" Visible="false">
+                                <a href="Profile.aspx"><i class="zmdi zmdi-account"></i> My Profile</a>
+                                <a href="Orders.aspx"><i class="zmdi zmdi-shopping-cart"></i> My Orders</a>
+                                <a href="Wishlist.aspx"><i class="zmdi zmdi-favorite"></i> Wishlist</a>
+                                <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click">
+                                    <i class="zmdi zmdi-power"></i> Logout
+                                </asp:LinkButton>
+                            </asp:Panel>
+                            <asp:Panel ID="pnlLoggedOut" runat="server" Visible="true">
+                                <a href="Login.aspx"><i class="zmdi zmdi-account"></i> Login</a>
+                                <a href="Register.aspx"><i class="zmdi zmdi-account-add"></i> Register</a>
+                            </asp:Panel>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>	
+    </div>
+
+    <!-- Header Mobile -->
+    <div class="wrap-header-mobile hidden-desktop">
+        <!-- Logo moblie -->        
+        <div class="logo-mobile">
+            <a href="home.aspx"><img src="../UserTemplate/images/icons/logo.png" alt="IMG-LOGO"></a>
+        </div>
+
+        <!-- Icon header -->
+        <div class="wrap-icon-header flex-w flex-r-m m-r-15">
+            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+                <i class="zmdi zmdi-search"></i>
+            </div>
+
+            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
+                <i class="zmdi zmdi-shopping-cart"></i>
+            </div>
+
+            <a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
+                <i class="zmdi zmdi-favorite-outline"></i>
+            </a>
+
+            <a href="Login.aspx" class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10">
+                <i class="zmdi zmdi-account"></i>
+            </a>
+        </div>
+
+        <!-- Button show menu -->
+        <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </div>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div class="mobile-menu">
+        <ul>
+            <li>
+                <a href="Home.aspx">Home</a>
+            </li>
+            
+            <li>
+                <a href="Mens.aspx">Mens <span class="mobile-arrow">›</span></a>
+                <ul class="sub-menu-m">
+                    <li><a href="Mens-Tshirts.aspx">T-Shirts</a></li>
+                    <li><a href="Mens-Trousers.aspx">Trousers</a></li>
+                    <li><a href="Mens-Shorts.aspx">Shorts</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <a href="Womens.aspx">Womens <span class="mobile-arrow">›</span></a>
+                <ul class="sub-menu-m">
+                    <li><a href="Womens-Tshirts.aspx">T-Shirts</a></li>
+                    <li><a href="Womens-Trousers.aspx">Trousers</a></li>
+                    <li><a href="Womens-Shorts.aspx">Shorts</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <a href="NewArrival.aspx">New Arrival</a>
+                <ul class="sub-menu-m">
+                    <li><a href="#">Womens</a></li>
+                    <li><a href="#">Mens</a></li>
+                   
+                </ul>
+            </li>
+            
+            
+            
+            <li><a href="Login.aspx">Login</a></li>
+            <li><a href="Register.aspx">Register</a></li>
+
+
+           
+        </ul>
+    </div>
+</header>
+
+            <!-- Modal Search -->
+            <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+                <div class="container-search-header">
+                    <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+                        <img src="images/icons/icon-close2.png" alt="CLOSE">
+                    </button>
+
+                    <form class="wrap-search-header flex-w p-l-15">
+                        <button class="flex-c-m trans-04">
+                            <i class="zmdi zmdi-search"></i>
+                        </button>
+                        <input class="plh3" type="text" name="search" placeholder="Search...">
+                    </form>
+                </div>
+            </div>
+
+            <!-- Cart -->
+            <div class="wrap-header-cart js-panel-cart">
+                <div class="s-full js-hide-cart"></div>
+
+                <div class="header-cart flex-col-l p-l-65 p-r-25">
+                    <div class="header-cart-title flex-w flex-sb-m p-b-8">
+                        <span class="mtext-103 cl2">
+                            Your Cart
+                        </span>
+
+                        <div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+                            <i class="zmdi zmdi-close"></i>
+                        </div>
+                    </div>
+            
+                    <asp:Panel ID="pnlEmptyCart" runat="server" CssClass="empty-cart-message" Visible="false">
+                        <div class="text-center p-t-30 p-b-30">
+                            <i class="zmdi zmdi-shopping-cart" style="font-size: 50px; color: #ccc;"></i>
+                            <p class="mtext-107 cl6 p-t-10">Kindly Login First To Check Cart</p>
+                            <a href="Login.aspx" class="flex-c-m stext-101 cl0 size-107 bg3 bor14 hov-btn3 p-lr-15 trans-04 m-t-10">
+                                Login
+                            </a>
+                        </div>
+                    </asp:Panel>
+
+                    <div id="cartContent" runat="server" class="header-cart-content flex-w js-pscroll">
+                        <!-- Cart items will be loaded server-side -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        
+            <!-- Footer -->
+            <footer class="footer" style="background-color: black; padding: 60px 0 30px; font-family: Arial, sans-serif; color: #fff;">
+                <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+                    <div class="footer-content" style="display: flex; flex-wrap: wrap; margin-bottom: 40px;">
+                    
+                        <!-- Column 1: My Account -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">My Account</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Sign-in to your account</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <span style="color: #ccc; font-size: 14px;">Sales: Language English</span>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Column 2: Help -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Help</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Returns Information</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Delivery Information</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Contact Us</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Tamara Payment</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Product Recall</a>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Column 3: Privacy & Legal -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Privacy & Legal</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Privacy & Cookie Policy</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Terms & Conditions</a>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Column 4: Departments -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Departments</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Womens</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Mens</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Boys</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Girls</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Home</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Baby</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Brands</a>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Column 5: Other Services -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Other Services</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Media & Press</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">The Company</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Careers</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Our Affiliate Programme</a>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Column 6: Social Networks -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Our Social Networks</h4>
+                            <div class="social-icons" style="margin-bottom: 20px;">
+                                <a href="#" style="color: #ccc; text-decoration: none; font-size: 20px; margin-right: 15px;">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" style="color: #ccc; text-decoration: none; font-size: 20px; margin-right: 15px;">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" style="color: #ccc; text-decoration: none; font-size: 20px; margin-right: 15px;">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" style="color: #ccc; text-decoration: none; font-size: 20px; margin-right: 15px;">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                            <div class="mobile-link">
+                                <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">View mobile site</a>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Copyright Section -->
+                    <div class="copyright" style="text-align: center; padding-top: 30px; border-top: 1px solid #444;">
+                        <p style="color: #ccc; font-size: 12px; margin: 0;">
+                            © 2025 Next General Trading LLC. Registered in Dubai. Company No. 1202472
+                        </p>
+                    </div>
+                </div>
+            </footer>
+
+         
+        
+
+            <!-- Vendor JS -->
+            
+
+            
+            <script>
+                // Mobile menu toggle
+                $(document).ready(function () {
+                    $('.btn-show-menu-mobile').on('click', function () {
+                        $(this).toggleClass('is-active');
+                        $('.mobile-menu').toggleClass('active');
+                    });
+
+                    // For touch devices - toggle mega menu on click
+                    if (matchMedia('(hover: none) and (pointer: coarse)').matches) {
+                        $('.mobile-menu > ul > li > a').on('click', function (e) {
+                            if ($(this).siblings('.mobile-mega-menu').length) {
+                                e.preventDefault();
+                                $(this).find('.mobile-arrow').toggleClass('active');
+                                $(this).siblings('.mobile-mega-menu').toggleClass('active');
+                            }
+                        });
+                    }
+
+                    // Account dropdown toggle
+                    $('.account-info').on('click', function (e) {
+                        e.stopPropagation();
+                        $('.account-dropdown-content').toggle();
+                    });
+
+                    // Close dropdown when clicking outside
+                    $(document).on('click', function () {
+                        $('.account-dropdown-content').hide();
+                    });
+
+                    // Prevent dropdown from closing when clicking inside it
+                    $('.account-dropdown-content').on('click', function (e) {
+                        e.stopPropagation();
+                    });
+
+                    // Handle cart icon click for unauthenticated users
+                    $('.header-icon2').on('click', function (e) {
+                        // Check if user is logged in (you might need to adjust this condition)
+                        if (typeof isUserLoggedIn === 'undefined' || !isUserLoggedIn) {
+                            e.preventDefault();
+                            swal({
+                                title: "Oops!",
+                                text: "You are logged out. Kindly log in to check your cart",
+                                icon: "warning",
+                                buttons: {
+                                    login: {
+                                        text: "Login",
+                                        value: "login",
+                                    },
+                                    cancel: "Cancel"
+                                }
+                            }).then((value) => {
+                                if (value === "login") {
+                                    window.location.href = "Login.aspx?ReturnUrl=Cart.aspx";
+                                }
+                            });
+                        }
+                    });
+                });
+
+                // Select2 initialization
+                $(".js-select2").each(function () {
+                    $(this).select2({
+                        minimumResultsForSearch: 20,
+                        dropdownParent: $(this).next('.dropDownSelect2')
+                    });
+                });
+
+                // Parallax initialization
+                $('.parallax100').parallax100();
+
+                // Lightbox initialization
+                $('.gallery-lb').each(function () {
+                    $(this).magnificPopup({
+                        delegate: 'a',
+                        type: 'image',
+                        gallery: {
+                            enabled: true
+                        },
+                        mainClass: 'mfp-fade'
+                    });
+                });
+
+                // Perfect scrollbar initialization
+                $('.js-pscroll').each(function () {
+                    $(this).css('position', 'relative');
+                    $(this).css('overflow', 'hidden');
+                    var ps = new PerfectScrollbar(this, {
+                        wheelSpeed: 1,
+                        scrollingThreshold: 1000,
+                        wheelPropagation: false,
+                    });
+
+                    $(window).on('resize', function () {
+                        ps.update();
+                    })
+                });
+            </script>
+        </form>
+    </body>
+    </html>

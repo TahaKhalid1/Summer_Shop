@@ -1,0 +1,2596 @@
+﻿
+<%--
+
+
+
+
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="Next_ae.User.UserMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../UserTemplate/images/icons/arban.png" type="image/gif">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   
+    <link rel="stylesheet" href="../UserTemplate/assets/libs/OwlCarousel-2/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../UserTemplate/dist/css/iconfont/tabler-icons.css">
+    <link rel="stylesheet" href="../UserTemplate/dist/css/style.css">
+
+     <link rel="icon" type="image/png" href="../UserTemplate/images/icons/arban.png"/>
+    
+     <!-- Vendor CSS -->
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/bootstrap/css/bootstrap.min.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/fonts/iconic/css/material-design-iconic-font.min.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/fonts/linearicons-v1.0.0/icon-font.min.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/animate/animate.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/css-hamburgers/hamburgers.min.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/animsition/css/animsition.min.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/select2/select2.min.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/daterangepicker/daterangepicker.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/slick/slick.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/MagnificPopup/magnific-popup.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    
+     <!-- Main CSS -->
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/css/util.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/css/main.css">    
+     <!-- Font Awesome for social icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+     rel="stylesheet">
+
+     <!-- Css Styles -->
+     <link rel="stylesheet" href="../UserTemplate/dist/css/iconfont/tabler-icons.css">
+     <link rel="stylesheet" href="../UserTemplate/dist/css/style.css">
+
+    
+
+    <style>
+    /* General Responsive Styles */
+    body {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        padding-top: 100px; /* Adjust based on your header height */
+        font-family: 'Poppins', sans-serif;
+        overflow-x: hidden;
+        text-decoration:none;
+    }
+
+    /* Header Styles */
+    header {
+         position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Reduced from 10000 to allow cart to appear above */
+        background: #fff;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Cart Count Badge Styles */
+    /* Cart Badge Styles */
+    .wrap-header-cart {
+    position: fixed;
+    z-index: 1100; /* Higher than header */
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.0);
+    visibility: hidden;
+    transition: all 0.4s;
+}
+
+  /* Cart Badge Styles */
+      .cart-badge {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background: #717fe0;
+        color: white !important;
+        border-radius: 50%;
+        font-size: 10px;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #fff;
+    }
+
+    /* Ensure the badge is visible on all backgrounds */
+    .cl2 .header-icons-noti {
+        color: white !important;
+        background-color: #717fe0;
+    }
+
+    .icon-header-item {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    /* Mobile specific adjustments */
+   @media (max-width: 991px) {
+    .cart-badge {
+        top: -3px;
+        right: 0;
+        font-size: 9px;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+    }
+}
+
+    /* Center the desktop menu */
+    .wrap-menu-desktop {
+        display: flex;
+        justify-content: center;
+         white-space: nowrap;
+    }
+
+    .menu-desktop {
+        position: relative;
+        width: auto;
+        margin: 0 auto;
+         display: inline-block;
+        vertical-align: top;
+        text-decoration:none;
+    }
+
+    .main-menu > li {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration:none;
+    }
+    /* Adjust logo and icons positioning */
+    .limiter-menu-desktop {
+        position:relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 50px; 
+    }
+
+    .logo {
+        position: absolute;
+        left: 15px;
+    }
+
+    .wrap-icon-header {
+        position: absolute;
+        right: 15px;
+    }
+
+    /* For mobile view */
+    @media (max-width: 991px) {
+        .logo {
+            position: static;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+        }
+        
+        .wrap-icon-header {
+            position: static;
+            justify-content: center;
+            margin-top: 10px;
+        }
+    }
+     @media (max-width: 991px) {
+         .header-icons-noti {
+             top: -6px;
+             right: 0;
+             font-size: 9px;
+             min-width: 16px;
+             height: 16px;
+             line-height: 16px;
+         }
+     }
+
+    /* Mobile menu style */
+    .mobile-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        z-index: 9999;
+        overflow-y: auto;
+        padding: 20px;
+        display: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .mobile-menu.active {
+        display: block;
+    }
+
+    .mobile-menu > ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-menu > ul > li {
+        position: relative;
+        border-bottom: 1px solid #eee;
+    }
+
+    .mobile-menu > ul > li > a {
+        color: #333;
+        display: block;
+        padding: 15px 0;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    .mobile-mega-menu {
+        display: none;
+        background: #f9f9f9;
+        padding: 15px;
+        margin-top: 10px;
+        border-left: 3px solid #717fe0;
+    }
+
+    .mobile-mega-menu.active {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .mobile-mega-col {
+        margin-bottom: 20px;
+    }
+
+    .mobile-mega-col h4 {
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .mobile-mega-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-mega-col ul li {
+        margin-bottom: 8px;
+    }
+
+    .mobile-mega-col ul li a {
+        color: #555;
+        font-size: 13px;
+        transition: all 0.2s ease;
+        display: block;
+        padding: 5px 0;
+    }
+
+    .mobile-mega-col ul li a:hover {
+        color: #717fe0;
+        padding-left: 8px;
+    }
+
+    .mobile-arrow {
+        float: right;
+        transition: transform 0.3s ease;
+        margin-left: 10px;
+    }
+
+    .mobile-arrow.active {
+        transform: rotate(90deg);
+    }
+
+    /* Account dropdown styles */
+    .wrap-icon-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .icon-header-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px !important;
+    }
+
+    /* Account Dropdown Styles */
+    .account-dropdown {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .account-info {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 10px;
+    }
+
+    .login-label {
+        margin-left: 8px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .account-dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background-color: #fff;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 4px;
+        padding: 10px 0;
+    }
+
+    .account-dropdown:hover .account-dropdown-content {
+        display: block;
+        animation: fadeIn 0.2s ease-out;
+    }
+
+    .account-dropdown-content a {
+        color: #333;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+    }
+
+    .account-dropdown-content a:hover {
+        background-color: #f5f5f5;
+        color: #717fe0;
+    }
+
+    /* Ensure all icons are the same size */
+    .icon-header-item i {
+        font-size: 20px;
+    }
+
+    
+.main-menu > li:hover > .sub-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+    .sub-menu {
+    position: absolute;
+    top: 100%; /* Position directly below the parent item */
+    left: 0;
+    width: 200px;
+    background: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 10px 0;
+    margin: 0;
+    text-decoration:none;
+}
+
+
+    
+.sub-menu li {
+    display: block;
+    padding: 0;
+}
+
+.sub-menu li a {
+    display: block;
+    padding: 8px 20px;
+    color: #333;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    text-decoration:none;
+}
+
+.sub-menu li a:hover {
+    background: #f5f5f5;
+    color: #717fe0;
+    padding-left: 25px;
+}
+
+/* Fix for mobile menu dropdowns */
+.sub-menu-m {
+    display: none;
+    padding-left: 15px;
+    background: rgba(0,0,0,0.02);
+}
+
+.has-submenu.active > .sub-menu-m {
+    display: block;
+}
+    /* Mobile menu adjustments */
+    @media (max-width: 991px) {
+        .wrap-icon-header {
+            gap: 5px;
+        }
+    
+        .icon-header-item {
+            padding: 0 5px !important;
+        }
+    
+        .account-dropdown-content {
+            right: auto;
+            left: 0;
+            min-width: 180px;
+        }
+    }
+
+    /* Cart styles */
+    .wrap-header-cart {
+        position: fixed;
+        z-index: 1100;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.0);
+        visibility: hidden;
+    
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+
+    .header-cart {
+         position: fixed;
+        z-index: 1101; /* Even higher than the overlay */
+        width: 390px;
+        max-width: calc(100% - 30px);
+        height: 100vh;
+        top: 0;
+        right: -400px;
+        background-color: #fff;
+        transition: all 0.4s;
+        box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.18);
+        text-decoration:none;
+        
+    
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+
+        box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.18);
+    }
+
+    .show-header-cart {
+        visibility: visible;
+        background-color: rgba(0,0,0,0.6);
+    }
+
+    .show-header-cart .header-cart {
+        right: 0;
+    }
+
+    /* Footer responsive styles */
+    @media (max-width: 991px) {
+        .footer-column {
+            width: 33.33% !important;
+            margin-bottom: 30px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .footer-column {
+            width: 50% !important;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .footer-column {
+            width: 100% !important;
+        }
+    
+        .footer-content {
+            flex-direction: column;
+        }
+    }
+
+    /* Responsive logo */
+    .logo img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Hamburger menu icon */
+    .hamburger {
+        padding: 15px;
+        cursor: pointer;
+    }
+
+    /* Search modal responsive */
+    @media (max-width: 767px) {
+        .wrap-search-header input,
+        .wrap-search-header button {
+            font-size: 18px;
+        }
+
+        .wrap-search-header {
+            height: 60px;
+        }
+    }
+
+    /* General responsive utilities */
+    .hidden-mobile {
+        display: block;
+    }
+
+    .hidden-desktop {
+        display: none;
+    }
+
+    @media (max-width: 991px) {
+        .hidden-mobile {
+            display: none !important;
+        }
+    
+        .hidden-desktop {
+            display: block !important;
+        }
+    }
+
+    @media (max-width: 991px) {
+    /* Mobile menu styles */
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        z-index: 9999;
+        overflow-y: auto;
+        padding: 20px;
+    }
+    
+    .mobile-menu.active {
+        display: block;
+    }
+    
+    .mobile-menu > ul > li {
+        position: relative;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .mobile-menu > ul > li > a {
+        color: #333;
+        display: block;
+        padding: 15px 0;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    
+    .has-submenu > a:after {
+        content: '+';
+        float: right;
+        transition: transform 0.3s ease;
+    }
+    
+    .has-submenu.active > a:after {
+        content: '-';
+    }
+    
+    .sub-menu-m {
+        display: none;
+        padding-left: 15px;
+    }
+    
+    .has-submenu.active > .sub-menu-m {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
+    
+    /* Hide desktop dropdowns on mobile */
+    .sub-menu {
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    /* Hide mobile menu elements on desktop */
+    .mobile-menu,
+    .btn-show-menu-mobile {
+        display: none !important;
+    }
+    
+    /* Ensure desktop menu items are properly aligned */
+    .main-menu {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .main-menu > li {
+        float: none;
+        display: inline-block;
+    }
+    
+    .main-menu > li > a {
+        padding: 20px 15px;
+        display: block;
+        text-decoration:none;
+    }
+
+    .main-menu a,
+    .mobile-menu a,
+    .account-dropdown-content a,
+    .footer-column a {
+        text-decoration: none;
+    }
+
+    .main-menu a:hover,
+    .mobile-menu a:hover,
+    .account-dropdown-content a:hover,
+    .footer-column a:hover {
+        text-decoration: none;
+    }
+
+    .body a{
+        text-decoration:none;
+    }
+
+
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+</style>
+</head>
+    <body>
+        <form id="form1" runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
+        
+            <!-- Header -->
+            <header>
+    <!-- Header desktop -->
+    <div class="container-menu-desktop">
+        <div class="wrap-menu-desktop">
+            <nav class="limiter-menu-desktop container">
+            
+                <!-- Logo desktop -->        
+                <a href="Home.aspx" class="logo">
+                    <img src="../UserTemplate/images/icons/arban.png" alt="IMG-LOGO">
+                </a>
+            
+              <!-- Main Menu -->
+                    <div class="menu-desktop">
+                        <ul class="main-menu">
+                            <li class="">
+                                <a href="Home.aspx">Home</a>
+                            </li>
+
+                           <!-- In your master page -->
+                                <li>
+                                    <a href="Shop.aspx?catId=15">Mens</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="Shop.aspx?catId=15&subcatId=5">T-Shirts</a></li>
+                                        <li><a href="Shop.aspx?catId=15&subcatId=6">Trousers</a></li>
+                                        <li><a href="Shop.aspx?catId=15&subcatId=7">Shorts</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="Shop.aspx?catId=16">Womens</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="Shop.aspx?catId=16&subcatId=8">T-Shirts</a></li>
+                                        <li><a href="Shop.aspx?catId=16&subcatId=9">Trousers</a></li>
+                                        <li><a href="Shop.aspx?catId=16&subcatId=10">Shorts</a></li>
+                                    </ul>
+                                </li>
+        
+                            <li class="">
+                                <a href="Shop.aspx">Shop</a>
+                            </li>
+
+                            <li class="label1" data-label1="hot">
+                                <a href="Shop.aspx">New Arrival</a>
+                                <ul class="sub-menu">
+                                    <li><a href="Shop.aspx?catId=15">Mens</a></li>
+                                    <li><a href="Shop.aspx?catId=16">Womens</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+            
+                <!-- Icon header (same as original) -->
+                <div class="wrap-icon-header flex-w flex-r-m">
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+                        <i class="zmdi zmdi-search"></i>
+                    </div>
+
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-cart" style="position:relative;">
+                        <i class="zmdi zmdi-shopping-cart"></i>
+                        <span class="cart-badge" id="cartCountBadge" runat="server">0</span>
+                    </div>
+
+                    <div class="account-dropdown icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
+                        <div class="account-info">
+                            <i class="zmdi zmdi-account account-icon"></i>
+                            <asp:Label ID="lblLoginStatus" runat="server" Text="Login" CssClass="login-label"></asp:Label>
+                        </div>
+                        <div class="account-dropdown-content">
+                            <asp:Panel ID="pnlLoggedIn" runat="server" Visible="false">
+                                <a href="MyProfile.aspx"><i class="zmdi zmdi-account"></i> My Profile</a>
+                                <a href="MyOrders.aspx"><i class="zmdi zmdi-shopping-cart"></i> My Orders</a>
+                                <a href="Wishlist.aspx"><i class="zmdi zmdi-favorite"></i> Wishlist</a>
+                                <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click">
+                                    <i class="zmdi zmdi-power"></i> Logout
+                                </asp:LinkButton>
+                            </asp:Panel>
+                            <asp:Panel ID="pnlLoggedOut" runat="server" Visible="true">
+                                <a href="Login.aspx"><i class="zmdi zmdi-account"></i> Login</a>
+                                <a href="Register.aspx"><i class="zmdi zmdi-account-add"></i> Register</a>
+                            </asp:Panel>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>	
+    </div>
+
+    <!-- Header Mobile -->
+    <div class="wrap-header-mobile header-mobile-reverse">
+        <!-- Logo moblie -->        
+        <div class="logo-mobile">
+            <a href="home.aspx"><img src="../UserTemplate/images/icons/arban.png" alt="IMG-LOGO"></a>
+        </div>
+
+        <!-- Icon header -->
+        <div class="wrap-icon-header flex-w flex-r-m m-r-15">
+            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+                <i class="zmdi zmdi-search"></i>
+            </div>
+
+            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 js-show-cart hidden-desktop" style="position:relative;">
+                <i class="zmdi zmdi-shopping-cart"></i>
+                <span class="cart-badge" id="mobileCartCountBadge" runat="server">0</span>
+            </div>
+
+           
+
+            <div class="account-dropdown icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
+                <div class="account-info">
+                    <i class="zmdi zmdi-account account-icon"></i>
+                    <asp:Label ID="moblblLoginStatus" runat="server" Text="Login" CssClass="login-label"></asp:Label>
+                </div>
+                <div class="account-dropdown-content">
+                    <asp:Panel ID="mobpnlLoggedIn" runat="server" Visible="false">
+                        <a href="MyProfile.aspx"><i class="zmdi zmdi-account"></i> My Profile</a>
+                        <a href="MyOrders.aspx"><i class="zmdi zmdi-shopping-cart"></i> My Orders</a>
+                        <a href="Wishlist.aspx"><i class="zmdi zmdi-favorite"></i> Wishlist</a>
+                        <asp:LinkButton ID="moblnkLogout" runat="server" OnClick="lnkLogout_Click">
+                            <i class="zmdi zmdi-power"></i> Logout
+                        </asp:LinkButton>
+                    </asp:Panel>
+                    <asp:Panel ID="mobpnlLoggedOut" runat="server" Visible="true">
+                        <a href="Login.aspx"><i class="zmdi zmdi-account"></i> Login</a>
+                        <a href="Register.aspx"><i class="zmdi zmdi-account-add"></i> Register</a>
+                    </asp:Panel>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button show menu -->
+        <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </div>
+    </div>
+
+    <!-- Menu Mobile -->
+<!-- Menu Mobile -->
+<div class="mobile-menu">
+    <ul>
+        <li>
+            <a href="Home.aspx">Home</a>
+        </li>
+        
+        <li class="has-submenu">
+            <a href="Shop.aspx?catId=15">Mens</a>
+            <ul class="sub-menu-m">
+                <li><a href="Shop.aspx?catId=15&subcatId=5">T-Shirts</a></li>
+                <li><a href="Shop.aspx?catId=15&subcatId=6">Trousers</a></li>
+                <li><a href="Shop.aspx?catId=15&subcatId=7">Shorts</a></li>
+            </ul>
+        </li>
+
+        <li class="has-submenu">
+            <a href="Shop.aspx?catId=16">Womens</a>
+            <ul class="sub-menu-m">
+                <li><a href="Shop.aspx?catId=16&subcatId=8">T-Shirts</a></li>
+                <li><a href="Shop.aspx?catId=16&subcatId=9">Trousers</a></li>
+                <li><a href="Shop.aspx?catId=16&subcatId=10">Shorts</a></li>
+            </ul>
+        </li>
+        
+        <li class="has-submenu">
+            <a href="Shop.aspx">New Arrival</a>
+            <ul class="sub-menu-m">
+                <li><a href="Shop.aspx?catId=15">Womens</a></li>
+                <li><a href="Shop.aspx?catId=16">Mens</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</header>
+
+            <!-- Modal Search -->
+            <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+                <div class="container-search-header">
+                    <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+                        <img src="images/icons/icon-close2.png" alt="CLOSE">
+                    </button>
+
+                    <form class="wrap-search-header flex-w p-l-15">
+                        <button class="flex-c-m trans-04">
+                            <i class="zmdi zmdi-search"></i>
+                        </button>
+                        <input class="plh3" type="text" name="search" placeholder="Search...">
+                    </form>
+                </div>
+            </div>
+
+            <!-- Cart -->
+            <!-- Cart -->
+            <div class="wrap-header-cart js-panel-cart">
+                <div class="s-full js-hide-cart"></div>
+
+                <div class="header-cart flex-col-l p-l-65 p-r-25">
+                    <div class="header-cart-title flex-w flex-sb-m p-b-8">
+                        <span class="mtext-103 cl2 " style="text-decoration:none;">
+                            Your Cart
+                        </span>
+
+                        <div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+                            <i class="zmdi zmdi-close"></i>
+                        </div>
+                    </div>
+    
+                    <!-- Show this when user is not logged in -->
+                    <asp:Panel ID="pnlNotLoggedIn" runat="server" CssClass="empty-cart-message" Visible="false">
+                    <div class="text-center p-t-30 p-b-30">
+                        <i class="zmdi zmdi-shopping-cart" style="font-size: 50px; color: #ccc;"></i>
+                        <p class="mtext-107 cl6 p-t-10">Kindly Login First To Check Cart</p>
+                        <a href="Login.aspx" class="flex-c-m stext-101 cl0 size-107 bg3 bor14 hov-btn3 p-lr-15 trans-04 m-t-10">
+                            Login
+                        </a>
+                    </div>
+                </asp:Panel>
+
+                <!-- Show this when user is logged in but cart is empty -->
+                <asp:Panel ID="pnlEmptyCart" runat="server" CssClass="empty-cart-message" Visible="false">
+                    <div class="text-center p-t-30 p-b-30">
+                        <i class="zmdi zmdi-shopping-cart" style="font-size: 50px; color: #ccc;"></i>
+                        <p class="mtext-107 cl6 p-t-10">Your cart is empty</p>
+                        <a href="Shop.aspx" class="flex-c-m stext-101 cl0 size-107 bg3 bor14 hov-btn3 p-lr-15 trans-04 m-t-10">
+                            Continue Shopping
+                        </a>
+                    </div>
+                </asp:Panel>
+
+                    <!-- Show cart items when user is logged in and has products -->
+                    <div id="cartContent" runat="server" class="header-cart-content flex-w js-pscroll">
+                        <!-- Cart items will be loaded server-side -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        
+            <!-- Footer -->
+            <footer class="footer" style="background-color: black; padding: 60px 0 30px; font-family: Arial, sans-serif; color: #fff;">
+                <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+                    <div class="footer-content" style="display: flex; flex-wrap: wrap; margin-bottom: 40px;">
+                    
+                        <!-- Column 1: My Account -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">My Account</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Sign-in to your account</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <span style="color: #ccc; font-size: 14px;">Sales: Language English</span>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Column 2: Help -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Help</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Returns Information</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Delivery Information</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Contact Us</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Tamara Payment</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Product Recall</a>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Column 3: Privacy & Legal -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Privacy & Legal</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Privacy & Cookie Policy</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Terms & Conditions</a>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Column 4: Departments -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Departments</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Womens</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Mens</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    
+                        <!-- Column 5: Other Services -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Other Services</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Media & Press</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">The Company</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Careers</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Our Affiliate Programme</a>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Column 6: Social Networks -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Our Social Networks</h4>
+                            <div class="social-icons" style="margin-bottom: 20px;">
+                                <a href="#" style="color: #ccc; text-decoration: none; font-size: 20px; margin-right: 15px;">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" style="color: #ccc; text-decoration: none; font-size: 20px; margin-right: 15px;">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" style="color: #ccc; text-decoration: none; font-size: 20px; margin-right: 15px;">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" style="color: #ccc; text-decoration: none; font-size: 20px; margin-right: 15px;">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                            <div class="mobile-link">
+                                <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">View mobile site</a>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Copyright Section -->
+                    <div class="copyright" style="text-align: center; padding-top: 30px; border-top: 1px solid #444;">
+                        <p style="color: #ccc; font-size: 12px; margin: 0;">
+                            © 2025 Arban Choice
+                        </p>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- Vendor JS -->
+            <script src="../UserTemplate/vendor/jquery/jquery-3.2.1.min.js"></script>
+            <script src="../UserTemplate/vendor/animsition/js/animsition.min.js"></script>
+            <script src="../UserTemplate/vendor/bootstrap/js/popper.js"></script>
+            <script src="../UserTemplate/vendor/bootstrap/js/bootstrap.min.js"></script>
+            <script src="../UserTemplate/vendor/select2/select2.min.js"></script>
+            <script src="../UserTemplate/vendor/daterangepicker/moment.min.js"></script>
+            <script src="../UserTemplate/vendor/daterangepicker/daterangepicker.js"></script>
+            <script src="../UserTemplate/vendor/slick/slick.min.js"></script>
+            <script src="../UserTemplate/js/slick-custom.js"></script>
+            <script src="../UserTemplate/vendor/parallax100/parallax100.js"></script>
+            <script src="../UserTemplate/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+            <script src="../UserTemplate/vendor/isotope/isotope.pkgd.min.js"></script>
+            <script src="../UserTemplate/vendor/sweetalert/sweetalert.min.js"></script>
+            <script src="../UserTemplate/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        
+            <!-- Main JS -->
+            <script src="../UserTemplate/js/main.js"></script>
+
+
+            <script>
+
+                $(document).ready(function () {
+                    // Mobile menu toggle
+                    $('.btn-show-menu-mobile').on('click', function () {
+                        $(this).toggleClass('is-active');
+                        $('.mobile-menu').toggleClass('active');
+
+                        // Toggle body overflow when menu is open
+                        if ($('.mobile-menu').hasClass('active')) {
+                            $('body').css('overflow', 'hidden');
+                        } else {
+                            $('body').css('overflow', 'auto');
+                        }
+                    });
+
+                    // Mobile submenu toggle
+                    $('.mobile-menu > ul > li.has-submenu > a').on('click', function (e) {
+                        if ($(window).width() <= 991) {
+                            e.preventDefault();
+                            var $parent = $(this).parent();
+                            $parent.toggleClass('active');
+                            $parent.find('> .sub-menu-m').slideToggle(300);
+                        }
+                    });
+
+                    // Close mobile menu when clicking outside
+                    $(document).on('click', function (e) {
+                        if (!$(e.target).closest('.mobile-menu, .btn-show-menu-mobile').length) {
+                            $('.mobile-menu').removeClass('active');
+                            $('.btn-show-menu-mobile').removeClass('is-active');
+                            $('body').css('overflow', 'auto');
+                        }
+                    });
+
+                    // Account dropdown toggle
+                    $('.account-info').on('click', function (e) {
+                        e.stopPropagation();
+                        $(this).closest('.account-dropdown').find('.account-dropdown-content').toggle();
+                    });
+
+                    // Close dropdown when clicking outside
+                    $(document).on('click', function () {
+                        $('.account-dropdown-content').hide();
+                    });
+
+                    // Prevent dropdown from closing when clicking inside it
+                    $('.account-dropdown-content').on('click', function (e) {
+                        e.stopPropagation();
+                    });
+
+                    // Handle cart icon click for unauthenticated users
+                    //$('.js-show-cart').on('click', function(e) {
+                    //    // Check if user is logged in (you might need to adjust this condition)
+                    //    if (typeof isUserLoggedIn === 'undefined' || !isUserLoggedIn) {
+                    //        e.preventDefault();
+                    //        swal({
+                    //            title: "Oops!",
+                    //            text: "You are logged out. Kindly log in to check your cart",
+                    //            icon: "warning",
+                    //            buttons: {
+                    //                login: {
+                    //                    text: "Login",
+                    //                    value: "login",
+                    //                },
+                    //                cancel: "Cancel"
+                    //            }
+                    //        }).then((value) => {
+                    //            if (value === "login") {
+                    //                window.location.href = "Login.aspx?ReturnUrl=Cart.aspx";
+                    //            }
+                    //        });
+                    //    }
+                    //});
+
+                    // Initialize submenu classes for mobile
+                    $('.mobile-menu > ul > li').each(function () {
+                        if ($(this).find('> .sub-menu-m').length) {
+                            $(this).addClass('has-submenu');
+                        }
+                    });
+                });
+
+                // Select2 initialization
+                $(".js-select2").each(function () {
+                    $(this).select2({
+                        minimumResultsForSearch: 20,
+                        dropdownParent: $(this).next('.dropDownSelect2')
+                    });
+                });
+
+                // Parallax initialization
+                $('.parallax100').parallax100();
+
+                // Lightbox initialization
+                $('.gallery-lb').each(function () {
+                    $(this).magnificPopup({
+                        delegate: 'a',
+                        type: 'image',
+                        gallery: {
+                            enabled: true
+                        },
+                        mainClass: 'mfp-fade'
+                    });
+                });
+
+                // Perfect scrollbar initialization
+                $('.js-pscroll').each(function () {
+                    $(this).css('position', 'relative');
+                    $(this).css('overflow', 'hidden');
+                    var ps = new PerfectScrollbar(this, {
+                        wheelSpeed: 1,
+                        scrollingThreshold: 1000,
+                        wheelPropagation: false,
+                    });
+
+                    $(window).on('resize', function () {
+                        ps.update();
+                    })
+                });
+            </script>
+            </script>
+           <%-- <script>
+                // Mobile menu toggle
+                $(document).ready(function () {
+                    // Remove any duplicate badges that might have been added by plugins
+                    $('.header-icons-noti').not('#cartCountBadge, #mobileCartCountBadge').remove();
+                });
+
+                $(document).ready(function () {
+                    $('.btn-show-menu-mobile').on('click', function () {
+                        $(this).toggleClass('is-active');
+                        $('.mobile-menu').toggleClass('active');
+                    });
+
+                    // For touch devices - toggle mega menu on click
+                    if (matchMedia('(hover: none) and (pointer: coarse)').matches) {
+                        $('.mobile-menu > ul > li > a').on('click', function (e) {
+                            if ($(this).siblings('.mobile-mega-menu').length) {
+                                e.preventDefault();
+                                $(this).find('.mobile-arrow').toggleClass('active');
+                                $(this).siblings('.mobile-mega-menu').toggleClass('active');
+                            }
+                        });
+                    }
+
+                    // Account dropdown toggle
+                    $('.account-info').on('click', function (e) {
+                        e.stopPropagation();
+                        $('.account-dropdown-content').toggle();
+                    });
+
+                    // Close dropdown when clicking outside
+                    $(document).on('click', function () {
+                        $('.account-dropdown-content').hide();
+                    });
+
+                    // Prevent dropdown from closing when clicking inside it
+                    $('.account-dropdown-content').on('click', function (e) {
+                        e.stopPropagation();
+                    });
+
+                    // Handle cart icon click for unauthenticated users
+                    $('.header-icon2').on('click', function (e) {
+                        // Check if user is logged in (you might need to adjust this condition)
+                        if (typeof isUserLoggedIn === 'undefined' || !isUserLoggedIn) {
+                            e.preventDefault();
+                            swal({
+                                title: "Oops!",
+                                text: "You are logged out. Kindly log in to check your cart",
+                                icon: "warning",
+                                buttons: {
+                                    login: {
+                                        text: "Login",
+                                        value: "login",
+                                    },
+                                    cancel: "Cancel"
+                                }
+                            }).then((value) => {
+                                if (value === "login") {
+                                    window.location.href = "Login.aspx?ReturnUrl=Cart.aspx";
+                                }
+                            });
+                        }
+                    });
+                });
+
+                // Select2 initialization
+                $(".js-select2").each(function () {
+                    $(this).select2({
+                        minimumResultsForSearch: 20,
+                        dropdownParent: $(this).next('.dropDownSelect2')
+                    });
+                });
+
+                // Parallax initialization
+                $('.parallax100').parallax100();
+
+                // Lightbox initialization
+                $('.gallery-lb').each(function () {
+                    $(this).magnificPopup({
+                        delegate: 'a',
+                        type: 'image',
+                        gallery: {
+                            enabled: true
+                        },
+                        mainClass: 'mfp-fade'
+                    });
+                });
+
+                // Perfect scrollbar initialization
+                $('.js-pscroll').each(function () {
+                    $(this).css('position', 'relative');
+                    $(this).css('overflow', 'hidden');
+                    var ps = new PerfectScrollbar(this, {
+                        wheelSpeed: 1,
+                        scrollingThreshold: 1000,
+                        wheelPropagation: false,
+                    });
+
+                    $(window).on('resize', function () {
+                        ps.update();
+                    })
+                });
+            </script>--%>
+      <%--  </form>
+    </body>
+</html>--%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.Master.cs" Inherits="Next_ae.User.HomeMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%--<link rel="icon" href="../UserTemplate/images/icons/arban.png" type="image/gif">--%>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   
+    <link rel="stylesheet" href="../UserTemplate/assets/libs/OwlCarousel-2/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../UserTemplate/dist/css/iconfont/tabler-icons.css">
+    <link rel="stylesheet" href="../UserTemplate/dist/css/style.css">
+
+     <link rel="icon" type="image/png" href="../UserTemplate/images/icons/arban.png"/>
+    
+     <!-- Vendor CSS -->
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/bootstrap/css/bootstrap.min.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/fonts/iconic/css/material-design-iconic-font.min.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/fonts/linearicons-v1.0.0/icon-font.min.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/animate/animate.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/css-hamburgers/hamburgers.min.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/animsition/css/animsition.min.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/select2/select2.min.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/daterangepicker/daterangepicker.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/slick/slick.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/MagnificPopup/magnific-popup.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    
+     <!-- Main CSS -->
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/css/util.css">
+     <link rel="stylesheet" type="text/css" href="../UserTemplate/css/main.css">    
+     <!-- Font Awesome for social icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+     rel="stylesheet">
+
+     <!-- Css Styles -->
+     <link rel="stylesheet" href="../UserTemplate/dist/css/iconfont/tabler-icons.css">
+     <link rel="stylesheet" href="../UserTemplate/dist/css/style.css">
+
+    
+
+    <style>
+    /* General Responsive Styles */
+    body {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        padding-top: 100px; /* Adjust based on your header height */
+        font-family: 'Poppins', sans-serif;
+        overflow-x: hidden;
+    }
+
+    /* Header Styles */
+    header {
+         position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Reduced from 10000 to allow cart to appear above */
+        background: #fff;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Cart Count Badge Styles */
+    /* Cart Badge Styles */
+    .wrap-header-cart {
+    position: fixed;
+    z-index: 1100; /* Higher than header */
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.0);
+    visibility: hidden;
+    transition: all 0.4s;
+}
+
+  /* Cart Badge Styles */
+      .cart-badge {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background: #717fe0;
+        color: white !important;
+        border-radius: 50%;
+        font-size: 10px;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #fff;
+    }
+
+    /* Ensure the badge is visible on all backgrounds */
+    .cl2 .header-icons-noti {
+        color: white !important;
+        background-color: #717fe0;
+    }
+
+    .icon-header-item {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    /* Mobile specific adjustments */
+   @media (max-width: 991px) {
+    .cart-badge {
+        top: -3px;
+        right: 0;
+        font-size: 9px;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+    }
+}
+
+    /* Center the desktop menu */
+    .wrap-menu-desktop {
+        display: flex;
+        justify-content: center;
+         white-space: nowrap;
+    }
+
+    .menu-desktop {
+        position: relative;
+        width: auto;
+        margin: 0 auto;
+         display: inline-block;
+        vertical-align: top;
+    }
+
+    .main-menu > li {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    }
+    /* Adjust logo and icons positioning */
+    .limiter-menu-desktop {
+        position:relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 50px; 
+    }
+
+    .logo {
+        position: absolute;
+        left: 15px;
+    }
+
+    .wrap-icon-header {
+        position: absolute;
+        right: 15px;
+    }
+
+    /* For mobile view */
+    @media (max-width: 991px) {
+        .logo {
+            position: static;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+        }
+        
+        .wrap-icon-header {
+            position: static;
+            justify-content: center;
+            margin-top: 10px;
+        }
+    }
+     @media (max-width: 991px) {
+         .header-icons-noti {
+             top: -6px;
+             right: 0;
+             font-size: 9px;
+             min-width: 16px;
+             height: 16px;
+             line-height: 16px;
+         }
+     }
+
+    /* Mobile menu style */
+    .mobile-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        z-index: 9999;
+        overflow-y: auto;
+        padding: 20px;
+        display: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .mobile-menu.active {
+        display: block;
+    }
+
+    .mobile-menu > ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-menu > ul > li {
+        position: relative;
+        border-bottom: 1px solid #eee;
+    }
+
+    .mobile-menu > ul > li > a {
+        color: #333;
+        display: block;
+        padding: 15px 0;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    .mobile-mega-menu {
+        display: none;
+        background: #f9f9f9;
+        padding: 15px;
+        margin-top: 10px;
+        border-left: 3px solid #717fe0;
+    }
+
+    .mobile-mega-menu.active {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .mobile-mega-col {
+        margin-bottom: 20px;
+    }
+
+    .mobile-mega-col h4 {
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .mobile-mega-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-mega-col ul li {
+        margin-bottom: 8px;
+    }
+
+    .mobile-mega-col ul li a {
+        color: #555;
+        font-size: 13px;
+        transition: all 0.2s ease;
+        display: block;
+        padding: 5px 0;
+    }
+
+    .mobile-mega-col ul li a:hover {
+        color: #717fe0;
+        padding-left: 8px;
+    }
+
+    .mobile-arrow {
+        float: right;
+        transition: transform 0.3s ease;
+        margin-left: 10px;
+    }
+
+    .mobile-arrow.active {
+        transform: rotate(90deg);
+    }
+
+    /* Account dropdown styles */
+    .wrap-icon-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .icon-header-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px !important;
+    }
+
+    /* Account Dropdown Styles */
+    .account-dropdown {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .account-info {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 10px;
+    }
+
+    .login-label {
+        margin-left: 8px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .account-dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background-color: #fff;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 4px;
+        padding: 10px 0;
+    }
+
+    .account-dropdown:hover .account-dropdown-content {
+        display: block;
+        animation: fadeIn 0.2s ease-out;
+    }
+
+    .account-dropdown-content a {
+        color: #333;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+    }
+
+    .account-dropdown-content a:hover {
+        background-color: #f5f5f5;
+        color: #717fe0;
+    }
+
+    /* Ensure all icons are the same size */
+    .icon-header-item i {
+        font-size: 20px;
+    }
+
+    
+.main-menu > li:hover > .sub-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+    .sub-menu {
+    position: absolute;
+    top: 100%; /* Position directly below the parent item */
+    left: 0;
+    width: 200px;
+    background: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 10px 0;
+    margin: 0;
+}
+
+
+    
+.sub-menu li {
+    display: block;
+    padding: 0;
+}
+
+.sub-menu li a {
+    display: block;
+    padding: 8px 20px;
+    color: #333;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.sub-menu li a:hover {
+    background: #f5f5f5;
+    color: #717fe0;
+    padding-left: 25px;
+}
+
+/* Fix for mobile menu dropdowns */
+.sub-menu-m {
+    display: none;
+    padding-left: 15px;
+    background: rgba(0,0,0,0.02);
+}
+
+.has-submenu.active > .sub-menu-m {
+    display: block;
+}
+    /* Mobile menu adjustments */
+    @media (max-width: 991px) {
+        .wrap-icon-header {
+            gap: 5px;
+        }
+    
+        .icon-header-item {
+            padding: 0 5px !important;
+        }
+    
+        .account-dropdown-content {
+            right: auto;
+            left: 0;
+            min-width: 180px;
+        }
+    }
+
+    /* Cart styles */
+    .wrap-header-cart {
+        position: fixed;
+        z-index: 1100;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.0);
+        visibility: hidden;
+    
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+
+    .header-cart {
+         position: fixed;
+        z-index: 1101; /* Even higher than the overlay */
+        width: 390px;
+        max-width: calc(100% - 30px);
+        height: 100vh;
+        top: 0;
+        right: -400px;
+        background-color: #fff;
+        transition: all 0.4s;
+        box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.18);
+    
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+
+        box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.18);
+    }
+
+    .show-header-cart {
+        visibility: visible;
+        background-color: rgba(0,0,0,0.6);
+    }
+
+    .show-header-cart .header-cart {
+        right: 0;
+    }
+
+    /* Footer responsive styles */
+    @media (max-width: 991px) {
+        .footer-column {
+            width: 33.33% !important;
+            margin-bottom: 30px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .footer-column {
+            width: 50% !important;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .footer-column {
+            width: 100% !important;
+        }
+    
+        .footer-content {
+            flex-direction: column;
+        }
+    }
+
+    /* Responsive logo */
+    .logo img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Hamburger menu icon */
+    .hamburger {
+        padding: 15px;
+        cursor: pointer;
+    }
+
+    /* Search modal responsive */
+    @media (max-width: 767px) {
+        .wrap-search-header input,
+        .wrap-search-header button {
+            font-size: 18px;
+        }
+
+        .wrap-search-header {
+            height: 60px;
+        }
+    }
+
+    /* General responsive utilities */
+    .hidden-mobile {
+        display: block;
+    }
+
+    .hidden-desktop {
+        display: none;
+    }
+
+     .main-menu a,
+ .mobile-menu a,
+ .account-dropdown-content a,
+ .footer-column a {
+     text-decoration: none;
+ }
+
+ .main-menu a:hover,
+ .mobile-menu a:hover,
+ .account-dropdown-content a:hover,
+ .footer-column a:hover {
+     text-decoration: none;
+ }
+
+
+    @media (max-width: 991px) {
+        .hidden-mobile {
+            display: none !important;
+        }
+    
+        .hidden-desktop {
+            display: block !important;
+        }
+    }
+
+    @media (max-width: 991px) {
+    /* Mobile menu styles */
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        z-index: 9999;
+        overflow-y: auto;
+        padding: 20px;
+    }
+    
+    .mobile-menu.active {
+        display: block;
+    }
+    
+    .mobile-menu > ul > li {
+        position: relative;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .mobile-menu > ul > li > a {
+        color: #333;
+        display: block;
+        padding: 15px 0;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    
+    .has-submenu > a:after {
+        content: '+';
+        float: right;
+        transition: transform 0.3s ease;
+    }
+    
+    .has-submenu.active > a:after {
+        content: '-';
+    }
+    
+    .sub-menu-m {
+        display: none;
+        padding-left: 15px;
+    }
+    
+    .has-submenu.active > .sub-menu-m {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
+    
+    /* Hide desktop dropdowns on mobile */
+    .sub-menu {
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    /* Hide mobile menu elements on desktop */
+    .mobile-menu,
+    .btn-show-menu-mobile {
+        display: none !important;
+    }
+    
+    /* Ensure desktop menu items are properly aligned */
+    .main-menu {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .main-menu > li {
+        float: none;
+        display: inline-block;
+    }
+    
+    .main-menu > li > a {
+        padding: 20px 15px;
+        display: block;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+</style>
+</head>
+    <body>
+        <form id="form1" runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
+        
+            <!-- Header -->
+            <header>
+    <!-- Header desktop -->
+    <div class="container-menu-desktop">
+        <div class="wrap-menu-desktop">
+            <nav class="limiter-menu-desktop container">
+            
+                <!-- Logo desktop -->        
+                <a href="Home.aspx" class="logo">
+                    <img src="../UserTemplate/images/icons/arban.png" alt="IMG-LOGO">
+                </a>
+            
+              <!-- Main Menu -->
+                    <div class="menu-desktop">
+                        <ul class="main-menu">
+                            <li class="">
+                                <a href="Home.aspx">Home</a>
+                            </li>
+
+                           <!-- In your master page -->
+                                <li>
+                                    <a href="Shop.aspx?catId=15">Mens</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="Shop.aspx?catId=15&subcatId=5">T-Shirts</a></li>
+                                        <li><a href="Shop.aspx?catId=15&subcatId=6">Trousers</a></li>
+                                        <li><a href="Shop.aspx?catId=15&subcatId=7">Shorts</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="Shop.aspx?catId=16">Womens</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="Shop.aspx?catId=16&subcatId=8">T-Shirts</a></li>
+                                        <li><a href="Shop.aspx?catId=16&subcatId=9">Trousers</a></li>
+                                        <li><a href="Shop.aspx?catId=16&subcatId=10">Shorts</a></li>
+                                    </ul>
+                                </li>
+        
+                            <li class="">
+                                <a href="Shop.aspx">Shop</a>
+                            </li>
+
+                            <li class="label1" data-label1="hot">
+                                <a href="Shop.aspx">New Arrival</a>
+                                <ul class="sub-menu">
+                                    <li><a href="Shop.aspx?catId=15">Mens</a></li>
+                                    <li><a href="Shop.aspx?catId=16">Womens</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+            
+                <!-- Icon header (same as original) -->
+                <div class="wrap-icon-header flex-w flex-r-m">
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+                        <i class="zmdi zmdi-search"></i>
+                    </div>
+
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-cart" style="position:relative;">
+                        <i class="zmdi zmdi-shopping-cart"></i>
+                        <span class="cart-badge" id="cartCountBadge" runat="server">0</span>
+                    </div>
+
+                    <div class="account-dropdown icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
+                        <div class="account-info">
+                            <i class="zmdi zmdi-account account-icon"></i>
+                            <asp:Label ID="lblLoginStatus" runat="server" Text="Login" CssClass="login-label"></asp:Label>
+                        </div>
+                        <div class="account-dropdown-content">
+                            <asp:Panel ID="pnlLoggedIn" runat="server" Visible="false">
+                                <a href="MyProfile.aspx"><i class="zmdi zmdi-account"></i> My Profile</a>
+                                <a href="MyOrders.aspx"><i class="zmdi zmdi-shopping-cart"></i> My Orders</a>
+                                <a href="Wishlist.aspx"><i class="zmdi zmdi-favorite"></i> Wishlist</a>
+                                <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click">
+                                    <i class="zmdi zmdi-power"></i> Logout
+                                </asp:LinkButton>
+                            </asp:Panel>
+                            <asp:Panel ID="pnlLoggedOut" runat="server" Visible="true">
+                                <a href="Login.aspx"><i class="zmdi zmdi-account"></i> Login</a>
+                                <a href="Register.aspx"><i class="zmdi zmdi-account-add"></i> Register</a>
+                            </asp:Panel>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>	
+    </div>
+
+    <!-- Header Mobile -->
+    <div class="wrap-header-mobile header-mobile-reverse">
+        <!-- Logo moblie -->        
+        <div class="logo-mobile">
+            <a href="home.aspx"><img src="../UserTemplate/images/icons/arban.png" alt="IMG-LOGO"></a>
+        </div>
+
+        <!-- Icon header -->
+        <div class="wrap-icon-header flex-w flex-r-m m-r-15">
+            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+                <i class="zmdi zmdi-search"></i>
+            </div>
+
+            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 js-show-cart hidden-desktop" style="position:relative;">
+                <i class="zmdi zmdi-shopping-cart"></i>
+                <span class="cart-badge" id="mobileCartCountBadge" runat="server">0</span>
+            </div>
+
+           
+
+            <div class="account-dropdown icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
+                <div class="account-info">
+                    <i class="zmdi zmdi-account account-icon"></i>
+                    <asp:Label ID="moblblLoginStatus" runat="server" Text="Login" CssClass="login-label"></asp:Label>
+                </div>
+                <div class="account-dropdown-content">
+                    <asp:Panel ID="mobpnlLoggedIn" runat="server" Visible="false">
+                        <a href="MyProfile.aspx"><i class="zmdi zmdi-account"></i> My Profile</a>
+                        <a href="MyOrders.aspx"><i class="zmdi zmdi-shopping-cart"></i> My Orders</a>
+                        <a href="Wishlist.aspx"><i class="zmdi zmdi-favorite"></i> Wishlist</a>
+                        <asp:LinkButton ID="moblnkLogout" runat="server" OnClick="lnkLogout_Click">
+                            <i class="zmdi zmdi-power"></i> Logout
+                        </asp:LinkButton>
+                    </asp:Panel>
+                    <asp:Panel ID="mobpnlLoggedOut" runat="server" Visible="true">
+                        <a href="Login.aspx"><i class="zmdi zmdi-account"></i> Login</a>
+                        <a href="Register.aspx"><i class="zmdi zmdi-account-add"></i> Register</a>
+                    </asp:Panel>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button show menu -->
+        <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </div>
+    </div>
+
+    <!-- Menu Mobile -->
+<!-- Menu Mobile -->
+<div class="mobile-menu">
+    <ul>
+        <li>
+            <a href="Home.aspx">Home</a>
+        </li>
+        
+        <li class="has-submenu">
+            <a href="Shop.aspx?catId=15">Mens</a>
+            <ul class="sub-menu-m">
+                <li><a href="Shop.aspx?catId=15&subcatId=5">T-Shirts</a></li>
+                <li><a href="Shop.aspx?catId=15&subcatId=6">Trousers</a></li>
+                <li><a href="Shop.aspx?catId=15&subcatId=7">Shorts</a></li>
+            </ul>
+        </li>
+
+        <li class="has-submenu">
+            <a href="Shop.aspx?catId=16">Womens</a>
+            <ul class="sub-menu-m">
+                <li><a href="Shop.aspx?catId=16&subcatId=8">T-Shirts</a></li>
+                <li><a href="Shop.aspx?catId=16&subcatId=9">Trousers</a></li>
+                <li><a href="Shop.aspx?catId=16&subcatId=10">Shorts</a></li>
+            </ul>
+        </li>
+        
+        <li class="has-submenu">
+            <a href="Shop.aspx">New Arrival</a>
+            <ul class="sub-menu-m">
+                <li><a href="Shop.aspx?catId=15">Womens</a></li>
+                <li><a href="Shop.aspx?catId=16">Mens</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</header>
+
+            <!-- Modal Search -->
+            <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+                <div class="container-search-header">
+                    <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+                        <img src="images/icons/icon-close2.png" alt="CLOSE">
+                    </button>
+
+                    <form class="wrap-search-header flex-w p-l-15">
+                        <button class="flex-c-m trans-04">
+                            <i class="zmdi zmdi-search"></i>
+                        </button>
+                        <input class="plh3" type="text" name="search" placeholder="Search...">
+                    </form>
+                </div>
+            </div>
+
+            <!-- Cart -->
+            <div class="wrap-header-cart js-panel-cart">
+    <div class="s-full js-hide-cart"></div>
+
+    <div class="header-cart flex-col-l p-l-65 p-r-25">
+        <div class="header-cart-title flex-w flex-sb-m p-b-8">
+            <span class="mtext-103 cl2 " style="text-decoration:none;">
+                Your Cart
+            </span>
+
+            <div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+                <i class="zmdi zmdi-close"></i>
+            </div>
+        </div>
+    
+        <!-- Show this when user is not logged in -->
+        <asp:Panel ID="pnlNotLoggedIn" runat="server" CssClass="empty-cart-message" Visible="false">
+            <div class="text-center p-t-30 p-b-30">
+                <i class="zmdi zmdi-shopping-cart" style="font-size: 50px; color: #ccc;"></i>
+                <p class="mtext-107 cl6 p-t-10">Kindly Login First To Check Cart</p>
+                <a href="Login.aspx" class="flex-c-m stext-101 cl0 size-107 bg3 bor14 hov-btn3 p-lr-15 trans-04 m-t-10">
+                    Login
+                </a>
+            </div>
+        </asp:Panel>
+        
+        <!-- Show this when user is logged in but cart is empty -->
+        <asp:Panel ID="pnlEmptyCart" runat="server" CssClass="empty-cart-message" Visible="false">
+            <div class="text-center p-t-30 p-b-30">
+                <i class="zmdi zmdi-shopping-cart" style="font-size: 50px; color: #ccc;"></i>
+                <p class="mtext-107 cl6 p-t-10">Your cart is empty</p>
+                <a href="Shop.aspx" class="flex-c-m stext-101 cl0 size-107 bg3 bor14 hov-btn3 p-lr-15 trans-04 m-t-10">
+                    Continue Shopping
+                </a>
+            </div>
+        </asp:Panel>
+
+        <!-- Show cart items when user is logged in and has products -->
+        <div id="cartContent" runat="server" class="header-cart-content flex-w js-pscroll">
+            <!-- Cart items will be loaded server-side -->
+        </div>
+    </div>
+</div>
+
+            <!-- Main Content -->
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        
+            <!-- Footer -->
+            <footer class="footer" style="background-color: black; padding: 60px 0 30px; font-family: Arial, sans-serif; color: #fff;">
+                <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+                    <div class="footer-content" style="display: flex; flex-wrap: wrap; margin-bottom: 40px;">
+                    
+                        <!-- Column 1: My Account -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">My Account</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Sign-in to your account</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <span style="color: #ccc; font-size: 14px;">Sales: Language English</span>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Column 2: Help -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Help</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Returns Information</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Delivery Information</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Contact Us</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Tamara Payment</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Product Recall</a>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Column 3: Privacy & Legal -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Privacy & Legal</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Privacy & Cookie Policy</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Terms & Conditions</a>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Column 4: Departments -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Departments</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Womens</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Mens</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    
+                        <!-- Column 5: Other Services -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Other Services</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Media & Press</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">The Company</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Careers</a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Our Affiliate Programme</a>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Column 6: Social Networks -->
+                        <div class="footer-column" style="width: 16.66%; padding: 0 15px; box-sizing: border-box;">
+                            <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 20px; color: #fff;">Our Social Networks</h4>
+                            <div class="social-icons" style="margin-bottom: 20px;">
+                                <a href="#" style="color: #ccc; text-decoration: none; font-size: 20px; margin-right: 15px;">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" style="color: #ccc; text-decoration: none; font-size: 20px; margin-right: 15px;">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" style="color: #ccc; text-decoration: none; font-size: 20px; margin-right: 15px;">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" style="color: #ccc; text-decoration: none; font-size: 20px; margin-right: 15px;">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                            <div class="mobile-link">
+                                <a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">View mobile site</a>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Copyright Section -->
+                    <div class="copyright" style="text-align: center; padding-top: 30px; border-top: 1px solid #444;">
+                        <p style="color: #ccc; font-size: 12px; margin: 0;">
+                            © 2025 Arban Choice
+                        </p>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- Vendor JS -->
+            <script src="../UserTemplate/vendor/jquery/jquery-3.2.1.min.js"></script>
+            <script src="../UserTemplate/vendor/animsition/js/animsition.min.js"></script>
+            <script src="../UserTemplate/vendor/bootstrap/js/popper.js"></script>
+            <script src="../UserTemplate/vendor/bootstrap/js/bootstrap.min.js"></script>
+            <script src="../UserTemplate/vendor/select2/select2.min.js"></script>
+            <script src="../UserTemplate/vendor/daterangepicker/moment.min.js"></script>
+            <script src="../UserTemplate/vendor/daterangepicker/daterangepicker.js"></script>
+            <script src="../UserTemplate/vendor/slick/slick.min.js"></script>
+            <script src="../UserTemplate/js/slick-custom.js"></script>
+            <script src="../UserTemplate/vendor/parallax100/parallax100.js"></script>
+            <script src="../UserTemplate/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+            <script src="../UserTemplate/vendor/isotope/isotope.pkgd.min.js"></script>
+            <script src="../UserTemplate/vendor/sweetalert/sweetalert.min.js"></script>
+            <script src="../UserTemplate/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        
+            <!-- Main JS -->
+            <script src="../UserTemplate/js/main.js"></script>
+
+
+            <script>
+
+                $(document).ready(function () {
+                    // Mobile menu toggle
+                    $('.btn-show-menu-mobile').on('click', function () {
+                        $(this).toggleClass('is-active');
+                        $('.mobile-menu').toggleClass('active');
+
+                        // Toggle body overflow when menu is open
+                        if ($('.mobile-menu').hasClass('active')) {
+                            $('body').css('overflow', 'hidden');
+                        } else {
+                            $('body').css('overflow', 'auto');
+                        }
+                    });
+
+                    // Mobile submenu toggle
+                    $('.mobile-menu > ul > li.has-submenu > a').on('click', function (e) {
+                        if ($(window).width() <= 991) {
+                            e.preventDefault();
+                            var $parent = $(this).parent();
+                            $parent.toggleClass('active');
+                            $parent.find('> .sub-menu-m').slideToggle(300);
+                        }
+                    });
+
+                    // Close mobile menu when clicking outside
+                    $(document).on('click', function (e) {
+                        if (!$(e.target).closest('.mobile-menu, .btn-show-menu-mobile').length) {
+                            $('.mobile-menu').removeClass('active');
+                            $('.btn-show-menu-mobile').removeClass('is-active');
+                            $('body').css('overflow', 'auto');
+                        }
+                    });
+
+                    // Account dropdown toggle
+                    $('.account-info').on('click', function (e) {
+                        e.stopPropagation();
+                        $(this).closest('.account-dropdown').find('.account-dropdown-content').toggle();
+                    });
+
+                    // Close dropdown when clicking outside
+                    $(document).on('click', function () {
+                        $('.account-dropdown-content').hide();
+                    });
+
+                    // Prevent dropdown from closing when clicking inside it
+                    $('.account-dropdown-content').on('click', function (e) {
+                        e.stopPropagation();
+                    });
+
+                    // Handle cart icon click for unauthenticated users
+                    //$('.js-show-cart').on('click', function(e) {
+                    //    // Check if user is logged in (you might need to adjust this condition)
+                    //    if (typeof isUserLoggedIn === 'undefined' || !isUserLoggedIn) {
+                    //        e.preventDefault();
+                    //        swal({
+                    //            title: "Oops!",
+                    //            text: "You are logged out. Kindly log in to check your cart",
+                    //            icon: "warning",
+                    //            buttons: {
+                    //                login: {
+                    //                    text: "Login",
+                    //                    value: "login",
+                    //                },
+                    //                cancel: "Cancel"
+                    //            }
+                    //        }).then((value) => {
+                    //            if (value === "login") {
+                    //                window.location.href = "Login.aspx?ReturnUrl=Cart.aspx";
+                    //            }
+                    //        });
+                    //    }
+                    //});
+
+                    // Initialize submenu classes for mobile
+                    $('.mobile-menu > ul > li').each(function () {
+                        if ($(this).find('> .sub-menu-m').length) {
+                            $(this).addClass('has-submenu');
+                        }
+                    });
+                });
+
+                // Select2 initialization
+                $(".js-select2").each(function () {
+                    $(this).select2({
+                        minimumResultsForSearch: 20,
+                        dropdownParent: $(this).next('.dropDownSelect2')
+                    });
+                });
+
+                // Parallax initialization
+                $('.parallax100').parallax100();
+
+                // Lightbox initialization
+                $('.gallery-lb').each(function () {
+                    $(this).magnificPopup({
+                        delegate: 'a',
+                        type: 'image',
+                        gallery: {
+                            enabled: true
+                        },
+                        mainClass: 'mfp-fade'
+                    });
+                });
+
+                // Perfect scrollbar initialization
+                $('.js-pscroll').each(function () {
+                    $(this).css('position', 'relative');
+                    $(this).css('overflow', 'hidden');
+                    var ps = new PerfectScrollbar(this, {
+                        wheelSpeed: 1,
+                        scrollingThreshold: 1000,
+                        wheelPropagation: false,
+                    });
+
+                    $(window).on('resize', function () {
+                        ps.update();
+                    })
+                });
+            </script>
+            </script>
+           <%-- <script>
+                // Mobile menu toggle
+                $(document).ready(function () {
+                    // Remove any duplicate badges that might have been added by plugins
+                    $('.header-icons-noti').not('#cartCountBadge, #mobileCartCountBadge').remove();
+                });
+
+                $(document).ready(function () {
+                    $('.btn-show-menu-mobile').on('click', function () {
+                        $(this).toggleClass('is-active');
+                        $('.mobile-menu').toggleClass('active');
+                    });
+
+                    // For touch devices - toggle mega menu on click
+                    if (matchMedia('(hover: none) and (pointer: coarse)').matches) {
+                        $('.mobile-menu > ul > li > a').on('click', function (e) {
+                            if ($(this).siblings('.mobile-mega-menu').length) {
+                                e.preventDefault();
+                                $(this).find('.mobile-arrow').toggleClass('active');
+                                $(this).siblings('.mobile-mega-menu').toggleClass('active');
+                            }
+                        });
+                    }
+
+                    // Account dropdown toggle
+                    $('.account-info').on('click', function (e) {
+                        e.stopPropagation();
+                        $('.account-dropdown-content').toggle();
+                    });
+
+                    // Close dropdown when clicking outside
+                    $(document).on('click', function () {
+                        $('.account-dropdown-content').hide();
+                    });
+
+                    // Prevent dropdown from closing when clicking inside it
+                    $('.account-dropdown-content').on('click', function (e) {
+                        e.stopPropagation();
+                    });
+
+                    // Handle cart icon click for unauthenticated users
+                    $('.header-icon2').on('click', function (e) {
+                        // Check if user is logged in (you might need to adjust this condition)
+                        if (typeof isUserLoggedIn === 'undefined' || !isUserLoggedIn) {
+                            e.preventDefault();
+                            swal({
+                                title: "Oops!",
+                                text: "You are logged out. Kindly log in to check your cart",
+                                icon: "warning",
+                                buttons: {
+                                    login: {
+                                        text: "Login",
+                                        value: "login",
+                                    },
+                                    cancel: "Cancel"
+                                }
+                            }).then((value) => {
+                                if (value === "login") {
+                                    window.location.href = "Login.aspx?ReturnUrl=Cart.aspx";
+                                }
+                            });
+                        }
+                    });
+                });
+
+                // Select2 initialization
+                $(".js-select2").each(function () {
+                    $(this).select2({
+                        minimumResultsForSearch: 20,
+                        dropdownParent: $(this).next('.dropDownSelect2')
+                    });
+                });
+
+                // Parallax initialization
+                $('.parallax100').parallax100();
+
+                // Lightbox initialization
+                $('.gallery-lb').each(function () {
+                    $(this).magnificPopup({
+                        delegate: 'a',
+                        type: 'image',
+                        gallery: {
+                                enabled: true
+                        },
+                        mainClass: 'mfp-fade'
+                    });
+                });
+
+                // Perfect scrollbar initialization
+                $('.js-pscroll').each(function () {
+                    $(this).css('position', 'relative');
+                    $(this).css('overflow', 'hidden');
+                    var ps = new PerfectScrollbar(this, {
+                        wheelSpeed: 1,
+                        scrollingThreshold: 1000,
+                        wheelPropagation: false,
+                    });
+
+                    $(window).on('resize', function () {
+                        ps.update();
+                    })
+                });
+            </script>--%>
+        </form>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
