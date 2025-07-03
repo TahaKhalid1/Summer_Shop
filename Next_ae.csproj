@@ -1,0 +1,1868 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4E2AD063-11DE-40FD-B7FC-E303E0288E50}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Next_ae</RootNamespace>
+    <AssemblyName>Next_ae</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminTemplate\assets\extra-libs\c3\c3.min.css" />
+    <Content Include="AdminTemplate\assets\extra-libs\c3\c3.min.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\c3\d3.min.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\datatables.net-bs4\css\dataTables.bootstrap4.css" />
+    <Content Include="AdminTemplate\assets\extra-libs\datatables.net-bs4\css\dataTables.bootstrap4.min.css" />
+    <Content Include="AdminTemplate\assets\extra-libs\datatables.net-bs4\js\dataTables.bootstrap4.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\datatables.net-bs4\js\dataTables.bootstrap4.min.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\datatables.net\js\jquery.dataTables.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\datatables.net\js\jquery.dataTables.min.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\datatables.net\License.txt" />
+    <Content Include="AdminTemplate\assets\extra-libs\jvector\gdp-data.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\jvector\jquery-jvectormap-2.0.2.css" />
+    <Content Include="AdminTemplate\assets\extra-libs\jvector\jquery-jvectormap-2.0.2.min.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\jvector\jquery-jvectormap-asia-mill.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\jvector\jquery-jvectormap-au-mill.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\jvector\jquery-jvectormap-ca-lcc.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\jvector\jquery-jvectormap-de-mill.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\jvector\jquery-jvectormap-europe-mill-en.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\jvector\jquery-jvectormap-in-mill.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\jvector\jquery-jvectormap-uk-mill-en.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\jvector\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\jvector\jquery-jvectormap-us-il-chicago-mill-en.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\jvector\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\jvector\jvectormap.custom.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\knob\jquery.knob.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\knob\jquery.knob.min.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\prism\prism-old.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\prism\prism.css" />
+    <Content Include="AdminTemplate\assets\extra-libs\prism\prism.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\sparkline\sparkline.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\css\demo.css" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\css\jquery-ui.min.css" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\css\lobilist.css" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\css\lobilist.min.css" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\js\demo.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\js\jquery-ui.min.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\js\jquery.ui.touch-punch-improved.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\js\lobibox.min.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\js\lobilist.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\js\lobilist.min.js" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\js\task-init.js" />
+    <Content Include="AdminTemplate\assets\images\alert\alert.png" />
+    <Content Include="AdminTemplate\assets\images\alert\alert2.png" />
+    <Content Include="AdminTemplate\assets\images\alert\alert3.png" />
+    <Content Include="AdminTemplate\assets\images\alert\alert4.png" />
+    <Content Include="AdminTemplate\assets\images\alert\alert5.png" />
+    <Content Include="AdminTemplate\assets\images\alert\alert6.png" />
+    <Content Include="AdminTemplate\assets\images\alert\alert7.png" />
+    <Content Include="AdminTemplate\assets\images\alert\model.png" />
+    <Content Include="AdminTemplate\assets\images\alert\model2.png" />
+    <Content Include="AdminTemplate\assets\images\alert\model3.png" />
+    <Content Include="AdminTemplate\assets\images\arbanchoice.png" />
+    <Content Include="AdminTemplate\assets\images\background\active-bg.jpg" />
+    <Content Include="AdminTemplate\assets\images\background\active-bg.png" />
+    <Content Include="AdminTemplate\assets\images\background\beauty.jpg" />
+    <Content Include="AdminTemplate\assets\images\background\error-bg.jpg" />
+    <Content Include="AdminTemplate\assets\images\background\img5.jpg" />
+    <Content Include="AdminTemplate\assets\images\background\img5.png" />
+    <Content Include="AdminTemplate\assets\images\background\login-register.jpg" />
+    <Content Include="AdminTemplate\assets\images\background\megamenubg.jpg" />
+    <Content Include="AdminTemplate\assets\images\background\nyan-cat.gif" />
+    <Content Include="AdminTemplate\assets\images\background\profile-bg.jpg" />
+    <Content Include="AdminTemplate\assets\images\background\sidebarbg.png" />
+    <Content Include="AdminTemplate\assets\images\background\socialbg.jpg" />
+    <Content Include="AdminTemplate\assets\images\background\user-bg.jpg" />
+    <Content Include="AdminTemplate\assets\images\background\user-info.jpg" />
+    <Content Include="AdminTemplate\assets\images\background\weatherbg.jpg" />
+    <Content Include="AdminTemplate\assets\images\big\1.jpg" />
+    <Content Include="AdminTemplate\assets\images\big\3.jpg" />
+    <Content Include="AdminTemplate\assets\images\big\5.jpg" />
+    <Content Include="AdminTemplate\assets\images\big\auth-bg.jpg" />
+    <Content Include="AdminTemplate\assets\images\big\auth-bg2.jpg" />
+    <Content Include="AdminTemplate\assets\images\big\d2.jpg" />
+    <Content Include="AdminTemplate\assets\images\big\icon.png" />
+    <Content Include="AdminTemplate\assets\images\big\img1.jpg" />
+    <Content Include="AdminTemplate\assets\images\big\img2.jpg" />
+    <Content Include="AdminTemplate\assets\images\big\img3.jpg" />
+    <Content Include="AdminTemplate\assets\images\big\img4.jpg" />
+    <Content Include="AdminTemplate\assets\images\big\img5.jpg" />
+    <Content Include="AdminTemplate\assets\images\big\img6.jpg" />
+    <Content Include="AdminTemplate\assets\images\browser\chrome-logo.png" />
+    <Content Include="AdminTemplate\assets\images\browser\edge-logo.png" />
+    <Content Include="AdminTemplate\assets\images\browser\firefox-logo.png" />
+    <Content Include="AdminTemplate\assets\images\browser\internet-logo.png" />
+    <Content Include="AdminTemplate\assets\images\browser\netscape-logo.png" />
+    <Content Include="AdminTemplate\assets\images\browser\opera-logo.png" />
+    <Content Include="AdminTemplate\assets\images\browser\photoshop.jpg" />
+    <Content Include="AdminTemplate\assets\images\browser\safari-logo.png" />
+    <Content Include="AdminTemplate\assets\images\browser\sketch.jpg" />
+    <Content Include="AdminTemplate\assets\images\custom-select.png" />
+    <Content Include="AdminTemplate\assets\images\docs\gulp.jpg" />
+    <Content Include="AdminTemplate\assets\images\favicon.png" />
+    <Content Include="AdminTemplate\assets\images\gallery\chair.jpg" />
+    <Content Include="AdminTemplate\assets\images\gallery\chair2.jpg" />
+    <Content Include="AdminTemplate\assets\images\gallery\chair3.jpg" />
+    <Content Include="AdminTemplate\assets\images\gallery\chair4.jpg" />
+    <Content Include="AdminTemplate\assets\images\img1.jpg" />
+    <Content Include="AdminTemplate\assets\images\img2.jpg" />
+    <Content Include="AdminTemplate\assets\images\img3.jpg" />
+    <Content Include="AdminTemplate\assets\images\landingpage\banne-img.png" />
+    <Content Include="AdminTemplate\assets\images\landingpage\banner-bg.png" />
+    <Content Include="AdminTemplate\assets\images\landingpage\brand-logos.png" />
+    <Content Include="AdminTemplate\assets\images\landingpage\db.png" />
+    <Content Include="AdminTemplate\assets\images\landingpage\f1.png" />
+    <Content Include="AdminTemplate\assets\images\landingpage\f2.png" />
+    <Content Include="AdminTemplate\assets\images\landingpage\f3.png" />
+    <Content Include="AdminTemplate\assets\images\landingpage\favicon.png" />
+    <Content Include="AdminTemplate\assets\images\landingpage\icon-sprite.jpg" />
+    <Content Include="AdminTemplate\assets\images\landingpage\img2.jpg" />
+    <Content Include="AdminTemplate\assets\images\landingpage\img3.jpg" />
+    <Content Include="AdminTemplate\assets\images\landingpage\logo.png" />
+    <Content Include="AdminTemplate\assets\images\landingpage\logos.png" />
+    <Content Include="AdminTemplate\assets\images\landingpage\right-img.png" />
+    <Content Include="AdminTemplate\assets\images\landingpage\section-bg.png" />
+    <Content Include="AdminTemplate\assets\images\landingpage\section-img.png" />
+    <Content Include="AdminTemplate\assets\images\logo-icon.png" />
+    <Content Include="AdminTemplate\assets\images\logo-light-text.png" />
+    <Content Include="AdminTemplate\assets\images\logo-text.png" />
+    <Content Include="AdminTemplate\assets\images\product\chair.png" />
+    <Content Include="AdminTemplate\assets\images\product\chair2.png" />
+    <Content Include="AdminTemplate\assets\images\product\chair3.png" />
+    <Content Include="AdminTemplate\assets\images\product\chair4.png" />
+    <Content Include="AdminTemplate\assets\images\product\ipad.png" />
+    <Content Include="AdminTemplate\assets\images\product\iphone.png" />
+    <Content Include="AdminTemplate\assets\images\product\iwatch.png" />
+    <Content Include="AdminTemplate\assets\images\product\p1.jpg" />
+    <Content Include="AdminTemplate\assets\images\product\p2.jpg" />
+    <Content Include="AdminTemplate\assets\images\product\p3.jpg" />
+    <Content Include="AdminTemplate\assets\images\product\p4.jpg" />
+    <Content Include="AdminTemplate\assets\images\rating\cancel-off.png" />
+    <Content Include="AdminTemplate\assets\images\rating\cancel-on.png" />
+    <Content Include="AdminTemplate\assets\images\rating\heart.png" />
+    <Content Include="AdminTemplate\assets\images\rating\like.png" />
+    <Content Include="AdminTemplate\assets\images\rating\star-half-mono.png" />
+    <Content Include="AdminTemplate\assets\images\rating\star-half.png" />
+    <Content Include="AdminTemplate\assets\images\rating\star-off.png" />
+    <Content Include="AdminTemplate\assets\images\rating\star-on.png" />
+    <Content Include="AdminTemplate\assets\images\tooltip\Euclid.png" />
+    <Content Include="AdminTemplate\assets\images\tooltip\shape1.svg" />
+    <Content Include="AdminTemplate\assets\images\tooltip\shape2.svg" />
+    <Content Include="AdminTemplate\assets\images\tooltip\shape3.svg" />
+    <Content Include="AdminTemplate\assets\images\tooltip\tooltip1.svg" />
+    <Content Include="AdminTemplate\assets\images\tooltip\tooltip2.svg" />
+    <Content Include="AdminTemplate\assets\images\tooltip\tooltip3.svg" />
+    <Content Include="AdminTemplate\assets\images\users\1-old.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\1.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\1.png" />
+    <Content Include="AdminTemplate\assets\images\users\2.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\2.png" />
+    <Content Include="AdminTemplate\assets\images\users\3.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\3.png" />
+    <Content Include="AdminTemplate\assets\images\users\4.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\5.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\6.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\7.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\8.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\agent.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\agent2.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\d1.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\d2.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\d3.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\d4.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\d5.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\profile-pic-2.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\profile-pic.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\profile.png" />
+    <Content Include="AdminTemplate\assets\images\users\widget-table-pic1.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\widget-table-pic2.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\widget-table-pic3.jpg" />
+    <Content Include="AdminTemplate\assets\images\users\widget-table-pic4.jpg" />
+    <Content Include="AdminTemplate\assets\images\widgets\1.jpg" />
+    <Content Include="AdminTemplate\assets\images\widgets\2.jpg" />
+    <Content Include="AdminTemplate\assets\images\widgets\3.jpg" />
+    <Content Include="AdminTemplate\assets\images\widgets\widget-carousel-2.jpg" />
+    <Content Include="AdminTemplate\assets\images\widgets\widget-carousel.jpg" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="AdminTemplate\assets\libs\chart.js\dist\Chart.bundle.min.js" />
+    <Content Include="AdminTemplate\assets\libs\chart.js\dist\Chart.min.css" />
+    <Content Include="AdminTemplate\assets\libs\chart.js\dist\Chart.min.js" />
+    <Content Include="AdminTemplate\assets\libs\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.css" />
+    <Content Include="AdminTemplate\assets\libs\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.min.js" />
+    <Content Include="AdminTemplate\assets\libs\chartist\dist\chartist.min.css" />
+    <Content Include="AdminTemplate\assets\libs\chartist\dist\chartist.min.js" />
+    <Content Include="AdminTemplate\assets\libs\datatables.net-bs4\css\dataTables.bootstrap4.min.css" />
+    <Content Include="AdminTemplate\assets\libs\datatables.net-bs4\js\dataTables.bootstrap4.min.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\fullcalendar.min.css" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\fullcalendar.min.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\fullcalendar.print.min.css" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\gcal.min.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale-all.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\af.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\ar-dz.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\ar-kw.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\ar-ly.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\ar-ma.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\ar-sa.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\ar-tn.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\ar.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\be.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\bg.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\bs.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\ca.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\cs.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\da.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\de-at.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\de-ch.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\de.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\el.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\en-au.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\en-ca.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\en-gb.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\en-ie.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\en-nz.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\es-do.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\es-us.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\es.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\et.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\eu.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\fa.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\fi.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\fr-ca.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\fr-ch.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\fr.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\gl.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\he.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\hi.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\hr.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\hu.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\id.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\is.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\it.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\ja.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\ka.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\kk.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\ko.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\lb.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\lt.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\lv.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\mk.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\ms-my.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\ms.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\nb.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\nl-be.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\nl.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\nn.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\pl.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\pt-br.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\pt.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\ro.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\ru.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\sk.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\sl.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\sq.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\sr-cyrl.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\sr.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\sv.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\th.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\tr.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\uk.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\vi.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\zh-cn.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\zh-hk.js" />
+    <Content Include="AdminTemplate\assets\libs\fullcalendar\dist\locale\zh-tw.js" />
+    <Content Include="AdminTemplate\assets\libs\jquery\dist\core.js" />
+    <Content Include="AdminTemplate\assets\libs\jquery\dist\jquery.min.js" />
+    <Content Include="AdminTemplate\assets\libs\jquery\dist\jquery.slim.min.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\ender.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\af.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ar-dz.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ar-kw.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ar-ly.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ar-ma.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ar-sa.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ar-tn.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ar.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\az.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\be.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\bg.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\bm.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\bn.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\bo.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\br.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\bs.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ca.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\cs.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\cv.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\cy.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\da.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\de-at.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\de-ch.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\de.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\dv.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\el.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\en-au.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\en-ca.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\en-gb.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\en-ie.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\en-il.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\en-nz.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\en-SG.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\eo.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\es-do.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\es-us.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\es.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\et.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\eu.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\fa.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\fi.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\fo.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\fr-ca.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\fr-ch.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\fr.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\fy.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ga.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\gd.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\gl.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\gom-latn.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\gu.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\he.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\hi.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\hr.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\hu.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\hy-am.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\id.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\is.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\it-ch.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\it.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ja.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\jv.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ka.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\kk.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\km.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\kn.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ko.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ku.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ky.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\lb.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\lo.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\lt.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\lv.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\me.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\mi.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\mk.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ml.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\mn.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\mr.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ms-my.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ms.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\mt.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\my.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\nb.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ne.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\nl-be.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\nl.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\nn.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\pa-in.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\pl.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\pt-br.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\pt.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ro.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ru.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\sd.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\se.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\si.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\sk.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\sl.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\sq.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\sr-cyrl.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\sr.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ss.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\sv.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\sw.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ta.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\te.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\tet.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\tg.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\th.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\tl-ph.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\tlh.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\tr.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\tzl.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\tzm-latn.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\tzm.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ug-cn.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\uk.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\ur.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\uz-latn.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\uz.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\vi.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\x-pseudo.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\yo.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\zh-cn.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\zh-hk.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\locale\zh-tw.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\min\locales.min.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\min\moment-with-locales.min.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\min\moment.min.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\moment.js" />
+    <Content Include="AdminTemplate\assets\libs\moment\package.js" />
+    <Content Include="AdminTemplate\assets\libs\morris.js\morris.css" />
+    <Content Include="AdminTemplate\assets\libs\morris.js\morris.min.js" />
+    <Content Include="AdminTemplate\assets\libs\perfect-scrollbar\dist\css\perfect-scrollbar.min.css" />
+    <Content Include="AdminTemplate\assets\libs\perfect-scrollbar\dist\js\perfect-scrollbar.jquery.min.js" />
+    <Content Include="AdminTemplate\assets\libs\perfect-scrollbar\dist\js\perfect-scrollbar.min.js" />
+    <Content Include="AdminTemplate\assets\libs\perfect-scrollbar\dist\perfect-scrollbar.common.js" />
+    <Content Include="AdminTemplate\assets\libs\perfect-scrollbar\dist\perfect-scrollbar.esm.js" />
+    <Content Include="AdminTemplate\assets\libs\perfect-scrollbar\dist\perfect-scrollbar.jquery.min.js" />
+    <Content Include="AdminTemplate\assets\libs\perfect-scrollbar\dist\perfect-scrollbar.min.js" />
+    <Content Include="AdminTemplate\assets\libs\popper.js\dist\esm\popper-utils.min.js" />
+    <Content Include="AdminTemplate\assets\libs\popper.js\dist\esm\popper.min.js" />
+    <Content Include="AdminTemplate\assets\libs\popper.js\dist\popper-utils.min.js" />
+    <Content Include="AdminTemplate\assets\libs\popper.js\dist\popper.min.js" />
+    <Content Include="AdminTemplate\assets\libs\popper.js\dist\umd\popper-utils.min.js" />
+    <Content Include="AdminTemplate\assets\libs\popper.js\dist\umd\popper.min.js" />
+    <Content Include="AdminTemplate\assets\libs\raphael\dev\banner.txt" />
+    <Content Include="AdminTemplate\assets\libs\raphael\dev\raphael.amd.js" />
+    <Content Include="AdminTemplate\assets\libs\raphael\dev\raphael.core.js" />
+    <Content Include="AdminTemplate\assets\libs\raphael\dev\raphael.svg.js" />
+    <Content Include="AdminTemplate\assets\libs\raphael\dev\raphael.vml.js" />
+    <Content Include="AdminTemplate\assets\libs\raphael\dev\raphaelTest.html" />
+    <Content Include="AdminTemplate\assets\libs\raphael\license.txt" />
+    <Content Include="AdminTemplate\assets\libs\raphael\raphael.min.js" />
+    <Content Include="AdminTemplate\assets\libs\raphael\raphael.no-deps.min.js" />
+    <Content Include="AdminTemplate\css\main.css" />
+    <Content Include="AdminTemplate\css\util.css" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Bold.svg" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Heavy.svg" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Medium.svg" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Regular.svg" />
+    <Content Include="AdminTemplate\dist\css\fonts\TofinoPersonal-Book.svg" />
+    <Content Include="AdminTemplate\dist\css\fonts\TofinoPersonal-Medium.svg" />
+    <Content Include="AdminTemplate\dist\css\fonts\TofinoPersonal-Regular.svg" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\css\fa-brands.css" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\css\fa-brands.min.css" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\css\fa-regular.css" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\css\fa-regular.min.css" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\css\fa-solid.css" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\css\fa-solid.min.css" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\css\fontawesome-all.css" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\css\fontawesome-all.min.css" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\css\fontawesome.css" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\css\fontawesome.min.css" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\webfonts\fa-brands-400.svg" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\webfonts\fa-regular-400.svg" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="AdminTemplate\dist\css\icons\simple-line-icons\css\simple-line-icons.css" />
+    <Content Include="AdminTemplate\dist\css\icons\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="AdminTemplate\dist\css\icons\themify-icons\fonts\themify.svg" />
+    <Content Include="AdminTemplate\dist\css\icons\themify-icons\ie7\ie7.css" />
+    <Content Include="AdminTemplate\dist\css\icons\themify-icons\ie7\ie7.js" />
+    <Content Include="AdminTemplate\dist\css\icons\themify-icons\themify-icons.css" />
+    <Content Include="AdminTemplate\dist\css\style.css" />
+    <Content Include="AdminTemplate\dist\css\style.min.css" />
+    <Content Include="AdminTemplate\dist\js\app-style-switcher.js" />
+    <Content Include="AdminTemplate\dist\js\app-style-switcher.min.js" />
+    <Content Include="AdminTemplate\dist\js\custom.js" />
+    <Content Include="AdminTemplate\dist\js\custom.min.js" />
+    <Content Include="AdminTemplate\dist\js\feather.min.js" />
+    <Content Include="AdminTemplate\dist\js\pages\calendar\cal-init.js" />
+    <Content Include="AdminTemplate\dist\js\pages\calendar\cal-init.min.js" />
+    <Content Include="AdminTemplate\dist\js\pages\chartist\chartist-init.css" />
+    <Content Include="AdminTemplate\dist\js\pages\chartist\chartist-init.js" />
+    <Content Include="AdminTemplate\dist\js\pages\chartist\chartist-init.min.js" />
+    <Content Include="AdminTemplate\dist\js\pages\chartist\chartist-plugin-tooltip.js" />
+    <Content Include="AdminTemplate\dist\js\pages\chartist\chartist-plugin-tooltip.min.js" />
+    <Content Include="AdminTemplate\dist\js\pages\chartjs\chartjs.init.js" />
+    <Content Include="AdminTemplate\dist\js\pages\chartjs\chartjs.init.min.js" />
+    <Content Include="AdminTemplate\dist\js\pages\dashboards\dashboard1.js" />
+    <Content Include="AdminTemplate\dist\js\pages\dashboards\dashboard1.min.js" />
+    <Content Include="AdminTemplate\dist\js\pages\datatable\datatable-basic.init.js" />
+    <Content Include="AdminTemplate\dist\js\pages\datatable\datatable-basic.init.min.js" />
+    <Content Include="AdminTemplate\dist\js\pages\morris\morris-data.js" />
+    <Content Include="AdminTemplate\dist\js\pages\morris\morris-data.min.js" />
+    <Content Include="AdminTemplate\dist\js\sidebarmenu.js" />
+    <Content Include="AdminTemplate\dist\js\sidebarmenu.min.js" />
+    <Content Include="AdminTemplate\docs\docs-custom-chart-chartjs.html" />
+    <Content Include="AdminTemplate\docs\docs-custom-datatables.html" />
+    <Content Include="AdminTemplate\docs\docs-custom-widgets.html" />
+    <Content Include="AdminTemplate\docs\docs-start.html" />
+    <Content Include="AdminTemplate\docs\docs-ui-bootstrapui.html" />
+    <Content Include="AdminTemplate\docs\docs-ui-breadcrumb.html" />
+    <Content Include="AdminTemplate\docs\docs-ui-buttons.html" />
+    <Content Include="AdminTemplate\docs\docs-ui-carousel.html" />
+    <Content Include="AdminTemplate\docs\docs-ui-grid.html" />
+    <Content Include="AdminTemplate\docs\docs-ui-listmedia.html" />
+    <Content Include="AdminTemplate\docs\docs-ui-modals.html" />
+    <Content Include="AdminTemplate\docs\docs-ui-notification.html" />
+    <Content Include="AdminTemplate\docs\docs-ui-progressbar.html" />
+    <Content Include="AdminTemplate\docs\docs-ui-scrollspy.html" />
+    <Content Include="AdminTemplate\docs\docs-ui-spinner.html" />
+    <Content Include="AdminTemplate\docs\docs-ui-tabs.html" />
+    <Content Include="AdminTemplate\docs\docs-ui-toasts.html" />
+    <Content Include="AdminTemplate\docs\docs-ui-tooltip-popover.html" />
+    <Content Include="AdminTemplate\docs\docs-ui-typography.html" />
+    <Content Include="AdminTemplate\docs\docs.html" />
+    <Content Include="AdminTemplate\docs\highlights\highlight.min.css" />
+    <Content Include="AdminTemplate\docs\highlights\highlight.min.js" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="AdminTemplate\fonts\montserrat\OFL.txt" />
+    <Content Include="AdminTemplate\images\icons\favicon.ico" />
+    <Content Include="AdminTemplate\images\img-01.png" />
+    <Content Include="AdminTemplate\js\main.js" />
+    <Content Include="AdminTemplate\src\counter.txt" />
+    <Content Include="AdminTemplate\vendor\animate\animate.css" />
+    <Content Include="AdminTemplate\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="AdminTemplate\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="AdminTemplate\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="AdminTemplate\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="AdminTemplate\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="AdminTemplate\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="AdminTemplate\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="AdminTemplate\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="AdminTemplate\vendor\bootstrap\js\popper.js" />
+    <Content Include="AdminTemplate\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="AdminTemplate\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="AdminTemplate\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="AdminTemplate\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="AdminTemplate\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="AdminTemplate\vendor\select2\select2.css" />
+    <Content Include="AdminTemplate\vendor\select2\select2.js" />
+    <Content Include="AdminTemplate\vendor\select2\select2.min.css" />
+    <Content Include="AdminTemplate\vendor\select2\select2.min.js" />
+    <Content Include="AdminTemplate\vendor\tilt\tilt.jquery.min.js" />
+    <Content Include="Admin\adminlogin.aspx" />
+    <Content Include="Admin\Categorylist.aspx" />
+    <Content Include="Admin\Categorylisting.aspx" />
+    <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\Orderlist.aspx" />
+    <Content Include="Admin\Productlist.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="UserTemplate\assets\img\anytime-anywhere\android.svg" />
+    <Content Include="UserTemplate\assets\img\anytime-anywhere\anytime-anywhere.svg" />
+    <Content Include="UserTemplate\assets\img\anytime-anywhere\anytime.png" />
+    <Content Include="UserTemplate\assets\img\anytime-anywhere\app-store.svg" />
+    <Content Include="UserTemplate\assets\img\anytime-anywhere\mac-os.svg" />
+    <Content Include="UserTemplate\assets\img\anytime-anywhere\windows.svg" />
+    <Content Include="UserTemplate\assets\img\faq\faq.svg" />
+    <Content Include="UserTemplate\assets\img\favicon.svg" />
+    <Content Include="UserTemplate\assets\img\footer-logo.svg" />
+    <Content Include="UserTemplate\assets\img\footer\call.svg" />
+    <Content Include="UserTemplate\assets\img\footer\facebook.svg" />
+    <Content Include="UserTemplate\assets\img\footer\home.svg" />
+    <Content Include="UserTemplate\assets\img\footer\icon-bitcash.svg" />
+    <Content Include="UserTemplate\assets\img\footer\icon-bitcoin.svg" />
+    <Content Include="UserTemplate\assets\img\footer\icon-dg-coin.svg" />
+    <Content Include="UserTemplate\assets\img\footer\icon-dodge.svg" />
+    <Content Include="UserTemplate\assets\img\footer\icon-euro.svg" />
+    <Content Include="UserTemplate\assets\img\footer\icon-litihum.svg" />
+    <Content Include="UserTemplate\assets\img\footer\icon-mez-coin.svg" />
+    <Content Include="UserTemplate\assets\img\footer\instagram.svg" />
+    <Content Include="UserTemplate\assets\img\footer\mail.svg" />
+    <Content Include="UserTemplate\assets\img\footer\twitter.svg" />
+    <Content Include="UserTemplate\assets\img\footer\youtube.svg" />
+    <Content Include="UserTemplate\assets\img\hero-section\banner-svg.svg" />
+    <Content Include="UserTemplate\assets\img\hero-section\banner.svg" />
+    <Content Include="UserTemplate\assets\img\hero-section\first.png" />
+    <Content Include="UserTemplate\assets\img\how-it-works\create-account.svg" />
+    <Content Include="UserTemplate\assets\img\how-it-works\exchange.svg" />
+    <Content Include="UserTemplate\assets\img\how-it-works\file.svg" />
+    <Content Include="UserTemplate\assets\img\how-it-works\find-your-credit.svg" />
+    <Content Include="UserTemplate\assets\img\how-it-works\how-1.png" />
+    <Content Include="UserTemplate\assets\img\how-it-works\how-2.png" />
+    <Content Include="UserTemplate\assets\img\how-it-works\how-3.png" />
+    <Content Include="UserTemplate\assets\img\icons\close-svgrepo-com.svg" />
+    <Content Include="UserTemplate\assets\img\icons\play-circle.svg" />
+    <Content Include="UserTemplate\assets\img\logo-brand-section\bitpanda.svg" />
+    <Content Include="UserTemplate\assets\img\logo-brand-section\coindesk.svg" />
+    <Content Include="UserTemplate\assets\img\logo-brand-section\mapbox.svg" />
+    <Content Include="UserTemplate\assets\img\logo-brand-section\tron.svg" />
+    <Content Include="UserTemplate\assets\img\logo.svg" />
+    <Content Include="UserTemplate\assets\img\most-trusted\free-to-use.svg" />
+    <Content Include="UserTemplate\assets\img\most-trusted\mosttrusted-2.png" />
+    <Content Include="UserTemplate\assets\img\most-trusted\mosttrusted-4.png" />
+    <Content Include="UserTemplate\assets\img\most-trusted\real-time-price.svg" />
+    <Content Include="UserTemplate\assets\img\most-trusted\secure-storage.svg" />
+    <Content Include="UserTemplate\assets\img\most-trusted\trusted-1.png" />
+    <Content Include="UserTemplate\assets\img\most-trusted\trusted-2.png" />
+    <Content Include="UserTemplate\assets\img\most-trusted\trusted-3.png" />
+    <Content Include="UserTemplate\assets\img\most-trusted\trusted-4.png" />
+    <Content Include="UserTemplate\assets\img\offcanvas-logo.svg" />
+    <Content Include="UserTemplate\assets\img\shape\body-bg.svg" />
+    <Content Include="UserTemplate\assets\img\shape\shape-1.svg" />
+    <Content Include="UserTemplate\assets\img\shape\shape-2.svg" />
+    <Content Include="UserTemplate\assets\img\shape\shape-3.svg" />
+    <Content Include="UserTemplate\assets\img\shape\shape-4.svg" />
+    <Content Include="UserTemplate\assets\img\shape\shape-5.svg" />
+    <Content Include="UserTemplate\assets\img\simple-secure\secure-1.png" />
+    <Content Include="UserTemplate\assets\img\simple-secure\secure.png" />
+    <Content Include="UserTemplate\assets\img\simple-secure\simple-secure.svg" />
+    <Content Include="UserTemplate\assets\img\toggle-menu.svg" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\dist\assets\owl.carousel.min.css" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\dist\owl.carousel.min.js" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\Gruntfile.js" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\dist\css\owl.carousel.css" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\dist\css\owl.theme.default.css" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\dist\css\owl.theme.green.css" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\img\ajax-loader.gif" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\img\owl.video.play.png" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\js\owl.animate.js" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\js\owl.autoheight.js" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\js\owl.autoplay.js" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\js\owl.autorefresh.js" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\js\owl.carousel.js" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\js\owl.hash.js" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\js\owl.lazyload.js" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\js\owl.navigation.js" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\js\owl.support.js" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\js\owl.support.modernizr.js" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\js\owl.video.js" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\scss\owl.carousel.css" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\scss\owl.theme.default.css" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\scss\owl.theme.green.css" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\test\index.html" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\test\unit\autoplay.js" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\test\unit\core.js" />
+    <Content Include="UserTemplate\css\main.css" />
+    <Content Include="UserTemplate\css\util.css" />
+    <Content Include="UserTemplate\dist\css\iconfont\fonts\tabler-icons.svg" />
+    <Content Include="UserTemplate\dist\css\iconfont\tabler-icons.css" />
+    <Content Include="UserTemplate\dist\css\style.css" />
+    <Content Include="UserTemplate\dist\js\bootstrap.min.js" />
+    <Content Include="UserTemplate\dist\js\custom.js" />
+    <Content Include="UserTemplate\dist\js\jquery.min.js" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="UserTemplate\fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="UserTemplate\fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="UserTemplate\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="UserTemplate\fonts\linearicons-v1.0.0\icon-font.min.css" />
+    <Content Include="UserTemplate\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="UserTemplate\fonts\Montserrat\OFL.txt" />
+    <Content Include="UserTemplate\fonts\PlayfairDisplay\OFL.txt" />
+    <Content Include="UserTemplate\images\about-01.jpg" />
+    <Content Include="UserTemplate\images\about-02.jpg" />
+    <Content Include="UserTemplate\images\avatar-01.jpg" />
+    <Content Include="UserTemplate\images\BabyShopSlide.jpg" />
+    <Content Include="UserTemplate\images\babytoppick.png" />
+    <Content Include="UserTemplate\images\babytops.png" />
+    <Content Include="UserTemplate\images\banner-01.jpg" />
+    <Content Include="UserTemplate\images\banner-02.jpg" />
+    <Content Include="UserTemplate\images\banner-03.jpg" />
+    <Content Include="UserTemplate\images\banner-04.jpg" />
+    <Content Include="UserTemplate\images\banner-05.jpg" />
+    <Content Include="UserTemplate\images\banner-06.jpg" />
+    <Content Include="UserTemplate\images\banner-07.jpg" />
+    <Content Include="UserTemplate\images\banner-08.jpg" />
+    <Content Include="UserTemplate\images\banner-09.jpg" />
+    <Content Include="UserTemplate\images\banner1.jpg" />
+    <Content Include="UserTemplate\images\banner2.jpg" />
+    <Content Include="UserTemplate\images\banner3.png" />
+    <Content Include="UserTemplate\images\bg-01.jpg" />
+    <Content Include="UserTemplate\images\bg-02.jpg" />
+    <Content Include="UserTemplate\images\blog-01.jpg" />
+    <Content Include="UserTemplate\images\blog-02.jpg" />
+    <Content Include="UserTemplate\images\blog-03.jpg" />
+    <Content Include="UserTemplate\images\blog-04.jpg" />
+    <Content Include="UserTemplate\images\blog-05.jpg" />
+    <Content Include="UserTemplate\images\blog-06.jpg" />
+    <Content Include="UserTemplate\images\BoysShopSlide.jpg" />
+    <Content Include="UserTemplate\images\boytoppick.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\about.html" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\blog-detail.html" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\blog.html" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\contact.html" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\css\main.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\css\util.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\linearicons-v1.0.0\icon-font.min.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\OFL.txt" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\PlayfairDisplay\OFL.txt" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\home-02.html" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\home-03.html" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\about-01.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\about-02.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\avatar-01.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\banner-01.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\banner-02.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\banner-03.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\banner-04.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\banner-05.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\banner-06.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\banner-07.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\banner-08.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\banner-09.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\bg-01.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\bg-02.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\blog-01.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\blog-02.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\blog-03.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\blog-04.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\blog-05.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\blog-06.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\gallery-01.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\gallery-02.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\gallery-03.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\gallery-04.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\gallery-05.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\gallery-06.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\gallery-07.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\gallery-08.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\gallery-09.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\icons\favicon.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\icons\icon-close.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\icons\icon-close2.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\icons\icon-email.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\icons\icon-heart-01.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\icons\icon-heart-02.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\icons\icon-next.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\icons\icon-pay-01.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\icons\icon-pay-02.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\icons\icon-pay-03.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\icons\icon-pay-04.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\icons\icon-pay-05.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\icons\icon-prev.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\icons\logo-01.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\icons\logo-02.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\icons\pin.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\item-cart-01.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\item-cart-02.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\item-cart-03.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\item-cart-04.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\item-cart-05.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-01.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-02.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-03.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-04.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-05.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-06.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-07.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-08.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-09.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-10.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-11.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-12.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-13.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-14.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-15.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-16.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-detail-01.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-detail-02.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-detail-03.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-min-01.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-min-02.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\product-min-03.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\slide-01.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\slide-02.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\slide-03.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\slide-04.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\slide-05.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\slide-06.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\slide-07.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\thumb-01.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\thumb-02.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\images\thumb-03.jpg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\index.html" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\js\main.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\js\map-custom.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\js\slick-custom.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\log.html" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\product-detail.html" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\product.html" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\shoping-cart.html" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\animate\animate.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\animsition\css\animsition.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\animsition\css\animsition.min.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\animsition\js\animsition.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\animsition\js\animsition.min.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\bootstrap\js\popper.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\countdowntime\countdowntime.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\daterangepicker\moment.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\daterangepicker\moment.min.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\isotope\isotope.pkgd.min.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\jqueryui\external\jquery\jquery.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\jqueryui\images\ui-icons_444444_256x240.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\jqueryui\images\ui-icons_555555_256x240.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\jqueryui\images\ui-icons_777620_256x240.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\jqueryui\images\ui-icons_777777_256x240.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\jqueryui\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\jqueryui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\jqueryui\index.html" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\jqueryui\jquery-ui.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\jqueryui\jquery-ui.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\jqueryui\jquery-ui.min.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\jqueryui\jquery-ui.min.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\jqueryui\jquery-ui.structure.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\jqueryui\jquery-ui.structure.min.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\jqueryui\jquery-ui.theme.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\jqueryui\jquery-ui.theme.min.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\lightbox2\css\lightbox.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\lightbox2\css\lightbox.min.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\lightbox2\images\close.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\lightbox2\images\loading.gif" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\lightbox2\images\next.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\lightbox2\images\prev.png" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\lightbox2\js\lightbox-plus-jquery.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\lightbox2\js\lightbox-plus-jquery.min.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\lightbox2\js\lightbox.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\lightbox2\js\lightbox.min.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\MagnificPopup\jquery.magnific-popup.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\MagnificPopup\jquery.magnific-popup.min.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\MagnificPopup\magnific-popup.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\parallax100\parallax100.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\select2\select2.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\select2\select2.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\select2\select2.min.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\select2\select2.min.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\slick\ajax-loader.gif" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\slick\fonts\slick.svg" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\slick\slick-theme.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\slick\slick.css" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\slick\slick.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\slick\slick.min.js" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\sweetalert\sweetalert.min.js" />
+    <Content Include="UserTemplate\images\gallery-01.jpg" />
+    <Content Include="UserTemplate\images\gallery-02.jpg" />
+    <Content Include="UserTemplate\images\gallery-03.jpg" />
+    <Content Include="UserTemplate\images\gallery-04.jpg" />
+    <Content Include="UserTemplate\images\gallery-05.jpg" />
+    <Content Include="UserTemplate\images\gallery-06.jpg" />
+    <Content Include="UserTemplate\images\gallery-07.jpg" />
+    <Content Include="UserTemplate\images\gallery-08.jpg" />
+    <Content Include="UserTemplate\images\gallery-09.jpg" />
+    <Content Include="UserTemplate\images\girlbanner.png" />
+    <Content Include="UserTemplate\images\girlshop-1.jpg" />
+    <Content Include="UserTemplate\images\girlshop-2.jpg" />
+    <Content Include="UserTemplate\images\girlshop-3.jpg" />
+    <Content Include="UserTemplate\images\girlshop-4.jpg" />
+    <Content Include="UserTemplate\images\girlshopslide.jpg" />
+    <Content Include="UserTemplate\images\girltop.png" />
+    <Content Include="UserTemplate\images\girltoppick.png" />
+    <Content Include="UserTemplate\images\icons\arban.png" />
+    <Content Include="UserTemplate\images\icons\arbanchoice.png" />
+    <Content Include="UserTemplate\images\icons\favicon.png" />
+    <Content Include="UserTemplate\images\icons\icon-close.png" />
+    <Content Include="UserTemplate\images\icons\icon-close2.png" />
+    <Content Include="UserTemplate\images\icons\icon-email.png" />
+    <Content Include="UserTemplate\images\icons\icon-heart-01.png" />
+    <Content Include="UserTemplate\images\icons\icon-heart-02.png" />
+    <Content Include="UserTemplate\images\icons\icon-next.png" />
+    <Content Include="UserTemplate\images\icons\icon-pay-01.png" />
+    <Content Include="UserTemplate\images\icons\icon-pay-02.png" />
+    <Content Include="UserTemplate\images\icons\icon-pay-03.png" />
+    <Content Include="UserTemplate\images\icons\icon-pay-04.png" />
+    <Content Include="UserTemplate\images\icons\icon-pay-05.png" />
+    <Content Include="UserTemplate\images\icons\icon-prev.png" />
+    <Content Include="UserTemplate\images\icons\logo-01.png" />
+    <Content Include="UserTemplate\images\icons\logo-02.png" />
+    <Content Include="UserTemplate\images\icons\logo.png" />
+    <Content Include="UserTemplate\images\icons\pin.png" />
+    <Content Include="UserTemplate\images\item-cart-01.jpg" />
+    <Content Include="UserTemplate\images\item-cart-02.jpg" />
+    <Content Include="UserTemplate\images\item-cart-03.jpg" />
+    <Content Include="UserTemplate\images\item-cart-04.jpg" />
+    <Content Include="UserTemplate\images\item-cart-05.jpg" />
+    <Content Include="UserTemplate\images\kidstoppick.png" />
+    <Content Include="UserTemplate\images\product-01.jpg" />
+    <Content Include="UserTemplate\images\product-02.jpg" />
+    <Content Include="UserTemplate\images\product-03.jpg" />
+    <Content Include="UserTemplate\images\product-04.jpg" />
+    <Content Include="UserTemplate\images\product-05.jpg" />
+    <Content Include="UserTemplate\images\product-06.jpg" />
+    <Content Include="UserTemplate\images\product-07.jpg" />
+    <Content Include="UserTemplate\images\product-08.jpg" />
+    <Content Include="UserTemplate\images\product-09.jpg" />
+    <Content Include="UserTemplate\images\product-10.jpg" />
+    <Content Include="UserTemplate\images\product-11.jpg" />
+    <Content Include="UserTemplate\images\product-12.jpg" />
+    <Content Include="UserTemplate\images\product-13.jpg" />
+    <Content Include="UserTemplate\images\product-14.jpg" />
+    <Content Include="UserTemplate\images\product-15.jpg" />
+    <Content Include="UserTemplate\images\product-16.jpg" />
+    <Content Include="UserTemplate\images\product-detail-01.jpg" />
+    <Content Include="UserTemplate\images\product-detail-02.jpg" />
+    <Content Include="UserTemplate\images\product-detail-03.jpg" />
+    <Content Include="UserTemplate\images\product-min-01.jpg" />
+    <Content Include="UserTemplate\images\product-min-02.jpg" />
+    <Content Include="UserTemplate\images\product-min-03.jpg" />
+    <Content Include="UserTemplate\images\slide-01.jpg" />
+    <Content Include="UserTemplate\images\slide-02.jpg" />
+    <Content Include="UserTemplate\images\slide-03.jpg" />
+    <Content Include="UserTemplate\images\slide-04.jpg" />
+    <Content Include="UserTemplate\images\slide-05.jpg" />
+    <Content Include="UserTemplate\images\slide-06.jpg" />
+    <Content Include="UserTemplate\images\slide-07.jpg" />
+    <Content Include="UserTemplate\images\summer.png" />
+    <Content Include="UserTemplate\images\summerdress.png" />
+    <Content Include="UserTemplate\images\thumb-01.jpg" />
+    <Content Include="UserTemplate\images\thumb-02.jpg" />
+    <Content Include="UserTemplate\images\thumb-03.jpg" />
+    <Content Include="UserTemplate\js\main.js" />
+    <Content Include="UserTemplate\js\map-custom.js" />
+    <Content Include="UserTemplate\js\slick-custom.js" />
+    <Content Include="UserTemplate\vendor\animate\animate.css" />
+    <Content Include="UserTemplate\vendor\animsition\css\animsition.css" />
+    <Content Include="UserTemplate\vendor\animsition\css\animsition.min.css" />
+    <Content Include="UserTemplate\vendor\animsition\js\animsition.js" />
+    <Content Include="UserTemplate\vendor\animsition\js\animsition.min.js" />
+    <Content Include="UserTemplate\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="UserTemplate\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="UserTemplate\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="UserTemplate\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="UserTemplate\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="UserTemplate\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="UserTemplate\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="UserTemplate\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="UserTemplate\vendor\bootstrap\js\popper.js" />
+    <Content Include="UserTemplate\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="UserTemplate\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="UserTemplate\vendor\countdowntime\countdowntime.js" />
+    <Content Include="UserTemplate\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="UserTemplate\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="UserTemplate\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="UserTemplate\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="UserTemplate\vendor\daterangepicker\moment.js" />
+    <Content Include="UserTemplate\vendor\daterangepicker\moment.min.js" />
+    <Content Include="UserTemplate\vendor\isotope\isotope.pkgd.min.js" />
+    <Content Include="UserTemplate\vendor\jqueryui\external\jquery\jquery.js" />
+    <Content Include="UserTemplate\vendor\jqueryui\images\ui-icons_444444_256x240.png" />
+    <Content Include="UserTemplate\vendor\jqueryui\images\ui-icons_555555_256x240.png" />
+    <Content Include="UserTemplate\vendor\jqueryui\images\ui-icons_777620_256x240.png" />
+    <Content Include="UserTemplate\vendor\jqueryui\images\ui-icons_777777_256x240.png" />
+    <Content Include="UserTemplate\vendor\jqueryui\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="UserTemplate\vendor\jqueryui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="UserTemplate\vendor\jqueryui\index.html" />
+    <Content Include="UserTemplate\vendor\jqueryui\jquery-ui.css" />
+    <Content Include="UserTemplate\vendor\jqueryui\jquery-ui.js" />
+    <Content Include="UserTemplate\vendor\jqueryui\jquery-ui.min.css" />
+    <Content Include="UserTemplate\vendor\jqueryui\jquery-ui.min.js" />
+    <Content Include="UserTemplate\vendor\jqueryui\jquery-ui.structure.css" />
+    <Content Include="UserTemplate\vendor\jqueryui\jquery-ui.structure.min.css" />
+    <Content Include="UserTemplate\vendor\jqueryui\jquery-ui.theme.css" />
+    <Content Include="UserTemplate\vendor\jqueryui\jquery-ui.theme.min.css" />
+    <Content Include="UserTemplate\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="UserTemplate\vendor\lightbox2\css\lightbox.css" />
+    <Content Include="UserTemplate\vendor\lightbox2\css\lightbox.min.css" />
+    <Content Include="UserTemplate\vendor\lightbox2\images\close.png" />
+    <Content Include="UserTemplate\vendor\lightbox2\images\loading.gif" />
+    <Content Include="UserTemplate\vendor\lightbox2\images\next.png" />
+    <Content Include="UserTemplate\vendor\lightbox2\images\prev.png" />
+    <Content Include="UserTemplate\vendor\lightbox2\js\lightbox-plus-jquery.js" />
+    <Content Include="UserTemplate\vendor\lightbox2\js\lightbox-plus-jquery.min.js" />
+    <Content Include="UserTemplate\vendor\lightbox2\js\lightbox.js" />
+    <Content Include="UserTemplate\vendor\lightbox2\js\lightbox.min.js" />
+    <Content Include="UserTemplate\vendor\MagnificPopup\jquery.magnific-popup.js" />
+    <Content Include="UserTemplate\vendor\MagnificPopup\jquery.magnific-popup.min.js" />
+    <Content Include="UserTemplate\vendor\MagnificPopup\magnific-popup.css" />
+    <Content Include="UserTemplate\vendor\parallax100\parallax100.js" />
+    <Content Include="UserTemplate\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="UserTemplate\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="UserTemplate\vendor\select2\select2.css" />
+    <Content Include="UserTemplate\vendor\select2\select2.js" />
+    <Content Include="UserTemplate\vendor\select2\select2.min.css" />
+    <Content Include="UserTemplate\vendor\select2\select2.min.js" />
+    <Content Include="UserTemplate\vendor\slick\ajax-loader.gif" />
+    <Content Include="UserTemplate\vendor\slick\fonts\slick.svg" />
+    <Content Include="UserTemplate\vendor\slick\slick-theme.css" />
+    <Content Include="UserTemplate\vendor\slick\slick.css" />
+    <Content Include="UserTemplate\vendor\slick\slick.js" />
+    <Content Include="UserTemplate\vendor\slick\slick.min.js" />
+    <Content Include="UserTemplate\vendor\sweetalert\sweetalert.min.js" />
+    <Content Include="User\Cart.aspx" />
+    <Content Include="User\Checkout.aspx" />
+    <Content Include="Admin\Productlisting.aspx" />
+    <Content Include="User\Home.aspx" />
+    <Content Include="User\Login.aspx" />
+    <Content Include="User\Myorders.aspx" />
+    <Content Include="User\MyProfile.aspx" />
+    <Content Include="User\OrderConfirmation.aspx" />
+    <Content Include="User\PaymentProcessing.aspx" />
+    <Content Include="User\Shop.aspx" />
+    <Content Include="User\ShopDetail.aspx" />
+    <Content Include="User\WebForm1.aspx" />
+    <Content Include="User\Wishlist.aspx" />
+    <Content Include="User\Women.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adminauth\Adminlogin.Master.cs">
+      <DependentUpon>Adminlogin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adminauth\Adminlogin.Master.designer.cs">
+      <DependentUpon>Adminlogin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\adminlogin.aspx.cs">
+      <DependentUpon>adminlogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\adminlogin.aspx.designer.cs">
+      <DependentUpon>adminlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Categorylist.aspx.cs">
+      <DependentUpon>Categorylist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Categorylist.aspx.designer.cs">
+      <DependentUpon>Categorylist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Categorylisting.aspx.cs">
+      <DependentUpon>Categorylisting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Categorylisting.aspx.designer.cs">
+      <DependentUpon>Categorylisting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Orderlist.aspx.cs">
+      <DependentUpon>Orderlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Orderlist.aspx.designer.cs">
+      <DependentUpon>Orderlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Productlist.aspx.cs">
+      <DependentUpon>Productlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Productlist.aspx.designer.cs">
+      <DependentUpon>Productlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\Authentication.Master.cs">
+      <DependentUpon>Authentication.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authentication\Authentication.Master.designer.cs">
+      <DependentUpon>Authentication.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\AdminActivityLogger.cs" />
+    <Compile Include="User\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Productlisting.aspx.cs">
+      <DependentUpon>Productlisting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Productlisting.aspx.designer.cs">
+      <DependentUpon>Productlisting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Home.Master.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Home.Master.designer.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+    </Compile>
+    <Compile Include="User\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Myorders.aspx.cs">
+      <DependentUpon>Myorders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Myorders.aspx.designer.cs">
+      <DependentUpon>Myorders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\MyProfile.aspx.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\MyProfile.aspx.designer.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderConfirmation.aspx.cs">
+      <DependentUpon>OrderConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderConfirmation.aspx.designer.cs">
+      <DependentUpon>OrderConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\PaymentProcessing.aspx.cs">
+      <DependentUpon>PaymentProcessing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\PaymentProcessing.aspx.designer.cs">
+      <DependentUpon>PaymentProcessing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Shop.aspx.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Shop.aspx.designer.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\ShopDetail.aspx.cs">
+      <DependentUpon>ShopDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ShopDetail.aspx.designer.cs">
+      <DependentUpon>ShopDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\User.Master.cs">
+      <DependentUpon>User.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User.Master.designer.cs">
+      <DependentUpon>User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="User\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Wishlist.aspx.cs">
+      <DependentUpon>Wishlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Wishlist.aspx.designer.cs">
+      <DependentUpon>Wishlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Women.aspx.cs">
+      <DependentUpon>Women.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Women.aspx.designer.cs">
+      <DependentUpon>Women.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminTemplate\assets\extra-libs\datatables.net-bs4\package.json" />
+    <Content Include="AdminTemplate\assets\extra-libs\datatables.net-bs4\Readme.md" />
+    <Content Include="AdminTemplate\assets\extra-libs\datatables.net\package.json" />
+    <Content Include="AdminTemplate\assets\extra-libs\datatables.net\Readme.md" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\example1\delete.php" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\example1\insert.php" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\example1\load.json" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\example1\update.php" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\less\lobilist.less" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\less\mixins.less" />
+    <Content Include="AdminTemplate\assets\extra-libs\taskboard\less\variables.less" />
+    <Content Include="AdminTemplate\assets\images\background\Thumbs.db" />
+    <Content Include="AdminTemplate\assets\images\big\Thumbs.db" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\js\bootstrap.js.map" />
+    <Content Include="AdminTemplate\assets\libs\bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Include="AdminTemplate\assets\libs\morris.js\bower.travis.json" />
+    <Content Include="AdminTemplate\assets\libs\popper.js\dist\umd\poppper.js.flow" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Bold.eot" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Bold.otf" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Bold.ttf" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Bold.woff" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Heavy.eot" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Heavy.otf" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Heavy.ttf" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Heavy.woff" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Medium.eot" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Medium.otf" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Medium.ttf" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Medium.woff" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Regular.eot" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Regular.otf" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Regular.ttf" />
+    <Content Include="AdminTemplate\dist\css\fonts\Gilmer-Regular.woff" />
+    <Content Include="AdminTemplate\dist\css\fonts\TofinoPersonal-Book.eot" />
+    <Content Include="AdminTemplate\dist\css\fonts\TofinoPersonal-Book.otf" />
+    <Content Include="AdminTemplate\dist\css\fonts\TofinoPersonal-Book.ttf" />
+    <Content Include="AdminTemplate\dist\css\fonts\TofinoPersonal-Book.woff" />
+    <Content Include="AdminTemplate\dist\css\fonts\TofinoPersonal-Medium.eot" />
+    <Content Include="AdminTemplate\dist\css\fonts\TofinoPersonal-Medium.otf" />
+    <Content Include="AdminTemplate\dist\css\fonts\TofinoPersonal-Medium.ttf" />
+    <Content Include="AdminTemplate\dist\css\fonts\TofinoPersonal-Medium.woff" />
+    <Content Include="AdminTemplate\dist\css\fonts\TofinoPersonal-Regular.eot" />
+    <Content Include="AdminTemplate\dist\css\fonts\TofinoPersonal-Regular.otf" />
+    <Content Include="AdminTemplate\dist\css\fonts\TofinoPersonal-Regular.ttf" />
+    <Content Include="AdminTemplate\dist\css\fonts\TofinoPersonal-Regular.woff" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\less\fa-brands.less" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\less\fa-regular.less" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\less\fa-solid.less" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\less\fontawesome.less" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\less\_animated.less" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\less\_bordered-pulled.less" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\less\_core.less" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\less\_fixed-width.less" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\less\_icons.less" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\less\_larger.less" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\less\_list.less" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\less\_mixins.less" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\less\_rotated-flipped.less" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\less\_screen-reader.less" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\less\_stacked.less" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\less\_variables.less" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\scss\fa-brands.scss" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\scss\fa-regular.scss" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\scss\fa-solid.scss" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\scss\fontawesome.scss" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\scss\_animated.scss" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\scss\_core.scss" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\scss\_icons.scss" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\scss\_larger.scss" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\scss\_list.scss" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\scss\_mixins.scss" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\scss\_stacked.scss" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\scss\_variables.scss" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\webfonts\fa-brands-400.eot" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\webfonts\fa-brands-400.woff" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\webfonts\fa-regular-400.eot" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\webfonts\fa-regular-400.woff" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\webfonts\fa-solid-900.eot" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\webfonts\fa-solid-900.woff" />
+    <Content Include="AdminTemplate\dist\css\icons\font-awesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="AdminTemplate\dist\css\icons\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="AdminTemplate\dist\css\icons\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="AdminTemplate\dist\css\icons\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="AdminTemplate\dist\css\icons\simple-line-icons\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="AdminTemplate\dist\css\icons\simple-line-icons\less\simple-line-icons.less" />
+    <Content Include="AdminTemplate\dist\css\icons\simple-line-icons\scss\simple-line-icons.scss" />
+    <Content Include="AdminTemplate\dist\css\icons\themify-icons\fonts\themify.eot" />
+    <Content Include="AdminTemplate\dist\css\icons\themify-icons\fonts\themify.ttf" />
+    <Content Include="AdminTemplate\dist\css\icons\themify-icons\fonts\themify.woff" />
+    <Content Include="AdminTemplate\dist\css\icons\themify-icons\themify-icons.less" />
+    <Content Include="AdminTemplate\dist\js\pages\datatable\data.json" />
+    <Content Include="AdminTemplate\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\bootstrap.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_deprecate.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\utilities\_overflow.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\utilities\_shadows.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\utilities\_stretched-link.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\vendor\_rfs.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_alert.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_badge.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_button-group.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_buttons.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_card.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_carousel.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_close.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_code.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_dropdown.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_forms.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_functions.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_grid.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_images.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_input-group.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_list-group.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_media.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_mixins.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_modal.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_nav.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_navbar.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_pagination.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_popover.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_print.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_progress.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_reboot.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_root.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_spinners.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_tables.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_toasts.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_tooltip.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_transitions.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_type.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_utilities.scss" />
+    <Content Include="AdminTemplate\scss\bootstrap\_variables.scss" />
+    <Content Include="AdminTemplate\scss\config\default\_custom-variables.scss" />
+    <Content Include="AdminTemplate\scss\config\default\_variables.scss" />
+    <Content Include="AdminTemplate\scss\custom\components\_breadcrumb.scss" />
+    <Content Include="AdminTemplate\scss\custom\components\_buttons.scss" />
+    <Content Include="AdminTemplate\scss\custom\components\_card.scss" />
+    <Content Include="AdminTemplate\scss\custom\components\_dropdown.scss" />
+    <Content Include="AdminTemplate\scss\custom\components\_forms.scss" />
+    <Content Include="AdminTemplate\scss\custom\components\_modal.scss" />
+    <Content Include="AdminTemplate\scss\custom\components\_progress.scss" />
+    <Content Include="AdminTemplate\scss\custom\components\_reboot.scss" />
+    <Content Include="AdminTemplate\scss\custom\components\_tables.scss" />
+    <Content Include="AdminTemplate\scss\custom\components\_tabs.scss" />
+    <Content Include="AdminTemplate\scss\custom\pages\_authentication.scss" />
+    <Content Include="AdminTemplate\scss\custom\pages\_chat-app.scss" />
+    <Content Include="AdminTemplate\scss\custom\pages\_dashboard.scss" />
+    <Content Include="AdminTemplate\scss\custom\pages\_grid.scss" />
+    <Content Include="AdminTemplate\scss\custom\pages\_landingpage.scss" />
+    <Content Include="AdminTemplate\scss\custom\plugins\_calendar.scss" />
+    <Content Include="AdminTemplate\scss\custom\plugins\_chartist-charts.scss" />
+    <Content Include="AdminTemplate\scss\custom\plugins\_perfect-scrollbar.scss" />
+    <Content Include="AdminTemplate\scss\custom\structure\_layout.scss" />
+    <Content Include="AdminTemplate\scss\custom\structure\_navbar.scss" />
+    <Content Include="AdminTemplate\scss\custom\structure\_preloader.scss" />
+    <Content Include="AdminTemplate\scss\custom\structure\_sidebar.scss" />
+    <Content Include="AdminTemplate\scss\custom\theme-colors\_theme-colors.scss" />
+    <Content Include="AdminTemplate\scss\fonts\landingpage_fonts.scss" />
+    <Content Include="AdminTemplate\scss\icons\icons.scss" />
+    <Content Include="AdminTemplate\scss\style.scss" />
+    <Content Include="AdminTemplate\src\.ftpquota" />
+    <Content Include="AdminTemplate\src\ajaxemail.php" />
+    <Content Include="AdminTemplate\src\index.php" />
+    <Content Include="AdminTemplate\src\package.zip" />
+    <Content Include="AdminTemplate\src\README.md" />
+    <Content Include="Admin\Admin.Master" />
+    <Content Include="Authentication\Authentication.Master" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="AdminTemplate\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="AdminTemplate\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="AdminTemplate\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="AdminTemplate\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="AdminTemplate\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="AdminTemplate\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="AdminTemplate\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="AdminTemplate\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="AdminTemplate\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Adminauth\Adminlogin.Master" />
+    <None Include="packages.config" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="UserTemplate\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="UserTemplate\fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="UserTemplate\fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="UserTemplate\fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="UserTemplate\fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="UserTemplate\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="UserTemplate\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="UserTemplate\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="UserTemplate\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-Black.ttf" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-Bold.ttf" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-Italic.ttf" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-Light.ttf" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-Medium.ttf" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-Regular.ttf" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-Thin.ttf" />
+    <Content Include="UserTemplate\fonts\Montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="UserTemplate\fonts\PlayfairDisplay\PlayfairDisplay-Black.ttf" />
+    <Content Include="UserTemplate\fonts\PlayfairDisplay\PlayfairDisplay-BlackItalic.ttf" />
+    <Content Include="UserTemplate\fonts\PlayfairDisplay\PlayfairDisplay-Bold.ttf" />
+    <Content Include="UserTemplate\fonts\PlayfairDisplay\PlayfairDisplay-BoldItalic.ttf" />
+    <Content Include="UserTemplate\fonts\PlayfairDisplay\PlayfairDisplay-Italic.ttf" />
+    <Content Include="UserTemplate\fonts\PlayfairDisplay\PlayfairDisplay-Regular.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-Black.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-Bold.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-Italic.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-Light.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-LightItalic.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-Medium.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-Regular.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-SemiBold.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-Thin.ttf" />
+    <Content Include="UserTemplate\fonts\Poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="UserTemplate\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="UserTemplate\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="UserTemplate\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="UserTemplate\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="UserTemplate\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="UserTemplate\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="UserTemplate\vendor\lightbox2\js\lightbox-plus-jquery.min.map" />
+    <Content Include="UserTemplate\vendor\lightbox2\js\lightbox.min.map" />
+    <Content Include="UserTemplate\vendor\slick\config.rb" />
+    <Content Include="UserTemplate\vendor\slick\fonts\slick.eot" />
+    <Content Include="UserTemplate\vendor\slick\fonts\slick.ttf" />
+    <Content Include="UserTemplate\vendor\slick\fonts\slick.woff" />
+    <Content Include="UserTemplate\vendor\slick\slick-theme.less" />
+    <Content Include="UserTemplate\vendor\slick\slick-theme.scss" />
+    <Content Include="UserTemplate\vendor\slick\slick.less" />
+    <Content Include="UserTemplate\vendor\slick\slick.scss" />
+    <Content Include="User\User.Master" />
+    <Content Include="UserTemplate\dist\css\iconfont\fonts\tabler-icons.eot" />
+    <Content Include="UserTemplate\dist\css\iconfont\fonts\tabler-icons.ttf" />
+    <Content Include="UserTemplate\dist\css\iconfont\fonts\tabler-icons.woff" />
+    <Content Include="UserTemplate\dist\css\iconfont\fonts\tabler-icons.woff2" />
+    <Content Include="UserTemplate\dist\css\style.css.map" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\.gitattributes" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\.gitignore" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\.travis.yml" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\bower.json" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\CONTRIBUTING.md" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\dist\LICENSE" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\dist\README.md" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\ISSUE_TEMPLATE.md" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\LICENSE" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\package-lock.json" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\package.json" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\README.md" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\ROADMAP.md" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\dist\css\owl.carousel.css.map" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\dist\css\owl.theme.default.css.map" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\dist\css\owl.theme.green.css.map" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\js\.jscsrc" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\js\.jshintrc" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\scss\owl.carousel.css.map" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\scss\owl.carousel.scss" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\scss\owl.theme.default.css.map" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\scss\owl.theme.default.scss" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\scss\owl.theme.green.css.map" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\scss\owl.theme.green.scss" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\scss\_animate.scss" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\scss\_autoheight.scss" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\scss\_core.scss" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\scss\_lazyload.scss" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\scss\_theme.default.scss" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\scss\_theme.green.scss" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\scss\_theme.scss" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\src\scss\_video.scss" />
+    <Content Include="UserTemplate\assets\libs\OwlCarousel-2\_config.json" />
+    <Content Include="User\Home.Master" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\.gitattributes" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-Black.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-Bold.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-Italic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-Light.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-Medium.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-Regular.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-Thin.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\PlayfairDisplay\PlayfairDisplay-Black.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\PlayfairDisplay\PlayfairDisplay-BlackItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\PlayfairDisplay\PlayfairDisplay-Bold.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\PlayfairDisplay\PlayfairDisplay-BoldItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\PlayfairDisplay\PlayfairDisplay-Italic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\PlayfairDisplay\PlayfairDisplay-Regular.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-Black.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-Bold.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-Italic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-Light.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-LightItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-Medium.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-Regular.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-SemiBold.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-Thin.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\fonts\Poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\lightbox2\js\lightbox-plus-jquery.min.map" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\lightbox2\js\lightbox.min.map" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\slick\config.rb" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\slick\fonts\slick.eot" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\slick\fonts\slick.ttf" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\slick\fonts\slick.woff" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\slick\slick-theme.less" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\slick\slick-theme.scss" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\slick\slick.less" />
+    <Content Include="UserTemplate\images\cozastore-master\cozastore-master\vendor\slick\slick.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59374</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59374/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
